@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>科目登録・変更</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+function setsubmitFile(sw) {
+	////////////////////////////////////////////////
+	////  _opFile は名前固定 exwork #MultiInput()
+	////////////////////////////////////////////////
+	document.form1._opFile.value = "FILE";
+	if(document.form1._uploadFile.value == ""){
+		document.form1._opFile.value = "NOFILE";
+		return false;
+	}
+	/////////////////////////////////////////////
+	/////////////////////////////////////////////
+	document.form1._menu.value = sw;
+	document.form1.submit();	
+}
+function setsubmit(sw) {	
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value = sw; // 
+	document.form1.submit();
+}
+function setEdit(sw,key){
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value   = sw;
+	document.form1._lec_key.value = key;
+	document.form1.submit();
+}
+function submitDelete(sw,key){
+	if(confirm("★この科目を削除しますか？")){
+		//////////////////////////////////////////////////
+		//////////////////////////////////////////////////
+		document.form1._opFile.value 		= "NOFILE";
+		document.form1._uploadFile.value 	= "";
+		//////////////////////////////////////////////////
+		//////////////////////////////////////////////////	
+		document.form1._menu.value = sw; // DELETE
+		document.form1._lec_key.value = key;
+		document.form1.submit();
+	}else{
+		return false;
+	}
+}
+function Jump(url){
+	if (url != ''){
+    	window.open(url, '_blank',"width=450,height=600,left=5,top=5,scrollbars=yes,toolbar=yes,resizable=yes");
+	}
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style>
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+
+body {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 14px;
+	color: #333333;
+}
+.t01 {
+	 border-top: 	1px solid #666666;
+	 border-left: 	1px solid #666666;
+	 border-bottom: 1px solid #666666;
+	 background-color: #6699CC;
+	 font-size: 12px;
+	 color: #ffffff;
+}
+.t02 {
+	 border-top: 	1px solid #666666;
+	 border-bottom: 1px solid #666666;
+	 background-color: #6699CC;
+	 font-size: 12px;
+	 color: #ffffff;
+}
+.t03 {
+	 border-top: 	1px solid #666666;
+	 border-bottom: 1px solid #666666;
+	 border-right: 	1px solid #666666;
+	 background-color: #6699CC;
+	 font-size: 12px;
+	 color: #ffffff;
+}
+.b01 {
+	 border-left: 	1px solid #666666;
+	 border-bottom: 1px solid #666666;
+	 background-color: #FAFAFF;
+}
+.b11 {
+	 border-left: 	1px solid #666666;
+	 border-bottom: 1px solid #666666;
+	 background-color: #FAFAFF;
+	 padding-left:     5px;
+}
+.b02 {
+	 border-bottom: 1px solid #666666;
+	 background-color: #FAFAFF;
+}
+.b03 {
+	 border-bottom: 1px solid #666666;
+	 border-right: 	1px solid #666666;
+	 background-color: #FAFAFF;
+}
+.message {
+	font-size: 12px;
+	color: #CC6666;
+}
+</style>
+</head>
+
+<body link="#3366FF"vlink="#3366FF" alink="#3366FF" onLoad="MM_preloadImages('/pc/images/sendxml-2.gif')">
+<form action="%_action%" method="post" enctype="multipart/form-data" name="form1">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+    <td height="15" colspan="9" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="1">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="説明を見る"></a></td>  
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('CABINET')"><img src="/pc/images/FileCbinet.gif" width="32" border="0" alt="ファイルキャビネットを開く" height="38"></a></td>
+      
+    <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('IMPORT')"><img src="/pc/images/import.gif" width="32" height="38" border="0" alt="科目定義をファイルから読み込んで新しい科目を作成する"></a></td>
+      
+    <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('CREATE')"><img src="/pc/images/makenew.gif" width="32" height="38" border="0" alt="科目を新規に作成する"></a></td>
+    <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('RETURN')"><img src="/pc/images/retback.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+    <td width="25" rowspan="2" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="13" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="13" colspan="9" valign="top"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    <td></td>
+  </tr>
+</table>
+  
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="13" colspan="12" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="26" height="29" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top"><img src="/pc/images/kamokuTable.gif" width="84" height="24"></td>
+      <td width="160" align="right" valign="top">科目定義XMLファイル：</td>
+      <td colspan="7" valign="top"><input name="_uploadFile" type="file" size="30" maxlength="100">
+        <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image33','','/pc/images/sendxml-2.gif',1)" onClick="setsubmitFile('SEND_XML')"><img src="/pc/images/sendxml-1.gif" alt="作成した科目定義XMLファイルを送信します" name="Image33" width="60" height="20" border="0" align="absmiddle"></a> 
+      </td>
+    </tr>
+    <tr> 
+      <td height="18" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="11" valign="top" class="message">%_msg%</td>
+    </tr>
+    <tr> 
+      <td height="22" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="37" align="center" valign="middle" class="t01">No.</td>
+      <td colspan="3" align="center" valign="middle" class="t01">科　目　名</td>
+      <td width="59" align="right" valign="middle" class="t01">操</td>
+      <td width="16" valign="top" class="t02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="42" align="center" valign="middle" class="t02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="42" align="center" valign="middle" class="t02">作</td>
+      <td width="41" valign="top" class="t03"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="77" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <pct: @itemList> 
+	<pct: block> 
+    <tr> 
+      <td height="44" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td align="center" valign="middle" class="b01">%_n%</td>
+      <td colspan="3" valign="middle" class="b11"><a href="#" onClick="setEdit('EDIT','%_lec_key%')">%_title%</a></td>
+      <td align="center" valign="bottom" class="b01"><a href="#" onClick="setEdit('PLAN','%_lec_key%')"><img src="/pc/images/plan.gif" width="32" height="38" border="0" align="absmiddle" alt="講義計画を作成する"></a></td>
+      <td valign="top" class="b02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="bottom" class="b02"><a href="#" onClick="setEdit('EXPORT', '%_lec_key%')"><img src="/pc/images/exportCont.gif" width="32" height="38" border="0" align="absmiddle" alt="科目定義をファイルに書き出す"></a></td>
+      <td valign="bottom" class="b02"><a href="#" onClick="setEdit('RESTORE','%_lec_key%')"><img src="/pc/images/restroeCont.gif" width="32" height="38" border="0" align="absmiddle" alt="科目定義をファイルから読み込んで上書きする"></a></td>
+      <td valign="bottom" class="b03"><a href="#" onClick="submitDelete('DELETE', '%_lec_key%')"><img src="/pc/images/deleteCont.gif" width="32" height="38" border="0" align="absmiddle" alt="科目を削除する"></a></td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <pct: /block> 
+	<pct: @noItem> 
+	<pct: block> 
+    <tr> 
+      <td height="44" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td align="center" valign="middle" class="b01"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="middle" class="b11">《科目を作成してください》</td>
+      <td align="center" valign="middle" class="b01"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" class="b02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="b02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="b02"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="b03"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <pct: /block> 
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="26" height="1"></td>
+      <td width="31"><img src="/pc/images/spacer.gif" alt="" width="31" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="37" height="1"></td>
+      <td width="152"><img src="/pc/images/spacer.gif" alt="" width="152" height="1"></td>
+      <td></td>
+      <td width="94"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="59" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="42" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="42" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="41" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="82" height="1"></td>
+    </tr>
+  </table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="780" height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="11" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="15" valign="middle"><div align="right"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></div></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

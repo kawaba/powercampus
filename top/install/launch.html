@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>PowerCampusの起動方法</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+PowerCampusの起動方法
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　PowerCampusを起動するには、tomcat と apache 及び postgresql がすでに起動していることが必要です．ただ、これらは、Windowsのサービス管理に組み込まれていますので、パソコンを起動すると、自動的にこれらも起動されています．したがって通常は、ブラウザを開いて、<br><br>　　<span style="color: #0000cc;">http://《サーバー名》/PowerCampus/pc/top/index2.html</span><br><br>をアクセスするだけです．<br>また、学生用は<br><br>　　<span style="color: #0000cc;">http://《サーバー名》/PowerCampus/pc/top/</span><br><br>です．<br><br><img src="files/endLine.gif" border="0" align="absmiddle" alt=""><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+【起動サービスの管理】<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　パソコンは使うがサーバーは止めておきたいという時は、tomcat と apache 及び postgresql を停止します．これには、Windowsのサービス管理を使います．そこで、以下では、まずサービス管理のアイコンをデスクトップに貼り付ける方法を説明します．<br><br>　次に、<span style="color: crimson;">Tomcat の再起動</span>をサービス管理を使って行います．これは、Tomcatにapacheのための情報ファイルを作成させるため、<span style="border-bottom:1px dotted red">インストール直後に必要な処理</span>です．これをやっておくのは、パソコンを再起動したとき、もしも先にapacheが起動してしまうと、この情報ファイルがないので、Tomcatとの連携がうまくいかず、PowerCampusを起動できなくなるからです．<br><br>　そして最後に、tomcat と apache 及び postgresqlのサービスを自動起動から手動起動に切り替える方法も説明します．<br><br>★パソコン下段のタスクバーに <img src="files/startIcons.gif" border="0" align="absmiddle" alt=""> が表示されていると思いますが、これはapache と Tomcat の起動状態を見たり、実際に起動や停止を行ったりするアイコンです．Windowsのサービス管理を使うので、これを操作する必要はありません．<br><br><br><br><br><img src="files/n01.gif" border="0" align="absmiddle" alt=""> サービス管理アイコンのセットアップ<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+(1) コントロールパネルで、パフォーマンスとメンテナンス⇒管理ツール、と選択して管理ツールフォルダを開きます．<br><br>　　　<img src="files/sv01.gif" border="0" align="absmiddle" alt=""> ⇒ <img src="files/sv02.gif" border="0" align="absmiddle" alt=""><br><br><br>(2) 歯車の形をしたサービスのアイコンのショートカットを作成し、それをデスクトップへドラッグしてやると、ショートカットアイコンができます．<br><br><img src="files/service_icon_copy.gif" border="1" align="absmiddle" alt=""> <br><br><br><br><br><img src="files/n02.gif" border="0" align="absmiddle" alt=""> サービス管理の利用<br><br>　Tomcat を再起動します．<br><br><br>(1) まず．サービスアイコンをダブルクリックしてサービス一覧を開きます．<br>　　次に、以下のように、サービスの中のTomcatを<span style="color: crimson;">クリック</span>して青く反転します．<br><img src="files/sv03.gif" border="0" align="absmiddle" alt=""><br><br>(2) 左にTomcatへ可能な操作が表示されますので、「サービスの開始」をクリックしてください．<br>　　すでに起動していた場合は「サービスの再起動」をクリックします．<br><img src="files/sv04.gif" border="0" align="absmiddle" alt=""><br><br>(3) 起動すると以下のような表示になります<br><img src="files/sv05.gif" border="0" align="absmiddle" alt=""><br><br>(4) また、サービス名を<span style="color: crimson;">ダブルクリック</span>すると、サービスのプロパティが開きます．<br>　　ここでは、サービスの起動を自動化から手動へ切り替えることなどができます．<br><img src="files/sv06.gif" border="0" align="absmiddle" alt=""><br><br><br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

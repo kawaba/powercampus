@@ -1,0 +1,85 @@
+#
+#
+#  httpd.conf  additional configrations
+#
+#
+#   WEB /usr/  
+#
+    alias /user  %homedir%user
+    <Location /user >
+       Order   deny,allow
+       Deny    from all
+    </Location>
+ 
+    <Location ~ "/user/.*/file">
+       Options None
+       AllowOverride None
+       Order   allow,deny
+       allow   from all
+    </Location>
+
+    <Location ~ "/user/.*/attach">
+       Options None
+       AllowOverride None
+       Order   allow,deny
+       allow   from all
+    </Location>
+
+    <Location ~ "/user/.*/kadai">
+       Options None
+       AllowOverride None
+       Order   allow,deny
+       allow   from all
+    </Location>
+
+    <Location ~ "/user/.*/html">
+       Options None
+       AllowOverride None
+       Order   allow,deny
+       allow   from all
+    </Location>
+
+	<Location ~ "/user/.*/download">
+       Options None
+       AllowOverride None
+	   Order   allow,deny
+	   allow   from all
+	</Location>
+#
+#   GROUP /web/ 
+#
+   alias /web  %homedir%group
+
+   <Location /web >
+       Options None
+       AllowOverride None
+       Order   allow,deny
+       allow   from all
+    </Location>
+#
+#   BBS /bbs/ 
+#
+   alias /bbs  %homedir%bbs
+   <Location  /bbs >
+       Options None
+       AllowOverride None
+      Order   allow,deny
+      allow   from all
+   </Location>
+#
+# System directory setting
+#
+<Location /pc/*>
+   Options None
+   AllowOverride None
+   
+</Location>
+<Location ~ "/pc/system/*">
+   Order   deny,allow
+   deny    from all
+</Location>
+<Location ~ "/pc/htmls/*">
+   Order   deny,allow
+   deny    from all
+</Location>
+#

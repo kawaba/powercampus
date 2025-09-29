@@ -1,0 +1,163 @@
+@line
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="780" height="11" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td width="780" height="13" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+  </table>
+-----
+
+@kamokuDsp
+<table width="781" border="0" cellpadding="0" cellspacing="0" bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="18" height="31" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="bottom"><table width="100%_PERCENT_%" border="0" cellpadding="0" cellspacing="0" >
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="591" height="31" valign="middle" class="kamokuName">%_title%</td>
+          </tr>
+        </table>
+	  </td>
+      <td width="124" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="48" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="16" colspan="4" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+	<pct: @items>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="561" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="124" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="48" height="1"></td>
+    </tr>
+  </table>
+-----
+
+@viewTemplate01
+<tr> 
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="middle" class="itemLabel">【 %_label% 】</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="30" valign="top" class="content"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="top" class="content">%_$content%</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+-----
+
+@viewTemplate02
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="middle" class="itemLabel2"> %_label%：<span class="content2">%_content%</span></td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+-----
+
+@enterTextareaTemplate
+    <tr> 
+      <td width="18" height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp; </td>
+      <td width="762" valign="bottom" class="itemLabel">【 %_label% 】</td>
+    </tr>
+    <tr> 
+      <td height="69" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"  class="content"><img src="/pc/images/spacer.gif" width="17" height="10">
+      <textarea name="%_name%" cols="%_col%" rows="%_row%" class="txaria" id="%_name%">
+%_content%</textarea></td>
+    </tr>
+-----
+
+@enterTextfieldTemplate
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="content">%_label%：
+          <input name="%_name%" type="text" class="txfield" value="%_content%" size="%_size%">
+        </td>
+    </tr>
+-----
+
+@enterListBoxTemplate
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="content"> <p>%_label%：
+          <select name="%_name%" class="txlist">
+%_items%
+          </select>
+        </p></td>
+    </tr>
+-----
+
+@enterListBoxItemTemplate
+            <option value="%_item%" %_sel% style="COLOR: #003399;">%_item%</option>
+-----
+
+@enterCheckBoxTemplate
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="content">%_label%： 
+%_items%
+	　</td>
+    </tr>
+-----
+
+@enterCheckBoxItemTemplate
+          <input name="%_name%%_k%" type="checkbox" id="%_name%%_k%" value="%_item%" %_chk% >%_item%&nbsp;&nbsp;
+-----
+
+
+
+@headderXml
+<?xml version="1.0" encoding="SJIS" ?>
+
+-----
+
+@kamokuTag
+<kamoku  serial=_number>
+
+-----
+
+@bottomXml
+</kamoku>
+
+-----
+
+@TextAreaXml
+<%_name% label=%_label% type=text row=%_row% col=%_col%>
+%_content%
+</%_name%>
+
+-----
+
+
+@TextFieldXml
+<%_name% label=%_label% type=text col=%_col%>
+%_content%
+</%_name%>
+
+-----
+
+@ListBoxXml
+<%_name% label=%_label% type=list>
+%_content%
+</%_name%>
+
+-----
+
+@CheckBoxXml
+<%_name% label=%_label% type=check>
+%_content%
+</%_name%>
+
+-----
+
+
+

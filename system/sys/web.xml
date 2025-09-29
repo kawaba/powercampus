@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+     <session-config>
+      <session-timeout>180</session-timeout>
+    </session-config>
+    
+    <servlet>
+      <servlet-name>PowerCampus</servlet-name>
+      <servlet-class>PowerCampus</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+    </servlet>
+    
+    <servlet>
+      <servlet-name>PowerCampusST</servlet-name>
+      <servlet-class>PowerCampusST</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+   </servlet>
+   
+    <servlet>
+      <servlet-name>PowerCampusBBS</servlet-name>
+      <servlet-class>PowerCampusBBS</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampus</servlet-name>
+       <url-pattern>/servlet/PowerCampus</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampusST</servlet-name>
+       <url-pattern>/servlet/PowerCampusST</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampusBBS</servlet-name>
+       <url-pattern>/servlet/PowerCampusBBS</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>HelloWorld</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/servlet/HelloWorld</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BasicFrame</servlet-name>
+        <servlet-class>BasicFrame</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BasicFrame</servlet-name>
+        <url-pattern>/servlet/BasicFrame</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>JefTest</servlet-name>
+        <servlet-class>JefTest</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JefTest</servlet-name>
+        <url-pattern>/servlet/JefTest</url-pattern>
+    </servlet-mapping>         
+</web-app>

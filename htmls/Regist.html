@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>科目登録・変更</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+
+function setSubmit(sw) {
+	document.form1._menu.value = sw; // REGIST,CLEAR
+	document.form1.submit();
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+<body onLoad="MM_preloadImages('/pc/images/clear02.gif')">
+<form name="form1" method="post" action="%_action%">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="17" height="43" valign="top"><a name="top">　</a></td>
+      <td width="511" valign="middle"><img src="/pc/images/userRegist.gif" width="297" height="34"></td>
+      <td width="68" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="44" valign="bottom"><a href="#" onClick="setSubmit('CLEAR')"><img src="/pc/images/eraserIcon.gif" name="Image36" width="32" height="38" border="0"></a></td>
+      <td width="44" valign="bottom"><a href="#" onClick="setSubmit('REGIST')"><img src="/pc/images/registIcon.gif" width="32" height="38" border="0"></a></td>
+      <td width="44" valign="bottom"><a href="#" onClick="setSubmit('RETURN')"><img src="/pc/images/returnIcon.gif" width="32" height="38" border="0"></a></td>
+      <td width="52" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="5" colspan="7" valign="top"><img src="../pc/images/spacer.gif" width="1" height="5"></td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="7" valign="top"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="7"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" class="mormalWhite14">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="50" height="22" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="6" valign="middle" class="red01">%_msg%</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="50" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#FFFFFF"style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="4" valign="middle" class="Gray11Wide"style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><p>■このユーザー名（１２文字以内）とパスワード（２０文字以内）は、PowerCampusシステムにログインする時に使用します。<br>
+          　使える文字は<span class="red01">英小字と数字</span>だけです。<span class="red01">記号は使えません</span>。</p></td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="17" valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="159" valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">ユーザー名</td>
+      <td width="16" valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="316" valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"><input name="_user_id" type="text" class="mormal_blue1" id="_user_id" value="%_user_id%" size="40" maxlength="50"> 
+      </td>
+      <td width="169" valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="1"> 
+        <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        yamada </td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="17" valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="159" valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;" bgcolor???="#E0E0E0">パスワード</td>
+      <td width="16" valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="316" valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"><input name="_passwd" type="text" class="mormal_blue1" id="_passwd" value="%_passwd%" size="40" maxlength="50"> 
+      </td>
+      <td width="169" valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="1"> 
+        <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        abz123cc</td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="50" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#FFFFFF" style="border-top: 1px solid #999999;border-left: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="4" valign="middle" class="Gray11Wide" style="border-top: 1px solid #999999;border-right: 1px solid #999999;"><p><span class="Gray11Wide">■</span>このメールアドレスは、学生との連絡などに使います。</p></td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="17" valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="159" valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">メールアドレス</td>
+      <td width="16" valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="316" valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"><input name="_teMail" type="text" class="mormal_blue1" id="_teMail" value="%_teMail%" size="40" maxlength="50"> 
+      </td>
+      <td width="169" valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="1"> 
+        <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        yamada@htb-u.ac.jp</td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="50" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#FFFFFF"style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="4" valign="middle" class="Gray11Wide"style="border-right: 1px solid #999999;border-top: 1px solid #999999;"> 
+        <p>■グループ名は所属学部を意味する３～６文字程度の短い英字名を指定してください。<br>
+          　英字名に利用できるのは<span class="red01">、a～zまでの半角の英小文字とアンダーバー( _ )と数字だけ</span>です。</p>
+        </td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#E0E0E0"style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">グループ名 
+      </td>
+      <td valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"><input name="_szDB" type="text" class="mormal_blue1" id="_szDB" value="%_szDB%" size="10" maxlength="30"> 
+      </td>
+      <td valign="top" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="1"> 
+        <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        htb_ec<br>
+        　（ＨＴＢ大学経済学部の意味）</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="50" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#FFFFFF" style="border-top: 1px solid #999999;border-left: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="4" valign="middle" class="Gray11Wide" style="border-top: 1px solid #999999;border-right: 1px solid #999999;"><p><span class="Gray11Wide">■</span>所属学部（または所属大学）のドメイン名を記入してください。<br>
+          　ドメイン名は、所属学部（または所属大学）から交付される公式なメールアドレスの<span class="red01">＠から右側の部分</span>に当たります。</p>
+        </td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="17" valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="159" valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">ドメイン名</td>
+      <td width="16" valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="316" valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"><input name="_domain" type="text" class="mormal_blue1" id="_domain" value="%_domain%" size="40" maxlength="50"> 
+      </td>
+      <td width="169" valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="1"> 
+        <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        htb-u.ac.jp</td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="6" valign="top"><img src="/pc/images/spacer.gif" width="1" height="5"></td>
+      <td valign="top" bgcolor="#FFFFFF"style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="5"></td>
+      <td colspan="4" valign="middle" class="Gray11Wide"style="border-right: 1px solid #999999;border-top: 1px solid #999999;"><img src="/pc/images/spacer.gif" width="1" height="5"></td>
+      <td valign="top"><img src="/pc/images/spacer.gif" width="1" height="5"></td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">氏　　名</td>
+      <td valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"> 
+        <input name="_teName" type="text" class="mormalD" id="_teName" value="%_teName%" size="20" maxlength="20"></td>
+      <td valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"> 
+        <img src="/pc/images/spacer.gif" width="1" height="1"> <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        山田　太郎</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="50"  height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;">ふりがな</td>
+      <td valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;"> 
+        <input name="_hurigana" type="text" class="mormalD" id="_teName" value="%_hurigana%" size="30" maxlength="30"></td>
+      <td valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;"> 
+        <img src="/pc/images/spacer.gif" width="1" height="1"> <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        やまだ　たろう</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" bgcolor="#E0E0E0" style="border-left: 1px solid #999999;border-top: 1px solid #999999; border-bottom: 1px solid #999999;">>&nbsp;</td>
+      <td valign="middle" bgcolor="#E0E0E0" class="GrayB12Wide" style="border-top: 1px solid #999999;border-bottom: 1px solid #999999;">所　属</td>
+      <td valign="top" bgcolor="#6699FF" style="border-top: 1px solid #666666;border-bottom: 1px solid #999999;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" bgcolor="#6699FF" style="border-right: 1px solid #666666;border-top: 1px solid #666666;border-bottom: 1px solid #999999;"><input name="_shozoku" type="text" id="_shozoku" value="%_shozoku%" size="50" class="mormalD" maxlength="50"> 
+      </td>
+      <td valign="middle" class="blue12Widelight" style="border-right: 1px solid #999999;border-top: 1px solid #999999;border-bottom: 1px solid #999999;"> 
+        <img src="/pc/images/spacer.gif" width="1" height="1"> <img src="/pc/images/ex.gif" width="18" height="18" align="absmiddle"> 
+        HTB大学経済学部</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td  width="50" height="1"><img src="/pc/images/spacer.gif" alt="" width="50" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="159" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="316" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="169" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="30" colspan="4" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="31" height="21" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="603" valign="top" class="normal_brown2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="5" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="15">&nbsp;</td>
+      <td>&nbsp;</td>
+      <td width="60">&nbsp;</td>
+      <td colspan="2" valign="middle"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+    </tr>
+    <tr>
+      <td height="1"></td>
+      <td></td>
+      <td></td>
+      <td width="62"></td>
+      <td></td>
+    </tr>
+  </table>
+
+</form>
+</body>
+</html>

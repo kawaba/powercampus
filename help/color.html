@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>カラーチャート</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+//
+function colorTable(){
+	//
+	for(i=0; i<6; i=i+3){
+		wrtTable(i);
+	}
+	document.write('<br><center><span style="font-size: 12px; color: #333333;"><img src="images/Other.gif"  align="absmiddle"> マウスポインタをカラータイルの上に置くとコードが表示されます</span></center>');
+}
+function wrtTable(i){
+	//
+	document.write('<table  align="center" border=0 cellpadding=2>');
+	for(j=0; j<6; j++){
+		wrtTR(i,j);
+	}
+	document.write('</table>');
+}
+function wrtTR(i,j){
+	//
+	document.write('<tr>');
+	for(k=0; k<6; k++){
+		wrtTD(i,j,k);
+	}
+	for(k=0; k<6; k++){
+		wrtTD(i+1,j,k);
+	}
+	for(k=0; k<6; k++){
+		wrtTD(i+2,j,k);
+	}
+	document.write('</tr>');
+}
+//
+function wrtTD(i,j,k){
+	//
+	color=new Array('00','33','66','99','CC','FF');
+	str = color[i] + color[k] + color[j];
+	//document.write('<td bgcolor="#' + color + '" height="5"  width="15"><ims src="images/spacer.gif" width="30" height="5"></td>');
+	document.write('<td bgcolor="#' + str + '" height="10"  width="10"><img src="images/spacer.gif"  width="15" height="15" alt="#' + str + '"></td>');
+}
+</script>
+</head>
+<body onload="colorTable()">
+</body>
+</html>

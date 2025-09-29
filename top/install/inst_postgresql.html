@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>postgresql-8.0.3のインストール</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+postgresql-8.0.3のインストール
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　postgresql は、これまでUNIXやLINUXの世界で使われていたリレーショナルデータベースシステム(RDBMS)です．商用や営利利用も可能なフリーのソフトウェアですが、MS-SQLやOracleと並立する高機能なシステムです．バージョン8.0からWindows版が配布されるようになり、そのおかげでPowerCampusのWindows版が可能になりました．データベースシステムは、規模が大きくなるほど性能の違いが出てくるのですが、Postgresqlは安心して大規模システムに適用できる数少ないDBMSのひとつです．<br><br>　インストールも非常に容易です．以下の解説の沿って実行してください．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+★最初に以下のように、ダウンロードした postgresql-8.0.3-ja.zip をダブルクリックして解凍しておきます(①)．ダブルクリックすると、postgresql-8.0.3-ja というフォルダが作成され、その内容が表示されます．<br>　　解凍したファイルの中の、postgresql-8.0.3-ja.msi をダブルクリック(②)するとインストールを開始します．<br><br><img src="files/db01.gif" border="1" align="absmiddle" alt=""><br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> 開始<br>　<br>　最初の開始画面では、次へをクリックします．<br> <br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg01.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> 説明<br>　<br>　Postgresql データベースについての説明です．分かる範囲で目を通しておくといいでしょう．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg02.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> インストール先の選択<br><br>  Postgresql をどこへインストールするか指定します．インストール先にデータベース本体も出来てしまいますから、十分に容量のあるドライブ装置を選んで、その装置の postgres というフォルダーにインストールしてください．ここでは、D:\postgres にインストールしています．<br><br>　Browse ボタンをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg03.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br>　指定場所に Dドライブを選択し、下段のフォルダ名に postgres と入力し、OKをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg04.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br>　元の画面にもどったら、インストール先として d:\postgres\ が指定されていることを確認してから、次へをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg05.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n04.gif" border="0" align="absmiddle" alt=""> サービスとして起動するよう指定する<br><br>　サービスとは、WindowsによるPostgresqlの自動起動サービスです．これにより、パソコンの電源を入れるたびにPostgresqlを手動で起動する必要がなくなります．<br><br>　PowerCampusのインストール指定を簡単にするため、ここでは、画面の表示に一切手を加えないで下さい．そのままOKボタンをクリックします．<br><br>　下図のように、３つの画面が次々と表示されますので、「はい」と「OK」をクリックしてください． <br><img src="files/pg07a.gif" border="0" align="absmiddle" alt=""><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg06.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n05.gif" border="0" align="absmiddle" alt=""> データベース生成と管理者の設定<br><br>　ポート番号とアドレスは変更しません．赤枠で囲った部分を好きに変えると、PowerCampusのインストールで間違いの原因になります．赤で指定した通りに設定してください．<br><br>　　ローケル　　　　：　<span style="color: #0066CC;">C</span><br>　　エンコーディング：　<span style="color: #0066CC;">EUC_JP</span><br>　　スパーユーザー名：　<span style="color: #0066CC;">postgres</span><br><br>また、パスワードも、PowerCampusのインストールに必要なデータです．<span style="color: crimson;">どこかにメモを取る</span>などして、忘れないように注意してください．<br>　<br>　また、pgadmin という管理ツールでデータベースを操作する時にも、ここで指定したスーパーユーザー名(postgres)とパスワードが必要になります．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg10.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n06.gif" border="0" align="absmiddle" alt=""> その他の設定 <br><br>　これ以降は、特に設定しません．次へをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg11.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　ここも次へをクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg12.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n07.gif" border="0" align="absmiddle" alt=""> インストール開始<br><br>　準備ができたという表示ですから、次へをクリックしてインストールを開始します．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg13.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　インストールは完了まで暫く時間がかかります．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg14.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n08.gif" border="0" align="absmiddle" alt=""> 完了<br><br>　終わるをクリックします．<br><br>　なお、PowerCampusのために、データベーステーブルを作成しますが、それはPowerCampusをインストールした後、Postgresql の管理プログラム(pgadmin)で行いますので、Postgresql のインストールはこれで完了です． <br><br> <br> <br><br> <br> <br><br><br><br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pg15.gif" border="0" ></td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>カレンダー</title>
+<style type="text/css">
+<!--
+.top{
+    font-size:12px; 
+	border: solid 1px #999999;
+	background-color:#6699FF;
+}
+.headder{
+    font-size:12px; 
+	border: solid 1px #999999;
+	background-color:#CCCCCC;
+}
+.dt{
+    font-size:12px; 
+	border: solid 1px #999999;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function setw(sw) {
+	document.form1._menu.value = sw;	// 
+	document.form1.submit();
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('/pc/images/sankaku_L2.gif','/pc/images/sankaku_R2.gif')">
+<form  name="form1" method="post" action="%_action%">
+<table  align="center" width="147" border="0">
+<tr>
+    <td width="147" align="center"> <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','/pc/images/sankaku_L2.gif',1)" onClick="setw('BACK')"><img src="/pc/images/sankaku_L1.gif" name="Image1" width="20" height="14" border="0"></a> 
+      <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','/pc/images/sankaku_R2.gif',1)" onClick="setw('NEXT')"><img src="/pc/images/sankaku_R1.gif" name="Image2" width="20" height="14" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<pct: @calTable>
+<pct: block>
+<table align="center" width = "147" border='0' cellspacing='1' cellpadding='3' style='border: solid 1px #999999;'>
+<tr>
+<td width ="147" align='center' colspan='7' class="top">%_yymm%</td>
+</tr>
+<tr>
+<td width="21" align='center' class="headder" >日</td>
+<td width="21" align='center' class="headder" >月</td>
+<td width="21" align='center' class="headder" >火</td>
+<td width="21" align='center' class="headder" >水</td>
+<td width="21" align='center' class="headder" >木</td>
+<td width="21" align='center' class="headder" >金</td>
+<td width="21" align='center' class="headder" >土</td>
+</tr>
+<pct: @calLine>
+<pct: block>
+<tr>
+<td width="21" align='center' bgcolor='%_bgcolor0%' class="dt">%_d0%</td>
+<td width="21" align='center' bgcolor='%_bgcolor1%' class="dt">%_d1%</td>
+<td width="21" align='center' bgcolor='%_bgcolor2%' class="dt">%_d2%</td>
+<td width="21" align='center' bgcolor='%_bgcolor3%' class="dt">%_d3%</td>
+<td width="21" align='center' bgcolor='%_bgcolor4%' class="dt">%_d4%</td>
+<td width="21" align='center' bgcolor='%_bgcolor5%' class="dt">%_d5%</td>
+<td width="21" align='center' bgcolor='%_bgcolor6%' class="dt">%_d6%</td>
+</tr>
+<pct: /block>
+</table>
+<table border="0" width="10" height="1">
+<tr><td width="10" height="1"><img src="/pc/images/spacer.gif" width="10" height="1"></td></tr>
+</table>
+<pct: /block>
+
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+

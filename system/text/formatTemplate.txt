@@ -1,0 +1,42 @@
+@default
+## $p1　(indent=20 size=16px weight=bold)
+## $p2　(indent=30 size=14px flow=650 height=130)
+## $p3　(indent=40 size=12px flow=640 height=130)
+## $p4　(indent=50 size=12px flow=630 height=130)
+## $p5　(indent=60 size=12px flow=610 height=130)
+
+## p3
+
+-----
+
+@001
+## $p1　(indent=20 size=16px weight=bold)
+## $p2　(indent=30 size=14px flow=650 height=130)
+## $p3　(indent=40 size=12px flow=640 height=130)
+## $p4　(indent=50 size=12px flow=630 height=130)
+## $p5　(indent=60 size=12px flow=610 height=130)
+
+## p1
+(#g=&1B.gif) 表題
+
+## p2
+(#g=&01r.gif) 見出し
+
+　(#s=12)見出し説明(/s)
+
+## p2
+(#g=&01r.gif)項目
+
+　項目説明
+
+## p3 imgbox=aaaaa.gif,right,0  height=130  flow=300
+(#p)(#g=&01.gif) (#c=royalblue)操作手順(/c)
+　
+　補足説明
+
+(#g=bbbbb.gif)
+
+## p3
+　
+-----
+

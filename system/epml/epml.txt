@@ -1,0 +1,102 @@
+#dropdownlist
+<select name="%_name%" class="%_classname%" style="padding:3px;">
+<option value="0" %_init% >------</option>
+%&dropdownItems%
+<option value="%_val%" %_select%>%_item%    %_sel% </option>%%
+</select>
+-----
+
+#radioButton
+<input type="radio" name="%_name%" value="%_val%" class="%_classname%" %_chk% ><span class="_classname">%_msg%</span>
+-----
+
+
+#checkBox
+<input type="checkbox" name="%_name%" id="%_name%" value="%_val%" class="%_classname%" %_chk% ><span class="_classname">%_msg%</span>
+-----
+
+
+#textField
+<input type="text" name="%_name%" value="%_init%" class="%_classname%" style="width: %_lenx%px; padding: 3px;text-align:%_alx%">
+-----
+
+
+#textArea
+<textarea name="%_name%" class="%_classname%" style="width: %_length%px; height: %_height%px; tab-size:4;">%_init%</textarea>
+-----
+
+#wordtable
+<table border="0" class="xtb">
+<tr>
+<td class="xtd">
+<table border="0">
+%&xtblRaw%
+<tr>
+%&xtblColumn%
+<td class="%_classname%">%_word%</td>%%
+</tr>%%
+</table>
+</td>
+</tr>
+</table>
+-----
+
+#checkList
+<table border="0">
+<tr>
+<td ><img src="/pc/images/spacer.gif" alt="" width="20" height="1"></td>
+<td class="k14"><pre>
+■ 問題の該当行
+　
+%_htmls%</td>
+</tr>
+</table>
+<table border="0">
+<tr>
+<td ><img src="/pc/images/spacer.gif" alt="" width="20" height="1"></td>
+<td ><img src="/pc/images/line_mid.gif" alt="" width="730" height="6"><p><!-- "ETF(1)"などの項目名を記憶 --><input type="hidden" name="_key" value="%_key%"></td>
+</tr>
+</table>
+<table border="0">
+<tr>
+<td ><img src="/pc/images/spacer.gif" alt="" width="30" height="1"></td>
+<td class="xtd">
+<table border="0">
+<tr>
+<td style="COLOR: #0066CC; font-size: 12px;font-family: 'ＭＳ ゴシック', 'Osaka－等幅';">■現在の正解語（チェックを外すと正解語から削除）<br></td></tr>
+</table>
+<table border="0">
+%&correctRaw%
+<tr>
+%&correctColumn%
+<td  class="k12" style="padding-right: 15px;"><span style="border-bottom: 1px dotted blue;"><input type="checkbox" name="correctNum_%_num%" value="1" class="k12" style="valign: middle;" checked >%_word%</span></td>%%
+</tr>%%
+</table>
+<table border="0">
+<tr>
+<td style="COLOR: #0066CC; font-size: 12px;font-family: 'ＭＳ ゴシック', 'Osaka－等幅';"><br><br>■不正解語一覧（チェックを入れると正解語へ追加）<br></td></tr>
+</table>
+<table border="0">
+%&incorrectRaw%
+<tr>
+%&incorrectColumn%
+<td  class="k12" style="padding-right: 15px;"><span style="border-bottom: 1px dotted blue;"><input type="checkbox" name="incorrectNum_%_num%" value="1" class="k12" style="valign: middle;" >%_word%</span></td>%%
+</tr>%%
+</table>
+</td>
+</tr>
+</table>
+-----
+
+#toNextMsg
+<table border="0">
+<tr>
+<td ><img src="/pc/images/spacer.gif" alt="" width="20" height="1"></td>
+<td class="k14"><pre>
+■この問題には記述式解答項目がありませんので直ちに自動採点できます．
+　
+　《採点実行》ボタンをクリックしてください．
+</td>
+</tr>
+</table>
+-----

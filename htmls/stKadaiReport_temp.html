@@ -1,0 +1,1061 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>科目登録・変更</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function keydown1() { 
+    if (event.keyCode==9) { 
+        // キャレットの選択部分を 
+        var objRange = document.selection.createRange(); 
+        // タブに置換え 
+        objRange.text = '\t'; 
+        event.returnValue = false; 
+    } 
+} 
+
+/////  editor   /////////////////////////////////////////////////////////////////////
+
+var	tags		=	0;
+var	tagStack	=	new	Array(20);
+var tagmarker	=   "^";
+// 初期設定　//
+
+var preview		= '%_preview%'	// Pレビューへ移行するかどうかのスイッチ　ON,OFF
+function init() {
+	
+	tagmarker	=   "%_tagmark%";
+	
+	if(preview=='ON'){
+		JumpPrev('/pc/launch/postStReportPreview.html') ;
+	}
+	return;
+}
+function setMarker(){
+	tagmarker	=	document.form1._tagmark.value;
+}
+
+function invokeProg(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=820,height=670,left=5,top=5,scrollbars=yes,status=yes,toolbar=yes,menubar=yes,location=yes,resizable=yes");
+  }
+}
+
+// 段落スタイルエイリアス
+function fmt(sw) {
+	edit	=	document.form1._answer.value;
+//	n		=	edit.length;
+//	if(edit.charAt(n-1) != "\n"){
+//		if(n>1){
+//			edit	=	edit + "\n" ;
+//		}
+//	}
+	document.form1._answer.value	=	putTag(edit,"## "+sw );
+	document.form1._answer.focus();
+	
+}
+
+// 行の配置
+function fmtAlign(sw){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit," align=" + sw );
+	document.form1._answer.focus();
+}
+
+// 太字
+function fmtWeight(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit," weight=bold" );
+	document.form1._answer.focus();
+}
+
+// 文字色
+function fmtSetColor(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit," color=" + document.form1.fmtColor.value );
+	document.form1.fmtColor.value	= "0";	
+	document.form1._answer.focus();
+}
+// 段落マージン
+function fmtSetMargine(){
+	edit	=	document.form1._answer.value;
+	val		=	Number(document.form1.fmtMargine.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._answer.value	=	putTag(edit," indent=" + val );
+	};
+	document.form1.fmtMargine.value 	= "0";
+	document.form1._answer.focus();
+}
+// フォントサイズ
+function fmtSetFontsize(){
+	edit	=	document.form1._answer.value;
+	val		=	Number(document.form1.fmtFontsize.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._answer.value	=	putTag(edit," size=" + val +"px");
+	};
+	document.form1.fmtFontsize.value 	= "0";	
+	document.form1._answer.focus();
+}
+// 行間
+function fmtSetHeight(){
+	edit	=	document.form1._answer.value;
+	val		=	Number(document.form1.fmtHeight.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._answer.value	=	putTag(edit," height=" + val );
+	};
+	document.form1.fmtHeight.value 	= "0";	
+	document.form1._answer.focus();
+}
+// 表示幅制御
+function fmtSetFlow(){
+	edit	=	document.form1._answer.value;
+	val		=	Number(document.form1.fmtFlow.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._answer.value	=	putTag(edit," flow=" + val );
+	};
+	document.form1.fmtFlow.value 	= "0";	
+	document.form1._answer.focus();
+}
+
+// 画像埋め込み
+function fmtImage(){
+	imgFile		=	document.form1.fmtImageFile.value;
+	fname	=	triming(imgFile);
+	if(fname.length ==0){
+		window.alert("ファイル名を入力してください．\nここで指定したファイルはファイルアップロードで\nサーバーに送信してください．");
+		document.form1.fmtImageFile.value	=	"";
+		return;
+	}
+	edit		=	document.form1._answer.value;
+	imgPos		=	document.form1.fmtImgpos.value;
+	imgBorder	=	document.form1.fmtImgBorder.value;
+	document.form1._answer.value	=	putTag(edit," imgbox=" + fname + "," + imgPos + "," + imgBorder);
+	document.form1.fmtImageFile.value	=	"";	
+	document.form1._answer.focus();
+}	
+function	triming(str){
+	n	=	str.length;
+	for(i=n-1; i>=0; i--){
+		ch	=	str.charAt(i);
+		if((ch!=" ")&&(ch!="　")){
+			return	str.substring(0,i+1);
+		}
+	}
+	return	"";
+}
+////////　直接編集　///////////
+function	putStack(str){
+	tagStack.push(str);
+	tags	=	tags + 1; 
+}
+function	popStack(){
+	tags	=	tags - 1;
+	return	tagStack.pop();
+}
+function	closeTag(){
+	if(tags	== 0) return;
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit, popStack());
+	document.form1._answer.focus();
+
+}
+function	closeAllTags(){
+	if(tags	== 0) return;
+	tagStr	=	"";
+	n	=	tags;
+	for(i=0; i<n; i++){
+		tagStr	=	tagStr	+	popStack();
+	}
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit, tagStr);
+	document.form1._answer.focus();
+
+}
+
+// タグマーカーの位置にタグ文字を挿入する
+function	putTag(text, tagStr){
+	if(tagmarker==""){
+		return	text + tagStr;
+	}
+	position	=	text.indexOf(tagmarker);
+	if(position==-1)	return	text + tagStr;
+	if(position==0){
+	    if(text.length>1){
+		    return		tagStr  + 	text.substring(position+1);
+		}else{
+		    return		tagStr;
+		}	
+	}else if(position==text.length-1){
+	    if(text.length>1){
+			return	text.substring(0,position) + tagStr;	
+		}else{
+		    return		tagStr;
+		}	
+	}
+	//
+	str1	=	text.substring(0,position);
+	return	str1 + tagStr + text.substring(position+1);	
+}
+// カラー
+function	tagColor(){
+	edit	=	document.form1._answer.value;
+	color	=	document.form1.fontColor.value;
+	document.form1._answer.value	=	putTag(edit,"(#c=" + color + ")");
+	putStack("(/c)");
+	document.form1.fontColor.value 		= "0";
+	document.form1._answer.focus();
+
+}
+// フォントサイズ
+function	tagFont(){
+	edit	=	document.form1._answer.value;
+	fsize	=	document.form1.fontSize.value;
+	document.form1._answer.value	=	putTag(edit,"(#s=" + fsize + "px)");
+	putStack("(/s)");
+	document.form1.fontSize.value.value	=	"0";
+	document.form1._answer.focus();
+}
+// 太字
+function	tagBold(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#b)" );
+	putStack("(/b)");
+	document.form1._answer.focus();
+}
+// 斜体
+function	tagItalic(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#i)");
+	putStack("(/i)");
+	document.form1._answer.focus();
+}
+// アンダーライン
+function	tagUline(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#u)");
+	putStack("(/u)");
+	document.form1._answer.focus();
+}
+// 画像
+function	tagImg(){
+	edit	=	document.form1._answer.value;
+	gfile	=	window.prompt("画像ファイル名を入力してください","");
+	if(gfile==null)	return;
+	//
+	document.form1._answer.value	=	putTag(edit,"(#g=" + gfile +")");
+	document.form1._answer.focus();
+}
+// アンカー
+function	tagAnchor(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#a)");
+	document.form1._answer.focus();
+}
+// 空白
+function	tagSpace(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#z)");
+	document.form1._answer.focus();
+}
+// 改行
+function	tagLinefeed(){
+	edit	=	document.form1._answer.value;
+	document.form1._answer.value	=	putTag(edit,"(#p)");
+	document.form1._answer.focus();
+}
+// リンク
+function	tagLink(){
+	edit	=	document.form1._answer.value;
+	tempUrl	=	document.form1.linkUrl.value;
+	target	=	document.form1.linkTarget.value;
+	url	=	triming(tempUrl);
+	if(url.length ==0){
+		window.alert("URLを入力してください．");
+		document.form1.linkUrl.value	=	"";
+		return;
+	}
+	document.form1._answer.value	=	putTag(edit,"(#j="+ url + "," + target +")");
+	document.form1.linkUrl.value	=	"http://";
+	putStack("(/j)");
+	document.form1.linkTarget.value	= "_self";	
+	document.form1._answer.focus();
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+function setsubmitFile(sw) {
+	////////////////////////////////////////////////
+	////  _opFile は名前固定 exwork #MultiInput()
+	////////////////////////////////////////////////
+	document.form1._opFile.value = "FILE";
+	if(document.form1._uploadFile.value == ""){
+		document.form1._opFile.value = "NOFILE";
+	}
+	/////////////////////////////////////////////
+	/////////////////////////////////////////////
+	document.form1._menu.value = sw;
+	document.form1.submit();	
+}
+function setsubmit(sw) {	
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value = sw; // 
+	document.form1.submit();
+}
+function delFile(fname) {
+    
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value 			= "DELETE";
+	document.form1._deleteFname.value 	= fname;
+	document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=600,left=5,top=5,scrollbars=yes,resizable=yes");
+  }
+}
+function JumpPrev(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=800,height=600,left=5,top=5,scrollbars=yes,resizable=yes ");
+  }
+}
+function JumpLIST(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=200,height=500,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCOLOR(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=440,height=330,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    //window.open(url, '_blank',"width=450,height=600,left=5,top=5,scrollbars=yes,resizable=yes");
+	window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style>
+body   { font-size: 12px; color: #333333; font-family: "ＭＳ ゴシック", "Osaka－等幅";}
+
+table  { font-size: 12px; color: #333333; font-family: "ＭＳ ゴシック", "Osaka－等幅";}
+
+.c1{
+	font-size: 12px;
+	color: #333333;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c2{
+	font-size: 12px;
+	color: #333333;
+	background-color: #FAFAFF;
+}
+.c3{
+	font-size: 12px;
+	color: #333333;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c41{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c42{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c43{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c5{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.a1_ColorB{
+	font-size: 12px;
+	color: #000000;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+	padding: 3px;
+}
+.a2_ColorB{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #99CCFF;
+	border-right: 1px solid #849898;
+	background-color: #6699CC;
+	padding: 3px;
+}
+.a2_ColorB_NoPadding{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #99CCFF;
+	border-right: 1px solid #849898;
+	background-color: #6699CC;
+}
+
+.black12aBGgreen {font-size: 12px; color: #000000; background-color: #6699CC;padding: 3px;}
+
+
+.a2_ColorC{
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #99CCFF;
+	border-right: 1px solid #849898;
+
+}
+.a1{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+}
+.a11{
+	font-size: 12px;
+	color: #FFFFFF;
+
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.a31{
+	font-size: 12px;
+	color: #FFFFFF;
+	
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+
+.a3{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	background-color: #99CCFF;
+}
+
+.a4{
+	font-size: 12px;
+	color: #FFFFFF;
+	border-right: 1px solid #849898;
+	
+	border-bottom: 1px solid #849898;
+	
+	background-color: #99CCFF;
+}
+.a2{
+	font-size: 12px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-right: 1px solid #849898;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #666666;
+	background-color: #6699CC;
+}
+.a2Padding{
+	font-size: 12px;
+	color: #FFFFFF;
+	border-right: 1px solid #849898;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+
+	background-color: #6699CC;
+	padding: 0px 0px 0px 10px; 
+}
+.b1{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #E7EDFF;
+}
+.b2{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #E7EDFF;
+}
+.b1_Light{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #F0F3FF;
+}
+.b2_Light{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #F0F4FF;
+}
+.b1PaddingLeft{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	
+	background-color: #E7EDFF;
+	padding: 0px 0px 0px 5px;
+}
+.b2PaddingLeft{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	
+	border-right: 1px solid #849898;
+	background-color: #E7EDFF;
+	padding: 0px 0px 0px 5px;
+}
+
+.txa12_A{ font-size:12px; 
+		line-height: 13px; 
+		color: #333333; 
+		font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+		background-color:#FAFAFF; 
+		border:1px solid #849898; 
+		scrollbar-arrow-color:#666666; 
+		scrollbar-highlight-color:#666666; 
+		scrollbar-shadow-color:#666666; 
+		scrollbar-base-color:#E0E0E0; 
+		scrollbar-darkshadow-color:#E0E0E0; 
+		scrollbar-track-color:#E0E0E0; 
+		padding: 5px 5px 5px 5px;
+		margin: 10px 0px 0px 0px;
+}
+.txf12_B{
+	font-size:12px; 
+	color: #3366CC; 
+	weight: bold;
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 1px 3px 1px 3px;; 
+}
+.txf12_D{
+	font-size:12px; 
+	color: #CC0066; 
+	weight: bold;
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#F7FDFD; 
+	border:1px solid #849898; 
+	padding: 1px 2px 1px 2px;; 
+}
+.blue01 {color: #6699CC;}
+.blue02 {color: #99CCFF;}
+.blue03 {color: #E0E7FF;}
+.blue04 {color: #E7EDFF;}
+.blue05 {color: #F0F4FF;}
+.blue06 {color: #F0F3FF;}
+
+.red12a { font-size: 12px; color: #CC6666;}
+.gray12a  { font-size: 12px; color: #333333; line-height: 130%; }
+.green12PD {font-size: 12px; color: #006060; padding: 0px 0px 0px 5px;}
+.paddingA {font-size: 12px; color: #333333; padding: 0px 0px 0px 10px;}
+.paddingB {font-size: 12px; color: #333333; padding: 0px 0px 0px 3px;}
+.paddingC {font-size: 12px; color: #333333; padding: 0px 0px 0px 18px;}
+.paddingD {font-size: 12px; color: #333333; padding: 0px 0px 0px 23px;}
+.paddingE {font-size: 12px; color: #333333; padding: 0px 0px 0px 90px;}
+.paddingF {font-size: 12px; color: #333333; padding: 0px 0px 0px 250px;}
+.paddingG {font-size: 12px; color: #333333; padding: 0px 10px 0px 10px;}
+.tagmk{
+	font-size:12px; 
+	color: #FF0000; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	padding-left: 3px;
+	padding-right: 3px; 
+}
+</style>
+</head>
+<!-- 
+<body onLoad="init();MM_preloadImages('images/p1-B.gif','images/p2-B.gif','images/p3-B.gif','images/p4-B.gif','images/p5-B.gif','images/aleft-B.gif','images/acenter-B.gif','images/aright-B.gif','images/bold-B.gif','images/Burl-2.gif','images/Sdone-2.gif','images/Lbold-2.gif','images/Litalic-2.gif','images/Lu-2.gif','images/Lgraphic-2.gif','images/Lanch-2.gif','images/Lspc-2.gif','images/Lret-2.gif','images/write60_20-2.gif','images/preview60_20-2.gif','images/plus20_16-2.gif','images/minus20_16-2.gif','images/tclose-2.gif','images/tcloseB-2.gif')">
+-->
+<body onLoad="init();MM_preloadImages('images/tabButton2.gif','images/refresh2.gif')">
+<form name="form1" method="post" action="%_action%" enctype="multipart/form-data">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="25" height="43" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="272" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="483">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="3" valign="bottom"><img src="images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+  </table>
+
+
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="17" height="20"  valign="top"><img src="images/spacer.gif" width="10" height="3"></td>
+      <td colspan="9" align="left" valign="middle" class="red12a">%_msg%</td>
+    </tr>
+    <tr> 
+      <td height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="151" align="center" valign="middle" class="a1"><img src="images/spacer.gif" width="5" height="13">%_title%</td>
+      <td colspan="8"  valign="middle" class="a2"><img src="images/spacer.gif" width="5" height="13">%_kadai_title%</td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td align="left" valign="middle" class="a11">&nbsp;&nbsp;<span onClick="JumpLIST('/pc/help/iconList1.html');" style="cursor:hand;"><img src="images/iconList2.gif" alt="アイコン" width="25" height="16" align="absmiddle"> 
+        </span> <span onClick="JumpLIST('/pc/help/iconList2.html');" style="cursor:hand;"><img src="images/iconList2.gif" alt="番号アイコン" width="25" height="16" align="absmiddle">　</span><span onClick="JumpCOLOR('/pc/help/color.html');" style="cursor:hand;"><img src="images/colorCode2.gif" alt="カラーチャート" width="25" height="16" align="absmiddle"></span></td>
+      <td width="30"  align="center" valign="middle" class="a31"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image56','','images/plus20_16-2.gif',1)" onClick="setsubmit('PLUS')"><img src="images/plus20_16-1.gif" name="Image56" width="20" height="16" border="0" align="absmiddle"></a></td>
+      <td width="30"  align="center" valign="middle" class="a3"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image57','','images/minus20_16-2.gif',1)" onClick="setsubmit('MINUS')"><img src="images/minus20_16-1.gif" name="Image57" width="20" height="16" border="0" align="absmiddle"></a></td>
+      <td width="36" align="center" valign="middle" class="a3"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image71','','images/tabButton2.gif',1)"  onClick="setsubmit('TAB')"><img src="images/tabButton1.gif" alt="タブをスペースに変換する" name="Image71" width="26" height="18" border="0"></a></td>
+      <td width="36"  align="center" valign="middle" class="a3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="120" valign="middle" class="a3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="211" valign="middle" class="a3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="70"   valign="middle" class="a3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="81"  valign="middle" class="a4"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="367" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top" class="b1_Light"> <table height="262" width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="2"></td>
+            <td height="36" colspan="2" align="left" valign="bottom"  class="green12PD"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image66','','images/refresh2.gif',1)"   onClick="setsubmit('REFRESH')"><img src="images/refresh1.gif" alt="段落スタイルをリフレッシュする" name="Image66" width="20" height="16" border="0" align="absmiddle"></a>&nbsp;段落スタイル</td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="26" colspan="2" align="left" valign="middle" class="paddingA" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image12','','images/p1-B.gif',1)" onClick="fmt('p1')"><img src="images/p1-A.gif" name="Image12" width="25" height="18" border="0" alt="%_par1%"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image13','','images/p2-B.gif',1)" onClick="fmt('p2')"><img src="images/p2-A.gif" name="Image13" width="25" height="18" border="0" alt="%_par2%"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image14','','images/p3-B.gif',1)" onClick="fmt('p3')"><img src="images/p3-A.gif" name="Image14" width="25" height="18" border="0" alt="%_par3%"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image15','','images/p4-B.gif',1)" onClick="fmt('p4')"><img src="images/p4-A.gif" name="Image15" width="25" height="18" border="0" alt="%_par4%"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image16','','images/p5-B.gif',1)" onClick="fmt('p5')"><img src="images/p5-A.gif" name="Image16" width="25" height="18" border="0" alt="%_par5%"></a></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="26" colspan="2" align="left" valign="middle" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image20','','images/aleft-B.gif',1)" onClick="fmtAlign('left')"><img src="images/aleft-A.gif" name="Image20" width="25" height="18" border="0" alt="左揃え"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image21','','images/acenter-B.gif',1)" onClick="fmtAlign('center')"><img src="images/acenter-A.gif" name="Image21" width="25" height="18" border="0" alt="中央揃え"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image22','','images/aright-B.gif',1)" onClick="fmtAlign('right')"><img src="images/aright-A.gif" name="Image22" width="25" height="18" border="0" alt="右揃え"></a> 
+            </td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="25" colspan="2" align="left" valign="middle" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image17','','images/bold-B.gif',1)" onClick="fmtWeight()"><img src="images/bold-A.gif" name="Image17" width="25" height="18" border="0" align="absmiddle" alt="太字"></a>
+              <SELECT name="fmtColor" id="fmtColor" style="font-size:12px;" onChange="fmtSetColor()">
+                <OPTION value=0 selected>文字色</OPTION>
+                <OPTION style="COLOR: skyblue;" value=skyblue>sky blue</OPTION>
+                <OPTION style="COLOR: royalblue" value=royalblue>royal blue</OPTION>
+                <OPTION style="COLOR: blue" value=blue>blue</OPTION>
+                <OPTION style="COLOR: darkblue" value=darkblue>dark-blue</OPTION>
+                <OPTION style="COLOR: orange" value=orange>orange</OPTION>
+                <OPTION style="COLOR: orangered" value=orangered>orange-red</OPTION>
+                <OPTION style="COLOR: crimson" value=crimson>crimson</OPTION>
+                <OPTION style="COLOR: red" value=red>red</OPTION>
+                <OPTION style="COLOR: firebrick" value=firebrick>firebrick</OPTION>
+                <OPTION style="COLOR: darkred" value=darkred>dark red</OPTION>
+                <OPTION style="COLOR: green" value=green>green</OPTION>
+                <OPTION style="COLOR: limegreen" value=limegreen>limegreen</OPTION>
+                <OPTION style="COLOR: seagreen" value=seagreen>sea-green</OPTION>
+                <OPTION style="COLOR: deeppink" value=deeppink>deeppink</OPTION>
+                <OPTION style="COLOR: tomato" value=tomato>tomato</OPTION>
+                <OPTION style="COLOR: coral" value=coral>coral</OPTION>
+                <OPTION style="COLOR: purple" value=purple>purple</OPTION>
+                <OPTION style="COLOR: indigo" value=indigo>indigo</OPTION>
+                <OPTION style="COLOR: burlywood" value=burlywood>burlywood</OPTION>
+                <OPTION style="COLOR: sandybrown" value=sandybrown>sandy brown</OPTION>
+                <OPTION style="COLOR: sienna" value=sienna>sienna</OPTION>
+                <OPTION style="COLOR: chocolate" value=chocolate>chocolate</OPTION>
+                <OPTION style="COLOR: teal" value=teal>teal</OPTION>
+                <OPTION style="COLOR: silver" value=silver>silver</OPTION>
+              </SELECT></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td width="73" height="1"></td>
+            <td width="76"></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="15" colspan="2" align="left" valign="middle" class="paddingA"><!--DWLayoutEmptyCell-->&nbsp; 
+            </td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="22" align="left" valign="middle" class="paddingA">行頭余白</td>
+            <td valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image24','','images/px-2.gif',1)"> 
+              </a> <select name="fmtMargine" id="fmtMargine" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetMargine()">
+                <option style="COLOR: #3366FF;" value=0 selected>indent</option>
+                <option value="10">10 px</option>
+                <option value="20">20 px</option>
+                <option value="30">30 px</option>
+                <option value="40">40 px</option>
+                <option value="50">50 px</option>
+                <option value="60">60 px</option>
+                <option value="70">70 px</option>
+                <option value="80">80 px</option>
+                <option value="90">90 px</option>
+                <option value="100">100 px</option>
+                <option value="110">110 px</option>
+                <option value="120">120 px</option>
+              </select> </td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="22" align="left" valign="middle" class="paddingA">文字サイズ 
+            </td>
+            <td valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image241','','images/px-2.gif',1)"> 
+              </a> <select name="fmtFontsize" id="fmtFontsize" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetFontsize()">
+                <option style="COLOR: #3366FF;" value=0 selected>size</option>
+                <option value="08">08 px</option>
+                <option value="10">10 px</option>
+                <option style="COLOR: #3366FF;" value="12">12 px</option>
+                <option value="14">14 px</option>
+                <option value="16">16 px</option>
+                <option value="18">18 px</option>
+                <option value="20">20 px</option>
+                <option value="22">22 px</option>
+                <option value="24">24 px</option>
+                <option value="26">26 px</option>
+                <option value="28">28 px</option>
+                <option value="30">30 px</option>
+                <option value="32">32 px</option>
+              </select></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="22" align="left" valign="middle" class="paddingA">行間 </td>
+            <td valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image27','','images/par-2.gif',1)"> 
+              </a> <select name="fmtHeight" id="fmtHeight" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetHeight()">
+                <option style="COLOR: #3366FF;" value=0 selected>height</option>
+                <option value="100">100 %</option>
+                <option value="110">110 %</option>
+                <option value="120">120 %</option>
+                <option style="COLOR: #3366FF;" value="130">130 %</option>
+                <option value="140">140 %</option>
+                <option value="150">150 %</option>
+                <option value="160">160 %</option>
+                <option value="170">170 %</option>
+                <option value="180">180 %</option>
+                <option value="190">190 %</option>
+                <option value="200">200 %</option>
+              </select></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="22" align="left" valign="middle" class="paddingA">表示幅制御 
+            </td>
+            <td valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image242','','images/px-2.gif',1)"> 
+              </a> <select name="fmtFlow" id="fmtFlow" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetFlow()">
+                <option style="COLOR: #3366FF;" value=0 selected>flow</option>
+                <option value="200">200 px</option>
+                <option value="250">250 px</option>
+                <option value="300">300 px</option>
+                <option value="350">350 px</option>
+                <option value="400">400 px</option>
+                <option value="450">450 px</option>
+                <option value="500">500 px</option>
+                <option value="550">550 px</option>
+                <option style="COLOR: #3366FF;" value="600">600 px</option>
+                <option value="650">650 px</option>
+                <option value="700">700 px</option>
+                <option value="750">750 px</option>
+                <option value="800">800 px</option>
+              </select></td>
+          </tr>
+          <tr  > 
+            <td></td>
+            <td height="30" colspan="2" valign="bottom" align="left" class="paddingA"><img src="images/gp.gif" width="110" height="18"></td>
+          </tr>
+          <tr align="center"> 
+            <td></td>
+            <td height="24" align="left" valign="bottom" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','images/Burl-2.gif',1)"> 
+              </a>・画像位置 </td>
+            <td align="left" valign="middle"> <select name="fmtImgpos" id="select7" style="font-size:12px;">
+                <option value="left" selected>左</option>
+                <option value="right">右</option>
+                <option value="top">上</option>
+                <option value="bottom">下</option>
+              </select></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="20" align="left" valign="middle" class="paddingA">・枠線 
+              　</td>
+            <td align="left" valign="middle"><select name="fmtImgBorder" id="select7" style="font-size:12px;">
+                <option value="0" selected>なし</option>
+                <option value="1">1 px</option>
+                <option value="2">2 px</option>
+                <option value="3">3 px</option>
+              </select></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="20" colspan="2" align="left" valign="middle" class="paddingA">・ファイル名：</td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="20" colspan="2" align="left" valign="middle" class="paddingD"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image242','','images/px-2.gif',1)"> 
+              </a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image242','','images/px-2.gif',1)"> 
+              <input name="fmtImageFile" type="text" class="txf12_B" id="fmtImageFile" size="16" maxlength="200">
+              </a></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="30" colspan="2" align="left" valign="middle" class="paddingE"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image462','','images/Sdone-2.gif',1)" onClick="fmtImage()"><img src="images/Sdone-1.gif" name="Image462" width="40" height="16" border="0" align="absmiddle" id="Image462" alt="画像を埋め込む段落を設定"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image242','','images/px-2.gif',1)"> 
+              </a></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="4"></td>
+            <td></td>
+          </tr>
+          <tr> 
+            <td></td>
+            <td height="1"><img src="images/spacer.gif" alt="" width="73" height="1"></td>
+            <td><img src="images/spacer.gif" alt="" width="76" height="1"></td>
+          </tr>
+        </table></td>
+      <td colspan="8" valign="top" class="b2_Light"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="610" height="271" align="center" valign="middle"><textarea name="_answer" cols="95" rows="%_editor_rows%" class="txa12_A"  onkeydown="keydown1();">25</textarea></td>
+            <td width="1"></td>
+          </tr>
+          <tr> 
+            <td height="93" colspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <!--DWLayoutTable-->
+                <tr> 
+                  <td height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+                  <td width="591" valign="bottom" class="paddingF"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image42','','images/tclose-2.gif',1)"  onClick="closeTag()"><img src="images/tclose-1.gif" name="Image42" width="84" height="16" border="0" align="absmiddle"></a>　<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image43','','images/tcloseB-2.gif',1)" onClick="closeAllTags()"><img src="images/tcloseB-1.gif" name="Image43" width="84" height="16" border="0" align="absmiddle"></a>　 
+                    タグマーカー 
+                    <select name="_tagmark" onChange="setMarker()" class="tagmk">
+                      <option value="^" %_tag_^% >^</option>
+                      <option value="@" %_tag_@% >@</option>
+                      <option value="!" %_tag_!% >!</option>
+                    </select> </td>
+                  <td width="1"></td>
+                </tr>
+                <tr> 
+                  <td width="20" height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+                  <td colspan="2" valign="middle" class="green12PD">直接編集指定　　　　　　　　　　</td>
+                </tr>
+                <tr> 
+                  <td height="20" valign="top" ><!--DWLayoutEmptyCell-->&nbsp;</td>
+                  <td valign="middle" class="paddingA"><SELECT name="fontColor" id=select style="font-size:11px;" onChange="tagColor()">
+                      <OPTION style="COLOR: #333333" value=0 selected>文字色</OPTION>
+                      <OPTION style="COLOR: skyblue" value=skyblue>sky blue</OPTION>
+                      <OPTION style="COLOR: royalblue" value=royalblue>royal blue</OPTION>
+                      <OPTION style="COLOR: blue" value=blue>blue</OPTION>
+                      <OPTION style="COLOR: darkblue" value=darkblue>dark-blue</OPTION>
+                      <OPTION style="COLOR: orange" value=orange>orange</OPTION>
+                      <OPTION style="COLOR: orangered" value=orangered>orange-red</OPTION>
+                      <OPTION style="COLOR: crimson" value=crimson>crimson</OPTION>
+                      <OPTION style="COLOR: red" value=red>red</OPTION>
+                      <OPTION style="COLOR: firebrick" value=firebrick>firebrick</OPTION>
+                      <OPTION style="COLOR: darkred" value=darkred>dark red</OPTION>
+                      <OPTION style="COLOR: green" value=green>green</OPTION>
+                      <OPTION style="COLOR: limegreen" value=limegreen>limegreen</OPTION>
+                      <OPTION style="COLOR: seagreen" value=seagreen>sea-green</OPTION>
+                      <OPTION style="COLOR: deeppink" value=deeppink>deeppink</OPTION>
+                      <OPTION style="COLOR: tomato" value=tomato>tomato</OPTION>
+                      <OPTION style="COLOR: coral" value=coral>coral</OPTION>
+                      <OPTION style="COLOR: purple" value=purple>purple</OPTION>
+                      <OPTION style="COLOR: indigo" value=indigo>indigo</OPTION>
+                      <OPTION style="COLOR: burlywood" value=burlywood>burlywood</OPTION>
+                      <OPTION style="COLOR: sandybrown" value=sandybrown>sandy 
+                      brown</OPTION>
+                      <OPTION style="COLOR: sienna" value=sienna>sienna</OPTION>
+                      <OPTION style="COLOR: chocolate" value=chocolate>chocolate</OPTION>
+                      <OPTION style="COLOR: teal" value=teal>teal</OPTION>
+                      <OPTION style="COLOR: silver" value=silver>silver</OPTION>
+                    </SELECT> <SELECT name="fontSize" id=select3 style="font-size:11px; color: #333333" onChange="tagFont()" >
+                      <OPTION  value=0 selected>サイズ</OPTION>
+                      <OPTION value="8"> 8px</OPTION>
+                      <OPTION value="9"> 9px</OPTION>
+                      <OPTION value="10">10px</OPTION>
+                      <OPTION value="11">11px</OPTION>
+                      <OPTION value="12">12px</OPTION>
+                      <OPTION value="14">14px</OPTION>
+                      <OPTION value="16">16px</OPTION>
+                      <OPTION value="18">18px</OPTION>
+                      <OPTION value="20">20px</OPTION>
+                      <OPTION value="22">22px</OPTION>
+                      <OPTION value="24">24px</OPTION>
+                      <OPTION value="26">26px</OPTION>
+                      <OPTION value="28">28px</OPTION>
+                      <OPTION value="30">30px</OPTION>
+                      <OPTION value="32">32px</OPTION>
+                    </SELECT> <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image34','','images/Lbold-2.gif',1)" onClick="tagBold()"><img src="images/Lbold-1.gif" name="Image34" width="20" height="16" border="0" align="absmiddle" alt="太字"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image35','','images/Litalic-2.gif',1)" onClick="tagItalic()"><img src="images/Liatlic-1.gif" name="Image35" width="20" height="16" border="0" align="absmiddle" alt="斜体字"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image41','','images/Lu-2.gif',1)" onClick="tagUline()"><img src="images/Lu-1.gif" name="Image41" width="20" height="16" border="0" align="absmiddle" alt="下線"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','images/Lgraphic-2.gif',1)" onClick="tagImg()"><img src="images/Lgraphic-1.gif" name="Image36" width="60" height="16" border="0" align="absmiddle" alt="画像埋め込み"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image37','','images/Lanch-2.gif',1)" onClick="tagAnchor()"><img src="images/Lanch-1.gif" name="Image37" width="60" height="16" border="0" align="absmiddle" alt="アンカー設定"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image38','','images/Lspc-2.gif',1)" onClick="tagSpace()"><img src="images/Lspc-1.gif" name="Image38" width="40" height="16" border="0" align="absmiddle" alt="強制空白"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','images/Lret-2.gif',1)" onClick="tagLinefeed()"><img src="images/Lret-1.gif" name="Image39" width="40" height="16" border="0" align="absmiddle" alt="強制改行"></a></td>
+                  <td></td>
+                </tr>
+                <tr> 
+                  <td height="20" valign="top" ><!--DWLayoutEmptyCell-->&nbsp;</td>
+                  <td valign="middle" class="paddingA"><img src="images/ch_link.gif" width="50" height="16" align="absmiddle">&nbsp;・リンク先： 
+                    <input name="linkUrl" type="text" class="txf12_B" id="linkUrl" value="http://" size="40" maxlength="200" onfocus="this.select()"> 
+                    &nbsp;・別窓 
+                    <SELECT name="linkTarget" id="linkTarget" style="font-size:12px; color: #333333" >
+                      <OPTION value="_self" selected> なし</OPTION>
+                      <OPTION value="_blank"> 指定</OPTION>
+                    </SELECT> &nbsp;&nbsp;<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image461','','images/Sdone-2.gif',1)" onClick="tagLink()"><img src="images/Sdone-1.gif" name="Image461" width="40" height="16" border="0" align="absmiddle" id="Image461" alt="リンクを埋め込む"></a></td>
+                  <td></td>
+                </tr>
+                <tr> 
+                  <td height="11"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr> 
+                  <td height="1"><img src="images/spacer.gif" alt="" width="20" height="1"></td>
+                  <td><img src="images/spacer.gif" alt="" width="591" height="1"></td>
+                  <td></td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr> 
+            <td height="1"><img src="images/spacer.gif" alt="" width="610" height="1"></td>
+            <td></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="151" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="30" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="30" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="36" height="1"></td>
+      <td></td>
+      <td><img src="images/spacer.gif" alt="" width="120" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="211" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="70" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="81" height="1"></td>
+    </tr>
+  </table>
+<table width="781" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="17" height="28" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="150" align="right" valign="middle" class="a1_ColorB">ファイルアップロード</td>
+      <td width="614" valign="middle" class="a2_ColorB"><input name="_uploadFile" type="file" class="txf12_B" id="_uploadFile" size="40" maxlength="200">
+        　<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image44','','images/sendSmall-2.gif',1)" onClick="setsubmitFile('UPLOAD')"><img src="images/sendSmall-1.gif" name="Image44" width="40" height="16" border="0" align="absmiddle" alt="指定したファイルをサーバーにアップロードする"></a>　<img src="images/spacer.gif" alt="" width="30" height="8"> 
+        <select name="_listsw" id="_listsw" onChange="setsubmit('FLIST')">
+          <option value="ON" style="COLOR: #333333; font-family: 'ＭＳ ゴシック', 'Osaka－等幅'; background-color: #FAFAFF; size=12px;" %_listOnSelected%>ファイルリストを表示する</option>
+          <option value="OFF" style="COLOR: #333333; font-family: 'ＭＳ ゴシック', 'Osaka－等幅'; background-color: #FAFAFF; size=12px;" %_listOffSelected%>ファイルリストを隠す</option>
+        </select></td>
+    </tr>
+    <tr> 
+      <td height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+	  <td colspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+<pct: @uploadFileList>
+<pct: block>
+          <tr> 
+            <td width="43" height="29" valign="top" class="c1"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-1%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-2%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-3%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-4%</td>
+            <td width="41" valign="top" class="c3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          </tr>
+<pct: /block>
+<pct: @isNoFiles>
+<pct: block>
+          <tr> 
+            <td width="43" height="29" valign="top" class="c1"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="41" valign="top" class="c3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          </tr>
+<pct: /block>
+          <tr> 
+            <td height="1" class="c41"><img src="images/spacer.gif" alt="" width="43" height="1"></td>
+            <td class="c42"><img src="images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c43"><img src="images/spacer.gif" alt="" width="41" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="middle" class="c5" ><!--DWLayoutEmptyCell-->&nbsp; </td>
+    </tr>
+    <tr> 
+      <td height="0"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="150" height="1"></td>
+      <td><img src="images/spacer.gif" alt="" width="614" height="1"></td>
+    </tr>
+  </table>
+
+
+</form>
+</body>
+</html>

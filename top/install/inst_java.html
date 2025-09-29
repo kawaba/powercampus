@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>Java,Tomcatのインストール</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a name="top"></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+Java(J2sdk5.0)とTomcat()のインストール
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　１．<a href="#a01" target ="_self" >Javaのインストール</a><br>　２．<a href="#a02" target ="_self" >Tomcatのインストール</a><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　PowerCampusはjava言語でかかれていますが、独自開発した<span style="color: #0066CC;">JEF</span>(<span style="color: #0066CC;">Java Easy Framework</span>)により作成していますので、Java言語を処理するためのJ2sdkという基本セットと、Tomcatをインストールするだけで済みます．Tomcatはapacheと連携してウェブベースのサーバープログラムを実行します．<br><br><br><a name="a01"></a><br>１．Javaのインストール<br><br>　最新のバージョン5.0をインストールします．すでに他のバージョンのjavaをインストールしている方は、それをアンインストールしてから、この処理を行ってください．古い版では、Tomcatとの関係から、不具合が起こる可能性があります．<br><br>　実際には、javaの実行環境(jre)のみをインストールしてもPowerCampusの稼動には問題ありませんが、サポートの都合から、開発環境を含むJ2sdkをインストールします．したがって、インストーラは最初にJ2sdkをインストールし、次に、jre をインストールします．２度インストール作業を実行するので、導入先なども２度指定することになります．このことを念頭において、以下の説明を見てください．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> インストーラーの起動<br><br>　<img src="files/ja01.gif" border="0" align="absmiddle" alt="">をダブルクリックして、インストーラーを起動します．圧縮ファイルにもかかわらず、50MBもありますので起動にはしばらく時間がかかりますが、やがて右のような使用許諾画面が表示されます．<br><br>同意するにチェックを入れて、次へをクリックします．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja02.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> インストール先の指定<br><br>　標準では、Cドライブの Program Files ディレクトリへ導入されますが、ディレクトリ名に空白が含まれていると、使用にあたって引用符で囲まねばならないなどの制限が出てきて好ましくないので、ここでは、Cドライブの java というフォルダにインストールします．<br><br>　　<span style="color: crimson;">C:\java</span><br><br>特別の事情がないかぎり、このようにされることをお勧めします．<br><br>変更をクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja03.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　インストール場所にCドライブを指定してから、下段のフォルダ名欄に c:\java と記入しOKをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja04.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　元の画面に戻りますので、インストール先に c:\java\ と記入されていることを確認の上、次へをクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja05.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> j2sdkの自動インストール<br><br>　j2sdk がインストールされます．数分程度の時間がかかります．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja06.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n04.gif" border="0" align="absmiddle" alt=""> jreのインストール先の指定<br><br>　ここからは、JRE(Java2 Runtime Environment)のインストールです．インストール先は j2sdk と同様にCドライブの jre ディレクトリに変更します．<br><br>変更をクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja07.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　インストール場所にCドライブを指定してから、下段のフォルダ名欄に c:\jre と記入しOKをクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja08.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　元の画面に戻りますので、インストール先に c:\jre\ と記入されていることを確認の上、次へをクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja09.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n05.gif" border="0" align="absmiddle" alt=""> 使用するブラウザの確認<br><br>　使用するブラウザを聞いてきます．PowerCampusが対応しているのは、Internet Explorerです．他のブラウザでは画面が乱れる可能性があります.<br> <br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja10.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n06.gif" border="0" align="absmiddle" alt=""> jre の自動インストール<br><br>　JREがインストールされます．数分かかります．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja11.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n07.gif" border="0" align="absmiddle" alt=""> 完了<br><br>　完了表示です．完了をクリックして終了します．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/ja12.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a02"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+２．Tomcatのインストール<br>　<br>　Tomcat はウェブ上で発行されるサーバープログラムへの要求を受け取って、それをjavaのプログラム本体に受け渡し、処理後に、結果の出力を行うためのシステムです．サーバープログラムはjavaサーブレットとよばれることから、Tomcatをサーブレットコンテナと呼ぶことがあります．<br>　ウェブサーバーであるapacheは、通常のブラウジング要求は自ら対応し、サーバープログラムの呼び出し要求はそれをTomcatに投げて処理させます．ですから、apacheとTomcatは密接に連携しており、両方のパージョンも適合するか否かがクリティカルに決まっています．<br><br>　PowerCampusでは、Tomcat5.5.9とApache 2.0.54 を使います．Apacheの場合と同じく、すでにTomcatの古いバージョンをお使いの方は、5.5以上のバージョンに入れ替える必要があります．バージョンを揃えない場合、PowerCampusは稼動しませんのでご注意ください．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> インストーラーの起動<br><br>　<img src="files/tm01.gif" border="0" align="absmiddle" alt="">をダブルクリックして、インストーラーを起動します．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm02.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> 使用許諾 <br><br>使用許諾画面です．I Agree をクリックして次へ進みます．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm03.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> インストールパッケージの選択<br><br>全てのパッケージをインストールするよう、Full を選択して next をクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm04.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n04.gif" border="0" align="absmiddle" alt=""> インストール先の選択<br><br>これも、標準のインストール先ではなく、Cドライブの Tomcat フォルダにインストールします．<br><br>　　<span style="color: crimson;">C:\Tomcat</span><br><br>特別の事情がないかぎり、このフォルダ名にされることをお勧めします．<br><br>Browse をクリックしてください．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm05.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>ファイルダイアログが開くので、マイコンピュータからローカルディスク(C)を選択し、OKをクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm06.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br>下段のインストール先(Destination Folder)には自動的に <span style="color: #0066CC;">C:\Tomcat 5.5</span> という表示が入りますので、これを<br><br>　　　<span style="color: crimson;">C:\Tomcat</span><br><br> と変更します．<br><br>確認のしたら Next をクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm07.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n05.gif" border="0" align="absmiddle" alt=""> admin パスワードの設定<br><br>　これは、tomcat付属の管理ツールにログインするためのものです．PowerCampusではこのパスワードは使いませんが、一応、何か設定しておいてください．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm08.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n06.gif" border="0" align="absmiddle" alt=""> JRE の所在の確認<br><br>JRE(Java Runtime Environment)の所在を確認するダイアログです．検索して自動的に表示さるはずですから、よければ Install をクリックします．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm09.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n07.gif" border="0" align="absmiddle" alt=""> インストール実行<br><br>インストールが始まります．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm10.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>インストールの終了が報告されます．tomcatを起動するという上段のチェックボックスをクリアしてから、Finish をクリックしてください．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tm11.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a02"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br><br><br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

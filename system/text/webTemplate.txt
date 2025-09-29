@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>%_ref_title%</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+%_body%
+</body>
+</html>

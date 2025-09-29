@@ -1,0 +1,9 @@
+こんにちは%_stName%さん。PowerCampusでのあなたの登録情報をお知らせします。
+学籍番号：
+　%_stNumber%
+パスワード：
+　%_stPasswd%
+メールアドレス：
+　%_stMail%
+携帯アドレス：
+　%_stKeitai%

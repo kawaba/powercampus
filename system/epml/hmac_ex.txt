@@ -1,0 +1,125 @@
+@std
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="top">
+<table %_flow% %_flowSize% border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: %_style% %_variant% %_weight% %_size%/%_height%_PCNT_ %_type%; COLOR: %_color% ; white-space:%_space%; text-align: %_align%;">
+%_htmls%</td></tr></table></td>
+</tr>
+</table>
+-----
+
+@g-left
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="%_imgUrl%" border="%_border%" ></td>
+<td valign="top">
+<table %_flow% %_flowSize% border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: %_style% %_variant% %_weight% %_size%/%_height%_PCNT_ %_type%; COLOR: %_color% ; white-space:%_space%; text-align: %_align%;" >
+%_htmls%</td></tr></table></td>
+</tr>
+</table>
+-----
+
+@g-right
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="top">
+<table %_flow% %_flowSize% border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: %_style% %_variant% %_weight% %_size%/%_height%_PCNT_ %_type%; COLOR: %_color% ; white-space:%_space%; text-align: %_align%;">
+%_htmls%</td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="%_imgUrl%" border="%_border%" ></td>
+</tr>
+</table>
+-----
+
+@g-top
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="bottom"><img src="%_imgUrl%" border="%_border%"></td>
+</tr>
+<tr>
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="top">
+<table %_flow% %_flowSize% border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: %_style% %_variant% %_weight% %_size%/%_height%_PCNT_ %_type%; COLOR: %_color% ; white-space:%_space%; text-align: %_align%;" >
+%_htmls%</td></tr></table></td>
+</tr>
+</table>
+-----
+
+@g-bottom
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="top">
+<table %_flow% %_flowSize% border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: %_style% %_variant% %_weight% %_size%/%_height%_PCNT_ %_type%; COLOR: %_color% ; white-space:%_space%; text-align: %_align%;" >
+%_htmls%</td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="%_indent%" height="1"></td>
+<td valign="top"><img src="%_imgUrl%" border="%_border%"></td>
+</tr>
+</table>
+-----
+
+@$$
+<a href="%_url%" target ="%_target%" >%_string%</a>
+-----
+
+@$c
+<span style="color: %_color%;">%_string%</span>
+-----
+
+@$w
+<span style="font-weight: bold;">%_string%</span>
+-----
+
+@$s
+<span style="font-size: %_size%px; line-height: %_lineheight%_PCNT_;">%_string%</span>
+-----
+
+@$u
+<!--$_ulineflag
+<span style="border-bottom:1px dotted red">%_string%</span>
+--><span style="border-bottom:1px dotted red"><span style="font-size: 10px;">(%_no%)</span>%_string%</span>
+-----
+
+@$g
+<img src="%_string%" border="%_border%" align="absmiddle" alt="%_alt%">
+-----
+
+@$a
+<a name="%_anchName%">%_string%</a>
+-----
+
+@$z
+<img src=files/spacer.gif border="0" height="1" width="%_wd%">
+-----
+
+@$p
+<br>
+-----
+
+@$i
+<span style="font-style: italic;">%_string%</span>
+-----
+
+@cannotview
+<table width="673" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="82" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="591" height="44" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="70" valign="top" style="font-size:14px; color: #CC6666; font-family: "ＭＳ ゴシック", "Osaka－等幅";"><img src="/pc/images/m04.gif" width="16" height="16" align="absmiddle"> 
+      まだ採点が済んでいないので正解を見ることはできません． </td>
+  </tr>
+</table>
+-----

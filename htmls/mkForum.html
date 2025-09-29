@@ -1,0 +1,1135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>無題ドキュメント</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+/////  variables   ///////////////////////////////////////////////////////////////////
+var	tags		=	0;
+var	tagStack	=	new	Array(20);
+var tagmarker	=   "!";
+
+/////  invoke   /////////////////////////////////////////////////////////////////////
+var	 invokeName	=	"%_invokeName%";
+function init(){
+	
+	tagmarker	=   "%_tagmark%";
+	
+	if(invokeName=="$jbbs.mkUserInfo"){
+		JumpINFO("/pc/launch/postMkUserInfo.html");
+
+	}else if(invokeName=="$jbbs.BbsForumPreview"){
+		JumpINFO("/pc/launch/postBbsForumPreview.html");
+
+	}
+}
+function invokeProg(url) {
+  if (url != ''){
+    window.open(url, "_blank" , "width=820,height=670,left=5,top=5,scrollbars=yes,status=yes,toolbar=yes,menubar=yes,location=yes,resizable=yes");
+  }
+}
+
+/////  System Return  //////////////////////////////////////////////////////////////////
+
+function setsubmitFile(sw) {
+	////////////////////////////////////////////////
+	////  _opFile は名前固定 exwork #MultiInput()
+	////////////////////////////////////////////////
+	document.form1._opFile.value = "FILE";
+	if(document.form1._uploadFile.value == ""){
+		document.form1._opFile.value = "NOFILE";
+		return false;
+	}
+	/////////////////////////////////////////////
+	/////////////////////////////////////////////
+	document.form1._menu.value = sw;
+	document.form1.submit();	
+}
+function setsubmit(sw) {	
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value = sw; // 
+	document.form1.submit();
+}
+function fileEdit(fname) {
+    
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value 			= "FILE_EDIT";
+	document.form1._deleteFile.value 	= fname;
+	document.form1.submit();
+}
+function fileMODE(fname) {
+    
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._opFile.value 		= "NOFILE";
+	document.form1._uploadFile.value 	= "";
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	document.form1._menu.value 			= "FILEMODE";
+	document.form1._chgFile.value 	= fname;
+	document.form1.submit();
+}
+
+function JumpHELP(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpICONLIST(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=200,height=500,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCOLOR(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=440,height=330,left=5,top=5,scrollbars=yes,");
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+////////  Editor  ///////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function setMarker(){
+	tagmarker	=	document.form1._tagmark.value;
+}
+
+// 段落スタイルエイリアス
+function fmt(sw) {
+	edit	=	document.form1._content.value;
+	//n		=	edit.length;
+	//if(edit.charAt(n-1) != "\n"){
+	//	if(n>1){
+	//		edit	=	edit + "\n"
+	//	}
+	//}
+	document.form1._content.value	=	putTag(edit,"## "+sw );
+	//edit	=	edit + "## "  + sw;
+	//document.form1._content.value = edit;
+}
+
+// 行の配置
+function fmtAlign(sw){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit," align=" + sw );
+	//document.form1._content.value = edit + " align=" + sw;
+}
+
+// 太字
+function fmtWeight(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit," weight=bold" );
+	//document.form1._content.value = edit + " weight=bold";
+
+}
+
+// 文字色
+function fmtSetColor(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit," color=" + document.form1.fmtColor.value );
+	//document.form1._content.value 	= edit + " color=" + document.form1.fmtColor.value;
+	document.form1.fmtColor.value	= "0";	
+}
+// 段落マージン
+function fmtSetMargine(){
+	edit	=	document.form1._content.value;
+	val		=	Number(document.form1.fmtMargine.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._content.value	=	putTag(edit," indent=" + val );
+		//document.form1._content.value 	= edit + " indent=" + val;
+	};
+	document.form1.fmtMargine.value 	= "0";
+}
+// フォントサイズ
+function fmtSetFontsize(){
+	edit	=	document.form1._content.value;
+	val		=	Number(document.form1.fmtFontsize.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._content.value	=	putTag(edit," size=" + val + "px" );
+		//document.form1._content.value 	= edit + " size=" + val;
+	};
+	document.form1.fmtFontsize.value 	= "0";	
+}
+// 行間
+function fmtSetHeight(){
+	edit	=	document.form1._content.value;
+	val		=	Number(document.form1.fmtHeight.value);
+	if(!isNaN(val) &&(val>0)){
+		document.form1._content.value	=	putTag(edit," height=" + val );
+		//document.form1._content.value 	= edit + " height=" + val;
+	};
+	document.form1.fmtHeight.value 	= "0";	
+}
+// 表示幅制御
+function fmtSetFlow(){
+	edit	=	document.form1._content.value;
+	val		=	Number(document.form1.fmtFlow.value);
+	if(!isNaN(val) &&(val>0)){
+		if(val>360)	{val=360;}
+		document.form1._content.value	=	putTag(edit," flow=" + val );
+		//document.form1._content.value 	= edit + " flow=" + val;
+	};
+	document.form1.fmtFlow.value 	= "0";	
+}
+
+// 画像埋め込み
+function fmtImage(){
+	imgFile		=	document.form1.fmtImageFile.value;
+	fname	=	triming(imgFile);
+	if(fname.length ==0){
+		window.alert("ファイル名を入力してください．\nここで指定したファイルはファイルアップロードで\nサーバーに送信してください．");
+		document.form1.fmtImageFile.value	=	"";
+		return;
+	}
+	edit		=	document.form1._content.value;
+	imgPos		=	document.form1.fmtImgpos.value;
+	imgBorder	=	document.form1.fmtImgBorder.value;
+	document.form1._content.value	=	putTag(edit," imgbox=" + fname + "," + imgPos + "," + imgBorder);
+	//document.form1._content.value		=	edit + " imgbox=" + fname + "," + imgPos + "," + imgBorder;
+	document.form1.fmtImageFile.value	=	"";	
+}	
+function	triming(str){
+	n	=	str.length;
+	for(i=n-1; i>=0; i--){
+		ch	=	str.charAt(i);
+		if((ch!=" ")&&(ch!="　")){
+			return	str.substring(0,i+1);
+		}
+	}
+	return	"";
+}
+
+////////　直接編集　///////////
+function	putStack(str){
+	tagStack.push(str);
+	tags	=	tags + 1; 
+}
+function	popStack(){
+	tags	=	tags - 1;
+	return	tagStack.pop();
+}
+function	closeTag(){
+	if(tags	== 0) return;
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit, popStack());
+}
+function	closeAllTags(){
+	if(tags	== 0) return;
+	tagStr	=	"";
+	n	=	tags;
+	for(i=0; i<n; i++){
+		tagStr	=	tagStr	+	popStack();
+	}
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit, tagStr);
+}
+
+// タグマーカーの位置にタグ文字を挿入する
+function	putTag(text, tagStr){
+	if(tagmarker==""){
+		return	text + tagStr;
+	}
+	position	=	text.indexOf(tagmarker);
+	if(position==-1)	return	text + tagStr;
+	if(position==0){
+	    if(text.length>1){
+		    return		tagStr  + 	text.substring(position+1);
+		}else{
+		    return		tagStr;
+		}	
+	}else if(position==text.length-1){
+	    if(text.length>1){
+			return	text.substring(0,position) + tagStr;	
+		}else{
+		    return		tagStr;
+		}	
+	}
+	//
+	str1	=	text.substring(0,position);
+	return	str1 + tagStr + text.substring(position+1);	
+		
+}
+
+// カラー
+function	tagColor(){
+	edit	=	document.form1._content.value;
+	color	=	document.form1.fontColor.value;
+	document.form1._content.value	=	putTag(edit,"(#c=" + color + ")");
+	putStack("(/c)");
+	document.form1.fontColor.value	= 0;
+}
+
+
+// フォントサイズ
+function	tagFont(){
+	edit	=	document.form1._content.value;
+	fsize	=	document.form1.fontSize.value;
+	document.form1._content.value	=	putTag(edit,"(#s=" + fsize + "px)");
+	putStack("(/s)");
+	document.form1.fontSize.value 	= 0;
+}
+
+// 太字
+function	tagBold(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#b)" );
+	putStack("(/b)");
+		
+}
+
+
+// 斜体
+function	tagItalic(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#i)");
+	putStack("(/i)");
+		
+}
+
+// アンダーライン
+function	tagUline(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#u)");
+	putStack("(/u)");
+	
+}
+
+// 画像
+function	tagImg(){
+	edit	=	document.form1._content.value;
+	gfile	=	window.prompt("画像ファイル名を入力してください","");
+	if(gfile==null)	return;
+	//
+	document.form1._content.value	=	putTag(edit,"(#g=" + gfile +")");	
+}
+
+// アンカー
+function	tagAnchor(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#a)");
+		
+}
+
+// 空白
+function	tagSpace(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#z)");
+		
+}
+
+// 改行
+function	tagLinefeed(){
+	edit	=	document.form1._content.value;
+	document.form1._content.value	=	putTag(edit,"(#p)");
+		
+}
+
+// リンク
+function	tagLink(){
+	edit	=	document.form1._content.value;
+	tempUrl	=	document.form1.linkUrl.value;
+	target	=	document.form1.linkTarget.value;
+	url	=	triming(tempUrl);
+	if(url.length ==0){
+		window.alert("URLを入力してください．");
+		document.form1.linkUrl.value	=	"";
+		return;
+	}
+	document.form1._content.value	=	putTag(edit,"(#j="+ url + "," + target +")");
+	document.form1.linkUrl.value	=	"http://";
+	putStack("(/j)");	
+}
+/////////////    HTML   /////////////////////////////////////////////////////////////////////////////////
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+</script>
+<style type="text/css">
+<!--
+A:link 		{ text-decoration: none; }
+A:visited 	{ text-decoration: none; }
+A:active 	{ text-decoration: none; }
+A:hover 	{ text-decoration: none; }
+
+
+ body   { font-size: 12px; color: #333333;}
+ table  { font-size: 12px; color: #333333;}
+
+.c1{
+	font-size: 12px;
+	color: #333333;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c2{
+	font-size: 12px;
+	color: #333333;
+	background-color: #FAFAFF;
+}
+.c3{
+	font-size: 12px;
+	color: #333333;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c41{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c42{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c43{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.c5{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.a1{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.a2{
+	font-size: 12px;
+	color: #333333;
+	border: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.a1_ColorB{
+	font-size: 12px;
+	color: #000000;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+	padding: 3px;
+}
+.a2_ColorB{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+	padding: 3px;
+}
+.a3_ColorB{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #6699CC;
+	padding: 3px;
+}
+.a2_ColorB_NoPadding{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	
+	border-right: 1px solid #849898;
+	background-color: #6699CC;
+}
+
+.black12aBGgreen {font-size: 12px; color: #000000; background-color: #6699CC;padding: 3px;}
+
+
+.a2_ColorC{
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #99CCFF;
+	border-right: 1px solid #849898;
+
+}
+
+.b1{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b1PaddingLeft{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 0px 0px 0px 5px;
+}
+.b1BottomDotted{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b1NoPadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+
+}
+.b2NoPadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+
+}
+.b2PaddingLeft{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 0px 0px 0px 3px;
+}
+.b2BottomDotted{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+
+.b1_A{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #F0F3FF;
+	padding: 5px;
+}
+.b1_ANotPadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #F0F3FF;
+}
+.b1_A_NoBottom{
+	font-size: 12px;
+	color: #333333;
+	border-left: 1px solid #849898;
+	background-color: #F0F3FF;
+}
+
+.b2_A{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #F0F3FF;
+	padding: 5px;
+}
+.b2_ANotPadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #F0F3FF;
+}
+.b1_B{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.b1_BPadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+	padding: 0px 0px 0px 12px;
+}
+.b2_B{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.b1_C{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #7EA2A2;
+}
+.b2_C{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #7EA2A2;
+}
+.b1_boldBottom{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b2_boldBottomNopaddig{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.txf12_A{
+	font-size:12px; 
+	color: #333333; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 3px 5px 3px 5px;; 
+}
+.txf12_B{
+	font-size:12px; 
+	color: #3366FF; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 1px 2px 1px 2px;; 
+}
+.txf12_D{
+	font-size:12px; 
+	color: #CC0066; 
+	weight: bold;
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 1px 2px 1px 2px;; 
+}
+
+.txf12_C{
+	font-size:12px; 
+	color: #3366FF; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#E0E0E0; 
+	border:1px solid #849898; 
+	padding: 1px 2px 1px 2px;; 
+}
+
+.txf10_C{
+	font-size:10px; 
+	color: #333333; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 1px 1px 1px 1px;; 
+}
+.txa12_A{ font-size:12px; 
+		color: #333333; 
+		font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+		background-color:#FAFAFF; 
+		border:1px solid #849898; 
+		scrollbar-arrow-color:#666666; 
+		scrollbar-highlight-color:#666666; 
+		scrollbar-shadow-color:#666666; 
+		scrollbar-base-color:#E0E0E0; 
+		scrollbar-darkshadow-color:#E0E0E0; 
+		scrollbar-track-color:#E0E0E0; 
+		padding: 5px 5px 5px 5px;}
+
+
+.gray12  { font-size: 12px; color: #333333;}
+.green12 { font-size: 12px; color: #006600;}
+.blue12  { font-size: 12px; color: #3333FF;}
+
+.gray12BGgreen {font-size: 12px; color: #333333; background-color: #FAFAFF;padding: 5px;}
+.gray12a  { font-size: 12px; color: #333333;  }
+.red12a   { font-size: 12px; color: #333333; font-weight: bold; }
+.green12PD {font-size: 12px; color: #006060; padding: 0px 0px 0px 5px;}
+.paddingA {font-size: 12px; color: #333333; padding: 0px 0px 0px 10px;}
+.paddingB {font-size: 12px; color: #333333; padding: 0px 0px 0px 3px;}
+.paddingC {font-size: 12px; color: #333333; padding: 0px 0px 0px 18px;}
+.paddingD {font-size: 12px; color: #333333; padding: 0px 0px 0px 23px;}
+.paddingE {font-size: 12px; color: #333333; padding: 0px 0px 0px 90px;}
+.paddingF {font-size: 12px; color: #333333; padding: 0px 0px 0px 275px;}
+.tagmk{
+	font-size:12px; 
+	color: #FF0000; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	padding-left: 3px;
+	padding-right: 3px; 
+}
+-->
+</style>
+</head>
+
+<body onLoad="init();MM_preloadImages('/pc/images/sendSmall-2.gif','/pc/images/Sdone-2.gif','/pc/images/tclose-2.gif','/pc/images/tcloseB-2.gif','/pc/images/plus20_16-2.gif','/pc/images/minus20_16-2.gif','/pc/images/p1-B.gif','/pc/images/p2-B.gif','/pc/images/p3-B.gif','/pc/images/p4-B.gif','/pc/images/p5-B.gif','/pc/images/aleft-B.gif','/pc/images/acenter-B.gif','/pc/images/aright-B.gif','/pc/images/bold-B.gif','/pc/images/Lbold-2.gif','/pc/images/Litalic-2.gif','/pc/images/Lu-2.gif','/pc/images/Lgraphic-2.gif','/pc/images/Lanch-2.gif','/pc/images/tabButton2.gif','/pc/images/preview60_20-2.gif','/pc/images/write60_20-2.gif')">
+<form name="form1" method="post" action="%_action%" enctype="multipart/form-data">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="17" colspan="8" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="78" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('INFO')"><img src="/pc/images/reg_info-1.gif" alt="個人情報を設定する" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('RETURN')"><img src="/pc/images/returnIcon.gif" alt="戻る" width="32" height="38" border="0"></a></td>
+      <td width="27" rowspan="2" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="11" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="8" valign="top"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="15" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="78" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="27" height="1"></td>
+    </tr>
+  </table>
+
+  <TABLE cellSpacing="0" cellPadding="0"width="780" border="0">
+    <!--DWLayoutTable-->
+    <TBODY>
+      <TR> 
+        <TD width="17" height="20" vAlign=top><!--DWLayoutEmptyCell-->&nbsp;</TD>
+        <TD colspan="2" vAlign=top><!--DWLayoutEmptyCell-->&nbsp;</TD>
+        <TD colspan="2" vAlign="middle"> <span style="font-size: 12px; color: #CC6666;">%_msg%</span> 
+        </td>
+        <TD width="81" vAlign=middle><!--DWLayoutEmptyCell-->&nbsp;</TD>
+      </TR>
+      <!-- ここからテーブルトップ -->
+      <tr> 
+        <TD height="28" vAlign=top><!--DWLayoutEmptyCell-->&nbsp;</TD>
+        <TD colspan="2" align="center" vAlign="middle" class="a1_ColorB">表題　（必須）</TD>
+        <td width="456" valign="middle" class="a1_ColorB"><input name="_subject" type="text" class="txf12_A" id="_subject" value="%_subject%" size="68" maxlength="100"> 
+        </td>
+        <td width="78" align="center" valign="middle" class="a1_ColorB"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image47','','/pc/images/preview60_20-2.gif',1)"  onClick="setsubmit('PREVIEW')"><img src="/pc/images/preview60_20-1.gif" name="Image47" width="60" height="20" border="0" align="absmiddle" alt="プレビュー"></a></td>
+        <td align="left" valign="middle" class="a2_ColorB_NoPadding"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image48','','/pc/images/write60_20-2.gif',1)" onClick="setsubmit('WRITE')"><img src="/pc/images/write60_20-1.gif" alt="保存する" name="Image48" width="60" height="20" border="0" align="absmiddle"></a> 
+        </td>
+      </tr>
+      <tr> 
+        <td height="29" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+        <td colspan="2" align="center" valign="middle" class="b1_B">
+		<a href="#" onClick="JumpICONLIST('/pc/help/iconList1.html');"><img src="/pc/images/iconList2.gif" border="0"  alt="アイコン" width="25" height="16" align="absmiddle"></a>
+		<a href="#" onClick="JumpICONLIST('/pc/help/iconList2.html');"><img src="/pc/images/iconList2.gif" border="0"  alt="番号アイコン" width="25" height="16" align="absmiddle"></a>
+		<a href="#" onClick="JumpCOLOR('/pc/help/color.html');"><img src="/pc/images/colorCode2.gif"   border="0"  alt="カラーチャート" width="25" height="16" align="absmiddle"></a>
+		</td>
+        <td colspan="3" valign="top" class="b2_B"> <table width="613" border="0" cellpadding="0" cellspacing="0">
+            <!--DWLayoutTable-->
+            <tr> 
+              <td width="15" height="27" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+              <td width="30" align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image56','','/pc/images/plus20_16-2.gif',1)" onClick="setsubmit('PLUS')"><img src="/pc/images/plus20_16-1.gif" name="Image56" width="20" height="16" border="0" align="absmiddle" alt="エディタ表示行数を増やす"></a></td>
+              <td width="30" align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image57','','/pc/images/minus20_16-2.gif',1)" onClick="setsubmit('MINUS')"><img src="/pc/images/minus20_16-1.gif" name="Image57" width="20" height="16" border="0" align="absmiddle" alt="エディタ表示行数を減らす"></a></td>
+              <td width="38" align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image71','','/pc/images/tabButton2.gif',1)"  onClick="setsubmit('TAB')"><img src="/pc/images/tabButton1.gif" alt="タブをスペースに変換する" name="Image71" width="26" height="18" border="0"></a></td>
+              <td width="21" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+              <td width="86" align="left" valign="middle"> 
+                <!--<input name="_group" type="checkbox" id="_group2" value="1" %_ck_group%>
+                グループ学習 -->
+                &nbsp;</td>
+              <td width="141" align="left" valign="middle"><input name="_handle" type="checkbox" id="_handle2" value="1" %_ck_handle%>
+                ハンドル名を使う </td>
+              <td width="145" valign="middle"><input name="_rating" type="checkbox" id="_rating2" value="1" %_ck_rating%>
+                支持度を有効にする </td>
+              <td width="93" valign="middle"><input name="_disp" type="checkbox" id="_disp" value="1" %_ck_disp%>
+                編集可能 </td>
+              <td width="14" align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            </tr>
+            <tr> 
+              <td height="0"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr> 
+              <td height="1"><img src="/pc/images/spacer.gif" alt="" width="15" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="30" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="30" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="38" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="21" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="86" height="1"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr> 
+        <td height="300" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+        <td colspan="2" valign="top" class="b1_ANotPadding"> <table width="150" border="0" cellpadding="0" cellspacing="0">
+            <!--DWLayoutTable-->
+            <tr valign="middle"> 
+              <td height="36" colspan="2" align="left" valign="middle" class="green12PD">段落スタイル</td>
+            </tr>
+            <tr> 
+              <td height="26" colspan="2" align="left" valign="middle" class="paddingA" ><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image12','','/pc/images/p1-B.gif',1)" onClick="fmt('p1')"><img src="/pc/images/p1-A.gif" name="Image12" width="25" height="18" border="0" alt="タイトル用：16px 太字"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image13','','/pc/images/p2-B.gif',1)" onClick="fmt('p2')"><img src="/pc/images/p2-A.gif" name="Image13" width="25" height="18" border="0" alt="見出し用：14px"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image14','','/pc/images/p3-B.gif',1)" onClick="fmt('p3')"><img src="/pc/images/p3-A.gif" name="Image14" width="25" height="18" border="0" alt="文章用：12px"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image15','','/pc/images/p4-B.gif',1)" onClick="fmt('p4')"><img src="/pc/images/p4-A.gif" name="Image15" width="25" height="18" border="0" alt="文章用：1文字分字下げ、12px"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image16','','/pc/images/p5-B.gif',1)" onClick="fmt('p5')"><img src="/pc/images/p5-A.gif" name="Image16" width="25" height="18" border="0" alt="文章用：２文字分字下げ、12px"></a></td>
+            </tr>
+            <tr> 
+              <td height="26" colspan="2" align="left" valign="middle" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image20','','/pc/images/aleft-B.gif',1)" onClick="fmtAlign('left')"><img src="/pc/images/aleft-A.gif" name="Image20" width="25" height="18" border="0" alt="左揃え"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image21','','/pc/images/acenter-B.gif',1)" onClick="fmtAlign('center')"><img src="/pc/images/acenter-A.gif" name="Image21" width="25" height="18" border="0" alt="中央揃え"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image22','','/pc/images/aright-B.gif',1)" onClick="fmtAlign('right')"><img src="/pc/images/aright-A.gif" name="Image22" width="25" height="18" border="0" alt="右揃え"></a> 
+              </td>
+            </tr>
+            <tr> 
+              <td height="25" colspan="2" align="left" valign="middle" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image17','','/pc/images/bold-B.gif',1)" onClick="fmtWeight()"><img src="/pc/images/bold-A.gif" name="Image17" width="25" height="18" border="0" align="absmiddle" alt="太字"></a> 
+                <SELECT name="fmtColor" id="fmtColor" style="font-size:12px;" onChange="fmtSetColor()">
+                      <OPTION style="COLOR: #333333" value=0 selected>文字色</OPTION>
+                      <OPTION style="COLOR: skyblue" value=skyblue>sky blue</OPTION>
+                      <OPTION style="COLOR: royalblue" value=royalblue>royal blue</OPTION>
+                      <OPTION style="COLOR: #6666CC" value="#6666CC">new-blue</OPTION>
+                      <OPTION style="COLOR: blue" value=blue>blue</OPTION>
+                      <OPTION style="COLOR: #0066CC" value="#0066CC">blue-blue</OPTION>
+                      <OPTION style="COLOR: darkblue" value=darkblue>dark-blue</OPTION>
+                      <OPTION style="COLOR: purple" value=purple>purple</OPTION>
+                      <OPTION style="COLOR: indigo" value=indigo>indigo</OPTION>
+                      <OPTION style="COLOR: #FFFFCC" value="#FFFFCC">lemon</OPTION>
+                      <OPTION style="COLOR: orange" value=orange>orange</OPTION>
+                      <OPTION style="COLOR: orangered" value=orangered>orange-red</OPTION>
+                      <OPTION style="COLOR: crimson" value=crimson>crimson</OPTION>
+                      <OPTION style="COLOR: red" value=red>red</OPTION>
+					  <OPTION style="COLOR: #CC3366" value="#CC3366">new-red</OPTION>					  
+                      <OPTION style="COLOR: deeppink" value=deeppink>deeppink</OPTION>
+                      <OPTION style="COLOR: tomato" value=tomato>tomato</OPTION>
+                      <OPTION style="COLOR: coral" value=coral>coral</OPTION>
+                      <OPTION style="COLOR: burlywood" value=burlywood>burlywood</OPTION>
+                      <OPTION style="COLOR: sandybrown" value=sandybrown>sandybrown</OPTION>
+                      <OPTION style="COLOR: sienna" value=sienna>sienna</OPTION>
+                      <OPTION style="COLOR: chocolate" value=chocolate>chocolate</OPTION>
+                      <OPTION style="COLOR: firebrick" value=firebrick>firebrick</OPTION>
+                      <OPTION style="COLOR: darkred" value=darkred>dark red</OPTION>
+                      <OPTION style="COLOR: #006600" value="#006600">dark-green</OPTION>
+                      <OPTION style="COLOR: green" value=green>green</OPTION>
+                      <OPTION style="COLOR: limegreen" value=limegreen>limegreen</OPTION>
+                      <OPTION style="COLOR: seagreen" value=seagreen>sea-green</OPTION>
+                      <OPTION style="COLOR: teal" value=teal>teal</OPTION>
+                      <OPTION style="COLOR: #000000" value="#000000">real-black</OPTION>
+                      <OPTION style="COLOR: #333333" value="#333333">dark-gray</OPTION>
+                      <OPTION style="COLOR: #666666" value="#666666">gray</OPTION>
+                      <OPTION style="COLOR: #999999" value="#999999">light-gray</OPTION>
+                      <OPTION style="COLOR: silver" value=silver>silver</OPTION>
+					  </SELECT></td>
+            </tr>
+            <tr> 
+              <td width="73" height="22" align="left" valign="middle" class="paddingA">文字サイズ</td>
+              <td width="77" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image24','','/pc/images/px-2.gif',1)"> 
+                </a> <select name="fmtFontsize" id="fmtFontsize" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetFontsize()">
+                  <option style="COLOR: #3366FF;" value=0 selected>size</option>
+                  <option value="08">08 px</option>
+                  <option value="10">10 px</option>
+                  <option style="COLOR: #3366FF;" value="12">12 px</option>
+                  <option value="14">14 px</option>
+                  <option value="16">16 px</option>
+                  <option value="18">18 px</option>
+                  <option value="20">20 px</option>
+                  <option value="22">22 px</option>
+                  <option value="24">24 px</option>
+                  <option value="26">26 px</option>
+                  <option value="28">28 px</option>
+                  <option value="30">30 px</option>
+                  <option value="32">32 px</option>
+                </select> </td>
+            </tr>
+            <tr> 
+              <td height="22" align="left" valign="middle" class="paddingA">行間 
+              </td>
+              <td valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image241','','/pc/images/px-2.gif',1)"> 
+                </a> <select name="fmtHeight" id="select2" style="font-size:12px; color: #333333;font-family:'Courier New, Courier, mono'" onChange="fmtSetHeight()">
+                  <option style="COLOR: #3366FF;" value=0 selected>height</option>
+                  <option value="100">100 %</option>
+                  <option value="110">110 %</option>
+                  <option value="120">120 %</option>
+                  <option style="COLOR: #3366FF;" value="130">130 %</option>
+                  <option value="140">140 %</option>
+                  <option value="150">150 %</option>
+                  <option value="160">160 %</option>
+                  <option value="170">170 %</option>
+                  <option value="180">180 %</option>
+                  <option value="190">190 %</option>
+                  <option value="200">200 %</option>
+                </select> </td>
+            </tr>
+            <tr valign="middle"> 
+              <td height="48" colspan="2" valign="middle" class="green12PD">直接編集指定　</td>
+            </tr>
+            <tr> 
+              <td height="22" colspan="2" valign="middle" class="paddingA"><select name="fontColor" id=select4 style="font-size:11px;" onChange="tagColor()">
+					  <OPTION style="COLOR: #333333" value=0 selected>文字色</OPTION>
+                      <OPTION style="COLOR: skyblue" value=skyblue>sky blue</OPTION>
+                      <OPTION style="COLOR: royalblue" value=royalblue>royal blue</OPTION>
+                      <OPTION style="COLOR: #6666CC" value="#6666CC">new-blue</OPTION>
+                      <OPTION style="COLOR: blue" value=blue>blue</OPTION>
+                      <OPTION style="COLOR: #0066CC" value="#0066CC">blue-blue</OPTION>
+                      <OPTION style="COLOR: darkblue" value=darkblue>dark-blue</OPTION>
+                      <OPTION style="COLOR: purple" value=purple>purple</OPTION>
+                      <OPTION style="COLOR: indigo" value=indigo>indigo</OPTION>
+                      <OPTION style="COLOR: #FFFFCC" value="#FFFFCC">lemon</OPTION>
+                      <OPTION style="COLOR: orange" value=orange>orange</OPTION>
+                      <OPTION style="COLOR: orangered" value=orangered>orange-red</OPTION>
+                      <OPTION style="COLOR: crimson" value=crimson>crimson</OPTION>
+                      <OPTION style="COLOR: red" value=red>red</OPTION>
+					  <OPTION style="COLOR: #CC3366" value="#CC3366">new-red</OPTION>					  
+                      <OPTION style="COLOR: deeppink" value=deeppink>deeppink</OPTION>
+                      <OPTION style="COLOR: tomato" value=tomato>tomato</OPTION>
+                      <OPTION style="COLOR: coral" value=coral>coral</OPTION>
+                      <OPTION style="COLOR: burlywood" value=burlywood>burlywood</OPTION>
+                      <OPTION style="COLOR: sandybrown" value=sandybrown>sandybrown</OPTION>
+                      <OPTION style="COLOR: sienna" value=sienna>sienna</OPTION>
+                      <OPTION style="COLOR: chocolate" value=chocolate>chocolate</OPTION>
+                      <OPTION style="COLOR: firebrick" value=firebrick>firebrick</OPTION>
+                      <OPTION style="COLOR: darkred" value=darkred>dark red</OPTION>
+					  <OPTION style="COLOR: #006600" value="#006600">dark-green</OPTION>
+                      <OPTION style="COLOR: green" value=green>green</OPTION>
+                      <OPTION style="COLOR: limegreen" value=limegreen>limegreen</OPTION>
+                      <OPTION style="COLOR: seagreen" value=seagreen>sea-green</OPTION>
+                      <OPTION style="COLOR: teal" value=teal>teal</OPTION>
+                      <OPTION style="COLOR: #000000" value="#000000">real-black</OPTION>
+                      <OPTION style="COLOR: #333333" value="#333333">dark-gray</OPTION>
+                      <OPTION style="COLOR: #666666" value="#666666">gray</OPTION>
+                      <OPTION style="COLOR: #999999" value="#999999">light-gray</OPTION>
+                      <OPTION style="COLOR: silver" value=silver>silver</OPTION>                </select></td>
+            </tr>
+            <tr> 
+              <td height="22" colspan="2" valign="middle" class="paddingA"><select name="fontSize" id=select6 style="font-size:11px; color: #333333" onChange="tagFont()">
+                  <option  value=0 selected>サイズ</option>
+                  <option value="8"> 8px</option>
+                  <option value="9"> 9px</option>
+                  <option value="10">10px</option>
+                  <option value="11">11px</option>
+                  <option value="12">12px</option>
+                  <option value="14">14px</option>
+                  <option value="16">16px</option>
+                  <option value="18">18px</option>
+                  <option value="20">20px</option>
+                  <option value="22">22px</option>
+                  <option value="24">24px</option>
+                  <option value="26">26px</option>
+                  <option value="28">28px</option>
+                  <option value="30">30px</option>
+                  <option value="32">32px</option>
+                </select> <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image34','','/pc/images/Lbold-2.gif',1)" onClick="tagBold()"><img src="/pc/images/Lbold-1.gif" name="Image34" width="20" height="16" border="0" align="absmiddle" alt="太字"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image35','','/pc/images/Litalic-2.gif',1)" onClick="tagItalic()"><img src="/pc/images/Liatlic-1.gif" name="Image35" width="20" height="16" border="0" align="absmiddle" alt="斜体字"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image41','','/pc/images/Lu-2.gif',1)" onClick="tagUline()"><img src="/pc/images/Lu-1.gif" name="Image41" width="20" height="16" border="0" align="absmiddle" alt="下線"></a></td>
+            </tr>
+            <tr> 
+              <td height="22" colspan="2" valign="middle" class="paddingA"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','/pc/images/Lgraphic-2.gif',1)" onClick="tagImg()"><img src="/pc/images/Lgraphic-1.gif" name="Image36" width="60" height="16" border="0" align="absmiddle" alt="表示する画像を指定"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image37','','/pc/images/Lanch-2.gif',1)" onClick="tagAnchor()"><img src="/pc/images/Lanch-1.gif" name="Image37" width="60" height="16" border="0" align="absmiddle" alt="飛び先アンカー指定"></a></td>
+            </tr>
+            <tr> 
+              <td height="28" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            </tr>
+            <tr> 
+              <td height="1"><img src="/pc/images/spacer.gif" alt="" width="73" height="1"></td>
+              <td><img src="/pc/images/spacer.gif" alt="" width="76" height="1"></td>
+            </tr>
+          </table></td>
+        <td colspan="3" align="center" valign="middle" class="b2_A"><textarea name="_content" class="txa12_A" cols="95" rows="%_editor%" wrap="SOFT"  id="_content">%_content%</textarea> 
+        </td>
+      </tr>
+      <tr> 
+        <td height="43" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+        <td width="100" align="center" valign="top" class="b1_A"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image42','','/pc/images/tclose-2.gif',1)"  onClick="closeTag()"><img src="/pc/images/tclose-1.gif" name="Image42" width="84" height="16" border="0" align="absmiddle" alt="自動入力したタグに対応する閉じタグを入力"></a> 
+          <br> <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image43','','/pc/images/tcloseB-2.gif',1)" onClick="closeAllTags()"><img src="/pc/images/tcloseB-1.gif" name="Image43" width="84" height="16" border="0" align="absmiddle" alt="自動入力した全てのタグに対応する閉じタグを一括入力"></a> 
+        </td>
+        <td width="51" align="center" valign="top" class="b1_A">marker<br> <select name="_tagmark" onChange="setMarker()" class="tagmk">
+            <option value="^" %_tag_^% >^</option>
+            <option value="@" %_tag_@% >@</option>
+            <option value="!" %_tag_!% >!</option>
+          </select></td>
+        <td colspan="3" align="left" valign="middle" class="b2_A">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/pc/images/ch_link.gif" width="50" height="16" align="absmiddle">　<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image242','','/pc/images/px-2.gif',1)"> 
+          <input name="linkUrl" type="text" class="txf12_B" id="linkUrl" value="http://" size="56" maxlength="200" onfocus="this.select()">
+          </a>　・別窓 
+          <SELECT name="linkTarget" id="linkTarget" style="font-size:12px; color: #333333" >
+            <OPTION value="_self" selected> なし</OPTION>
+            <OPTION value="_blank"> 指定</OPTION>
+          </SELECT>
+          　 <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image461','','/pc/images/Sdone-2.gif',1)" onClick="tagLink()"><img src="/pc/images/Sdone-1.gif" name="Image461" width="40" height="16" border="0" align="absmiddle" id="Image461" alt="指定したリンクを埋め込む"></a> 
+        </td>
+      </tr>
+      <tr> 
+        <td height="0"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr> 
+        <td height="1"><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+        <td><img src="/pc/images/spacer.gif" alt="" width="100" height="1"></td>
+        <td><img src="/pc/images/spacer.gif" alt="" width="51" height="1"></td>
+        <td><img src="/pc/images/spacer.gif" alt="" width="456" height="1"></td>
+        <td><img src="/pc/images/spacer.gif" alt="" width="78" height="1"></td>
+        <td><img src="/pc/images/spacer.gif" alt="" width="81" height="1"></td>
+      </tr>
+    </TBODY>
+  </TABLE>
+  
+  <table width="781" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="17" height="28" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="150" align="right" valign="middle" class="a1_ColorB">ファイルアップロード</td>
+      <td width="438" valign="middle" class="a2_ColorB"><input name="_uploadFile" type="file" class="txf12_B" id="_uploadFile" size="30" maxlength="200"> 
+        <input name="_attach" type="checkbox" id="_attach" value="1" %_ck_attach%>
+        添付ファイルにする　<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image44','','/pc/images/sendSmall-2.gif',1)" onClick="setsubmitFile('UPLOAD')"><img src="/pc/images/sendSmall-1.gif" name="Image44" width="40" height="16" border="0" align="absmiddle" alt="指定したファイルをサーバーにアップロードする"></a>　</td>
+      <td width="178" valign="middle" class="a3_ColorB"><select name="_listsw" id="_listsw" onChange="setsubmit('FLIST')">
+          <option value="ON" style="COLOR: #333333; font-family: 'ＭＳ ゴシック', 'Osaka－等幅'; background-color: #FAFAFF; size=12px;" %_listOnSelected%>ファイルリストを表示する</option>
+          <option value="OFF" style="COLOR: #333333; font-family: 'ＭＳ ゴシック', 'Osaka－等幅'; background-color: #FAFAFF; size=12px;" %_listOffSelected%>ファイルリストを隠す</option>
+        </select></td>
+    </tr>
+    <tr> 
+      <td height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <pct: @uploadFileList> 
+		  <pct: block> 
+          <tr> 
+            <td width="43" height="18" valign="top" class="c1"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-1%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-2%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-3%</td>
+            <td width="170" align="left" valign="middle" class="c2">%_fileDiscriptor-4%</td>
+            <td width="41" valign="top" class="c3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          </tr>
+          <pct: /block> 
+		  <pct: @isNoFiles> 
+		  <pct: block> 
+          <tr> 
+            <td width="43" height="18" valign="top" class="c1"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="170" align="left" valign="middle" class="c2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="41" valign="top" class="c3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          </tr>
+          <pct: /block> 
+          <tr> 
+            <td height="1" class="c41"><img src="/pc/images/spacer.gif" alt="" width="43" height="1"></td>
+            <td class="c42"><img src="/pc/images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="/pc/images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="/pc/images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c42"><img src="/pc/images/spacer.gif" alt="" width="170" height="1"></td>
+            <td class="c43"><img src="/pc/images/spacer.gif" alt="" width="41" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="150" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="438" height="1"></td>
+      <td></td>
+    </tr>
+  </table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="28" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="2">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="3" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="696" height="8"></td>
+      <td width="78" valign="top"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+      <td width="6"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="696" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="78" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="6" height="1"></td>
+      <td></td>
+    </tr>
+  </table>
+</form>
+</BODY>
+</HTML>
+

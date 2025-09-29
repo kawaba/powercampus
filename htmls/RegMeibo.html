@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>名簿登録</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function editSubmit(){
+	document.form1.file.value    = "";
+	document.form1._opFile.value = "NO_FILE";
+	//
+	document.form1._menu.value   = "DIRECT_EDIT";
+	document.form1.submit();
+}
+function setSubmit(sw,fmode) {
+	if(document.form1.file.value!=""){
+		document.form1._menu.value = sw; // UPDATE  RETURN
+		document.form1._opFile.value = fmode; // FILE or NO_FILE
+		document.form1.submit();
+	}else{
+		document.form1._menu.value = "ERROR_FILE";
+		document.form1._opFile.value = "NO_FILE";
+		document.form1.submit();
+	}
+}
+function setReturn(sw,fmode) {
+	document.form1._menu.value = sw; // RETURN
+	document.form1._opFile.value = fmode; //  NO_FILE
+	document.form1.submit();
+}
+
+function mailSubmit(sw,stNumber,fmode){
+	document.form1._menu.value   = sw; // SEND
+	document.form1._stNumber.value  = stNumber;
+	document.form1._opFile.value = "NO_FILE"; // NO_FILE
+	document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.TBL721 {
+ table-layout: fixed; width: 721px;
+ empty-cells: show;
+}
+.a1{
+	padding: 3px 0px 3px 0px;
+	color: #333333;
+	font-size:12px;
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+}
+.a2{
+	padding: 3px 0px 3px 0px;
+	color: #333333;
+	font-size:14px;
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	border-top: 1px solid #999999;
+	border-right: 1px solid #999999;
+}
+.b1{
+	padding: 3px 0px 3px 0px;
+	color: #333333;
+	font-size:12px;
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	padding-right: 15px;
+}
+.b2{
+	padding: 3px 0px 3px 0px;
+	color: #3366CC;
+	font-size:12px;
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	border-bottom: 1px solid #999999;
+	border-right: 1px solid #999999;
+}
+.txfield{
+	font-size:14px; 
+	color: #3366CC; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 1px 3px 1px 3px;; 
+}
+.strBlue{
+	font-size:14px; 
+	color: #3366CC; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+}
+.strRed{
+	font-size:12px; 
+	color: #CC6666; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+}
+-->
+</style>
+</head>
+<body onLoad="MM_preloadImages('/pc/images/sendFileIcon-2.gif')">
+<form name="form1" method="post" action="%_action%" ENCTYPE="multipart/form-data">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="10" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="17" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="マニュアルを見る"></a></td>
+      <td width="19" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setReturn('CABINET','NO_FILE')"><img src="/pc/images/FileCbinet.gif" width="32" border="0" alt="ファイルキャビネットを開く" height="38"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#"  onClick="setReturn('DOWNLOAD','NO_FILE')"><img src="/pc/images/meiboDLIcon.gif" alt="名簿をファイルキャビネットに取り出す" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#"  onClick="setReturn('RETURN','NO_FILE')"><img src="/pc/images/returnIcon.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+      <td width="29" rowspan="2" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="10" valign="bottom"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="19" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="29" height="1"></td>
+    </tr>
+  </table>
+  
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="32" height="50" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="721" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F0F3FF">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="18" height="25" align="center" valign="middle" class="a1"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td colspan="2" align="left" valign="middle" class="a2">【<span class="strBlue">%_wdateString%</span>／%_title%】<img src="/pc/images/spacer.gif" alt="" width="10" height="1"><span class="strRed">%_msg%</span></td>
+          </tr>
+          <tr> 
+            <td height="29" colspan="2" align="right" valign="middle" class="b1"><img src="/pc/images/sankakuFig.gif" width="11" height="11" align="absmiddle">&nbsp;名簿ファイルを送信してください</td>
+            <td width="454" valign="middle" class="b2"> <input name="file" type="file" class="txfield" size="40"> 
+              <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image54','','/pc/images/sendFileIcon-2.gif',1)"onClick="setSubmit('UPDATE','FILE')"><img src="/pc/images/sendFileIcon-1.gif" name="Image54" width="60" height="20" border="0" align="absmiddle"></a></td>
+          </tr>
+          <tr> 
+            <td height="0"></td>
+            <td width="249"></td>
+            <td></td>
+          </tr>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="249" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="454" height="1"></td>
+          </tr>
+        </table></td>
+      <td width="27" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="18" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="721" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="27" height="1"></td>
+    </tr>
+  </table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="32" height="46" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="721" valign="top">
+
+<table width="721" border="0" cellpadding="0" cellspacing="0" bordercolor="#cccccc" class="TBL721">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="60"   style="border: 1px solid #666666;" colspan="2" height="22" valign="middle" align="center" bgcolor="#6699CC" class="mormal_white">No.</td>
+    <td width="160"  style="border-top: 1px solid #666666; border-bottom: 1px solid #666666; border-right: 1px solid #666666;" bgcolor="#6699CC" valign="middle" class="mormal_white" align="center">メールアドレス</td>
+    <td width="87"   style="border-top: 1px solid #666666; border-bottom: 1px solid #666666; border-right: 1px solid #666666;" bgcolor="#6699CC" valign="middle" align="center" class="mormal_white">番　号</td>
+    <td width="100"  style="border-top: 1px solid #666666; border-bottom: 1px solid #666666; border-right: 1px solid #666666;" bgcolor="#6699CC" valign="middle" class="mormal_white" align="center">氏　名</td>
+    <td width="190"  style="border-top: 1px solid #666666; border-bottom: 1px solid #666666; border-right: 1px solid #666666;" valign="middle" class="mormal_white" align="center" bgcolor="#6699CC">携帯メールアドレス</td>
+    <td width="124"  style="border-top: 1px solid #666666; border-bottom: 1px solid #666666; border-right: 1px solid #666666;" valign="middle" bgcolor="#6699CC" align="center" class="mormal_white" >パスワード</td>
+  </tr>
+<pct: @meiboList>
+<pct: block> 
+  <tr> 
+    <td width="25"   style="border-left: 1px solid #999999; border-bottom: 1px solid #999999; border-right: 1px solid #999999;" height="24" valign="middle" align="center" class="mormal"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image%_k%','','/pc/images/PB02.gif',1)" onClick="mailSubmit('SEND','%_stNumber%','NO_FILE')"><img name="Image%_k%" border="0" src="/pc/images/PB01.gif" alt="学生にパスワード通知メール"></a></td>
+    <td width="35"   style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal">%_k%</td>
+          <td width="160"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10">%_stMail%</td>
+    <td width="87"   style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal">%_stNumber%</td>
+          <td width="100"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10">%_stName%</td>
+          <td width="190"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10">%_stKeitai%</td>
+    <td width="124"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal">%_stPasswd%</td>
+  </tr>
+<pct:  /block>
+<pct: @meiboBLK>
+<pct: block> 
+  <tr> 
+            <td width="25"   style="border-left: 1px solid #999999; border-bottom: 1px solid #999999; border-right: 1px solid #999999;" height="24" valign="middle" align="center" class="mormal"><!--DWLayoutEmptyCell-->&nbsp;</td>        <td width="35"   style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="160"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10"><span class="mormal_green_no_line">※名簿は登録されていません</span></td>
+            <td width="87"   style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td width="100"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10"></td>
+            <td width="190"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" class="mormal"><img src="/pc/images/spacer.gif" width="5" height="10"></td>
+            <td width="124"  style="border-bottom: 1px solid #999999; border-right: 1px solid #999999;" valign="middle" align="center" class="mormal"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+<pct: /block> 
+  <tr> 
+    <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="35" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="160" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="87" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="100" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="190" height="1"></td>
+
+    <td><img src="/pc/images/spacer.gif" alt="" width="124" height="1"></td>
+  </tr>
+</table>	
+
+</td>
+    <td width="27" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="0"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="721" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="27" height="1"></td>
+  </tr>
+</table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td height="30" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="11" colspan="2" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+  </tr>
+  <tr> 
+    <td width="694" height="15">&nbsp;</td>
+    <td width="86" valign="middle"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

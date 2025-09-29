@@ -1,0 +1,8 @@
+@attach
+<SPAN onclick="delFile('%_uploadFile%');" style="cursor:hand;"><img src="/pc/images/delIcon.gif" width="12" height="12" border="0" align="absmiddle" alt="このファイルを削除"></span>&nbsp;
+<a href="%_fileUrl%" target="_blank"><span style="font-size:12px; color:#333333">%_uploadFile%</span></a>
+-----
+
+@report
+<a href="%_link%" target="_blank"><img src="/pc/images/fileIcon.gif" name="fileIcon" width="13" height="12" border="0"  alt="%_fileName%" ></a>
+-----

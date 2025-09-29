@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>データベースの生成</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+データベースの生成
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+PowerCampusが使用するデータベースを作成します．PostgresqlのpgAdmonⅢというツールを使います．pgAdmonⅢは、データベースに関するあらゆることをGUIで操作できる便利なツールです．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "470" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> pgAdminⅢの起動<br><br><span style="color: #0066CC;">スタート</span>⇒<span style="color: #0066CC;">全てのプログラム</span>⇒<span style="color: #0066CC;">PostgreSQL8.0</span>⇒<span style="color: crimson;">pgAdminⅢ</span> と選択して起動します．<br>よく使うので、アイコンをデスクトップに貼り付けておくといいでしょう．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga01.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> Postgresql にログインする<br><br>　図の赤丸の部分をダブルクリックして、ログインダイアログを開きます．<br>スーパーユーザーのパスワードを入力してください．<br><br><img src="files/pga02.gif" border="0" align="absmiddle" alt=""><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> データベース作成<br><br>ログインすると右図のように表示されるので、「<span style="color: #0066CC;">データベース</span>」をマウスの右ボタンでクリックし、さらに、「<span style="color: #0066CC;">あたらしいデータベース</span>」を選択します．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga03.gif" border="1" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　データベース作成ダイアログが表示されます．ここでは、図に示したの同じものを記入してください．データベース名はPowerCampusのインストール時に設定していた<br><br>　　<span style="color: crimson;">PowerCampus</span><br><br>です．<span style="border-bottom:1px dotted red">P と C は大文字で</span>入力してください．<br><br>後の入力は以下の通りです．<br><br>　オーナー　　　　： <span style="color: #0066CC;">postgres</span><br>　エンコーディング： <span style="color: #0066CC;">EUC_JP</span><br><br>　以上３項目だけ記入して、OKをクリックするとデータベースが作成されます．<br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga04.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/n04.gif" border="0" align="absmiddle" alt=""> データベーステーブルの作成<br><br>マウスでデータベース名 PowerCampus をクリックして青く反転させます．すると、上段のツールバーのボタンが使えるようになります．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga05.gif" border="1" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>ツールバーの中から、SQLボタンを選んでクリックします．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga06.gif" border="1" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>SQL画面が開くので、図中の赤丸の部分にあるファイルを開くボタンをクリックします．するとファイルダイアログが表示されます．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga07.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>開くファイルは、tomcat インストールディレクトリ(Tomcat)の中にある create.sql です．<br><br>　   C:\Tomcat\<span style="color: #0066CC;">webapps</span>\<span style="color: #0066CC;">pc</span>\<span style="color: #0066CC;">system</span>\<span style="color: #0066CC;">sql</span>\<span style="color: crimson;">create.sql</span><br><br>です．ファイルダイアログでこれを指定して開いてください．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga08.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>create.sql には、必要なデータベーステーブルを作成するためのSQLスクリプトが入っています．右図のように、実行ボタンをクリックして、スクリプトを実行してください．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga09.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>成功すると右図のように表示されますので、ウィンドウを閉じます．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga10.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n05.gif" border="0" align="absmiddle" alt=""> 確認<br><br>データベースのツリーを右図のようにたどり、１５個のテーブルが作成されたことを確認してください．出来ていれば、pgAdminⅢを閉じます．<br><br><br><br>★参考<br>　あとで、実際にデータが入力されてからですが、この画面を開き、右側のテーブル名をクリックしからツールバーのめがねのボタンをクリックすると、該当のデータベーステーブルの内容を一覧し、変更や削除が簡単にできます．<br><br><br><br>　<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/pga11.gif" border="0" ></td>
+</tr>
+</table>
+
+</body>
+</html>

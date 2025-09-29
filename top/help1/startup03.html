@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>３．開講までの操作 － (3)クラス名簿を登録する</title>
+</head>
+<body link="#3366CC" alink="#3366CC" vlink="#3366CC">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:pre; text-align: left;">
+<img src="files/3B.gif" border="0" align="absmiddle"> 開講までの操作
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/03r.gif" border="0" align="absmiddle"> <span style="font-size: 14px; line-height: _lineheight%;">クラス名簿を登録する</span>
+<br>
+<br>　クラス名簿は学籍番号と漢字氏名からなるデータです．ファイル形式はCSVです．クラス名簿を登録するとクラスを開講できます．名簿を登録することにより，学生のアカウントが自動作成されます．初めて利用する学生の混乱を防ぐため，最初はユーザー名，パスワードともに学籍番号が充てられます．システムに慣れた頃，学生自身の手でパスワードを変更させてください．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/01.gif" border="0" align="absmiddle"> クラス名簿を作成します．
+<br>　名簿の１行目には必ずタイトルを入れます．タイトルには番号，氏名，メールとういう文字列を使ってください．ただし，メールの列はなくても構いません．列順序は違っても問題ありません．ファイル形式はCSVでなければなりません．以下の例を参考にしてください．
+<br>
+<br>　なお，名簿は，内容を確認してから使用してください．確認には，表計算ソフトではなくメモ帳などのテキストエディタを使ってください．よくデータ末尾に余分な空白行が付いている場合がありますが，表計算ソフトではこれをチェックすることができません．
+<br>
+<br>
+<br>
+<br>　　<img src="files/a33.010.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/light.gif" border="0" ></td>
+<td valign="top">
+<table width= "500" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+メールアドレスや携帯メールアドレスは学生自身に登録させることができます．ただ，e-mailについては，この例のようにあらかじめ登録しておくほうが混乱が少なくて済みます．多くの場合，学生のe-mailアドレスはエクセルのCONCATENATE関数で学籍番号から機械的に作成できます．
+<br>s1500116 →  CONCATENATE(学籍番号の列番号,&quot;@htb-u.ac.jp&quot;) → s1500116@htb-u.a.cjp 
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "280" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/light.gif" border="0" align="absmiddle"> 時間割画面の右上にある<span style="color: crimson;">設定</span>ボタンをクリックするとユーザー番号が表示されますのでメモしてください．学生用画面の参照に必要です．
+<br>
+<br>　上の名簿の例では ztkawaba とあるのがこのユーザー番号です．このように名簿の最後の行に，ユーザー番号と教師氏名を入力しておくと，下のようなボタンをクリックするだけで，学生として自動ログインし，学生用画面をすばやく確認できます．このボタンは時間割画面と講義画面にあります．
+<br>
+<br>　<img src="files/a33.012.gif" border="0" align="absmiddle">　　<img src="files/a33.011.gif" border="0" align="absmiddle">
+<br>
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.013.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/02.gif" border="0" align="absmiddle"> 講義画面を開きます．
+<br>　クラス名簿を登録するため，時間割でマルチメディア概論をクリックして，講義画面を開きます．
+<br>
+<br><img src="files/a33.015.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.014.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/03.gif" border="0" align="absmiddle"> 名簿ボタンをクリックします．
+<br>　講義画面の中の名簿ボタンをクリックすると，名簿登録画面が開きます．ここから名簿ファイルをサーバーに送信することで登録ができます．
+<br>
+<br><img src="files/a33.017.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.016.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/04.gif" border="0" align="absmiddle"> 参照ボタンをクリックしてファイル選択ダイアログを開きます．
+<br>　名簿画面上段に名簿ファイルを送信する場所があります．送信するファイルを選ぶために，参照ボタンをクリックしてください．ファイル選択ダイアログが開きます．
+<br>
+<br><img src="files/a33.019.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.018.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/05.gif" border="0" align="absmiddle"> ファイル選択ダイアログで送信する名簿ファイルを選択します．
+<br>
+<br>　　<img src="files/a33.020.gif" border="0" align="absmiddle">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/06.gif" border="0" align="absmiddle"> 送信ボタンをクリックします．
+<br>
+<br><img src="files/a33.021.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.022.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br><img src="files/08.gif" border="0" align="absmiddle"> 戻るボタンをクリックして講義画面へ戻ります．
+<br>　名簿が受け取られると，画面にリストが表示されます．この名簿画面は講義画面からいつでも開くことができます．登録を確認して，戻るボタンで講義画面へ戻ります．
+<br>
+<br><img src="files/a33.023.gif" border="0" align="absmiddle">
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a33.024.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+　
+　
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/a33.025.gif" border="0" align="absmiddle"> 名簿ダウンロードボタンをクリックすると名簿ファイルをファイルキャビネットに取り出すことができます．
+<br><img src="files/a33.026.gif" border="0" align="absmiddle"> ファイルキャビネットボタンをクリックするとファイルキャビネットが開きます．
+<br>
+<br><img src="files/a33.027.gif" border="0" align="absmiddle">  ボタンとクリックするとパスワードを忘れてしまった学生に登録情報通知メールが送信されます．
+<br>
+<br>
+<br>
+<br> 
+<br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

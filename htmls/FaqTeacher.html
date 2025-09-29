@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>採点一覧表</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+
+function setSubmit(sw) {
+	document.form1._menu.value = sw; // 
+	document.form1.submit();
+}
+function setSubmitPlus(sw,faq_seq_no) {
+	document.form1._menu.value = sw; // 
+	document.form1._faq_seq_no.value = faq_seq_no;
+	document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=400,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+//-->
+</script>
+<style>
+a {
+   color: #006600;
+   text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<form name="form1" method="post" action="%_action%">
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="9" valign="top"><a name="top"></a></td>
+    </tr>
+    <tr> 
+      <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="マニュアルを見る"></a></td>
+      <td width="54" rowspan="2" valign="middle"><a href="#" onClick="JumpCL('/pc/launch/postPcCalendar.html');"><img src="/pc/images/calendarIcon.gif" width="32" height="38" border="0" alt="カレンダーを見る"></a></td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setSubmitPlus('CREATE','-')"><img src="/pc/images/makenew.gif" alt="新しいFAQを作成する" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#"  onClick="setSubmit('RETURN')"><img src="/pc/images/returnIcon.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+      <td width="11" rowspan="2" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="9" valign="bottom"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="15" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="54" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="11" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="780" height="20" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="780" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td  width="25" height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="33" align="center" valign="middle" bgcolor="#6699CC" class="mormalWhite14"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="609" valign="middle" bgcolor="#6699CC"><span class="normalyellow14">%_title%</span><img src="/pc/images/spacer.gif" width="10" height="10"></td>
+      <td  width="90" align="center" valign="middle" bgcolor="#6699CC"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="10" colspan="5" valign="top"><img src="/pc/images/spacer.gif" width="10" height="10"></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="33" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="609" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="90" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+
+  <table width="780" border="0" cellpadding="0" cellspacing="0"  bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <pct: @faq_list> 
+	<pct: block> 
+    <tr> 
+      <td height="22" colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="66" valign="middle" ><img src="/pc/images/spacer.gif" width="5" height="10"><a href="#" onClick="setSubmitPlus('EDIT','%_faq_n%')"><img src="/pc/images/pencileIcon.gif" alt="このFAQを編集する" width="14" height="15" border="0" align="absmiddle"></a><img src="/pc/images/spacer.gif" width="15" height="5"><a href="#" onClick="setSubmitPlus('DELETE','%_faq_n%')"><img src="/pc/images/deleteIcon.gif" alt="このFAQを削除する" width="16" height="15" border="0" align="absmiddle"></a></td>
+      <td width="70" align="left" valign="middle" class="mormal" ><img src="/pc/images/spacer.gif" width="5" height="10">【<span class="mormalD">%_faq_n%</span>】</td>
+      <td width="561" align="left" valign="middle" class="greenB12Wide" ><a href="#a_%_faq_n%">%_$faq_title%</a></td>
+      <td colspan="2" valign="top" ><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <pct: /block> 
+    <tr> 
+      <td height="20" valign="top" class="mormalBlue12"><img src="/pc/images/spacer.gif" width="10" height="20"></td>
+      <td colspan="5" valign="middle"><img src="/pc/images/lineB732.gif" width="732" height="7"></td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="7" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="66" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="70" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="561" height="1"></td>
+      <td width="17"><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+	<pct: @faq_list>
+	<pct: block> 
+  	
+  <table width="780" border="0" cellpadding="0" cellspacing="0"  bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="24" colspan="2" valign="top"><a name="a_%_faq_n%"></a></td>
+      <td colspan="2" align="left" valign="middle" class="mormal"  style="border-bottom: 1px solid #999999"><img src="/pc/images/spacer.gif" width="5" height="10">【<span class="mormalD">%_faq_n%</span>】</td>
+      <td width="521" align="left" valign="middle" class="greenB12Wide"  style="border-bottom: 1px solid #999999">%_$faq_title%</td>
+      <td colspan="2" align="center" valign="middle"  style="border-bottom: 1px solid #999999"><img src="/pc/images/spacer.gif" width="5" height="10"><a href="#" onClick="setSubmitPlus('EDIT','%_faq_n%')"><img src="/pc/images/pencileIcon.gif" alt="このFAQを編集する" width="14" height="15" border="0"></a><img src="/pc/images/spacer.gif" width="15" height="5"><a href="#" onClick="setSubmitPlus('DELETE','%_faq_n%')"><img src="/pc/images/deleteIcon.gif" alt="このFAQを削除する" width="16" height="15" border="0"></a><img src="/pc/images/spacer.gif" width="15" height="5"><a href="#top"><img src="/pc/images/goTopSymbol.gif" alt="ページトップへ" width="31" height="15" border="0" align="absmiddle"></a></td>
+      <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="5" colspan="9" valign="top" class="mormalBlue12"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+    </tr>
+    <tr> 
+      <td height="36" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top" class="blueBwide">%_$faq_body1%</td>
+      <td colspan="3" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top" class="GrayB12Wide">%_$faq_body2%</td>
+      <td colspan="3" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="25" height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="7" align="center" valign="middle"><img src="/pc/images/lineB732.gif" width="732" height="7"></td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td width="18"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td width="28"><img src="/pc/images/spacer.gif" alt="" width="28" height="1"></td>
+      <td width="46"><img src="/pc/images/spacer.gif" alt="" width="46" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="521" height="1"></td>
+      <td width="68"><img src="/pc/images/spacer.gif" alt="" width="68" height="1"></td>
+      <td width="35"><img src="/pc/images/spacer.gif" alt="" width="35" height="1"></td>
+      <td width="16"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+  <pct: /block>
+  <pct: @faq_empty>
+  <pct: block> 
+  <table width="780" border="0" cellpadding="0" cellspacing="0"  bgcolor="#FAFAFF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="24" colspan="2" valign="top"><a name="a_%_faq_n%"></a></td>
+      <td width="28" valign="top" style="border-bottom: 1px solid #999999"　><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="569" align="left" valign="middle" class="mormal"  style="border-bottom: 1px solid #999999">（記事はありません）</td>
+      <td colspan="2" valign="middle"><img src="/pc/images/spacer.gif" width="5" height="10"><img src="/pc/images/pencileIcon.gif" alt="このFAQを編集する" width="14" height="15" border="0"><img src="/pc/images/spacer.gif" width="15" height="5"><img src="/pc/images/deleteIcon.gif" alt="このFAQを削除する" width="16" height="15" border="0"><img src="/pc/images/spacer.gif" width="15" height="5"><img src="/pc/images/goTopSymbol.gif" width="31" height="15" align="absmiddle"></td>
+      <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="5" colspan="8" valign="top" class="mormalBlue12"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+    </tr>
+    <tr> 
+      <td height="36" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="top" class="blueBwide">＜質問＞</td>
+      <td colspan="3" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="top" class="GrayB12Wide">＜回答＞</td>
+      <td colspan="3" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="25" height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="6" align="center" valign="middle"><img src="/pc/images/lineB732.gif" width="732" height="7"></td>
+      <td width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td width="18"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="28" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="569" height="1"></td>
+      <td width="66"><img src="/pc/images/spacer.gif" alt="" width="66" height="1"></td>
+      <td width="32"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+      <td width="19"><img src="/pc/images/spacer.gif" alt="" width="19" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+  <pct: /block>
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="13" colspan="2" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td width="702" height="8"></td>
+      <td width="78" valign="top"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

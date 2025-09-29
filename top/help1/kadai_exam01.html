@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>14．試験問題の出題と採点 － (1)試験問題の作成</title>
+</head>
+<body link="#3366CC" alink="#3366CC" vlink="#3366CC">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="0" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+試験問題の出題と採点 － (1)ＥＰＭＬの書き方
+
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/01r.gif" border="0" align="absmiddle"> ＥＰＭＬ(Examination Paper Markup Language)の書き方
+<br>
+<br><span style="font-size: 12px; line-height: _lineheight%;">ＥＰＭＬは単語・短文を記入する筆記式問題と３種類の選択式問題に対応します．ひとつの問題の中にこれらを混ぜて作成できます．また，問題文の長さにも制限はありません．さらに，ＰＭＬを混在記述できますから，これによって，ウェブ相当の表現力で問題を作成できます．
+<br>　問題はもちろん自動採点できます，記述式問題も，独自の前処理を行って，同様に自動採点します．これらの特徴から，従来，筆記試験で行っていた問題とほぼ同じものを作成できます．定期試験をオンライン試験で行うことも不可能ではありません．</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle"> 簡単な例示
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　ＥＰＭＬのほとんど全ての機能を使った例題を示します．なお，左端の行番号は説明のために付けたもので通常はありません．以下では，緑と青で示した箇所がＥＰＭＬです．あとは，ウェブを書くときと同じです．ＥＭＰＬもこれまでと同じＰＭＬエディタで作成します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+【簡単な記述例】
+<br>
+<br>01:　(#g=pencilIcon.gif) 以下の問いに答えよ．
+<br>02:　<span style="color: seagreen;">{@10/} [@5/]</span>
+<br>03:　1.平成17年は西暦では<span style="color: royalblue;">!{2005/}</span>年だ．
+<br>04:
+<br>05:　2.平成17年は西暦では<span style="color: royalblue;">![2004,*2005,2006/]</span>年だ．
+<br>06:　 
+<br>07:　 
+<br>08:　3.正しいものを選べ<span style="color: seagreen;"> [@20/]</span>
+<br>09:　<span style="color: royalblue;">#[平成17年は西暦では2004年だ/]</span>
+<br>10:　<span style="color: royalblue;">#[*平成17年は西暦では2005年だ/]</span>
+<br>11:　<span style="color: royalblue;">#[平成17年は西暦では2006年だ/]</span>
+<br>12:　 
+<br>13:
+<br>14:　4.正解を番号で答えよ <span style="color: seagreen;">[@10/]</span>
+<br>15:　平成17年は西暦では<span style="color: royalblue;">![2005/]</span>年で
+<br>16:　干支は<span style="color: royalblue;">![トリ/]</span>だ．
+<br>17:　<span style="color: royalblue;">[&2004,2006,イヌ，サル，ウシ/]</span>
+<br>18:　<span style="color: royalblue;">[+ (3) /]</span>
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a14.010.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+
+<br>
+<br><img src="files/n02.gif" border="0" align="absmiddle"> 問題の書き分け
+<br>
+<br>ＥＰＭＬと右側のウェブ表示を見比べてください．ＥＰＭＬの特徴は，実際の問題作成過程とよく似た方法で作成できることです．正解を含む問題文をまず書いて，適当な場所をカッコでくくってやることにより，正解語の採取と問題作成が同時に行われます．
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+1.　＝　<span style="color: royalblue;">適当な言葉を答える記述式問題です．</span>
+<br>　　<span style="color: crimson;">!{<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/}</span> の中に正解語をかきます．
+<br>
+<br>2.　＝　<span style="color: royalblue;">ドロップダウンリストから正解を答える問題</span>
+<br>　　<span style="color: crimson;">![<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span> の中に選択語をコンマ(全角の、でも可)で区切って並べます．正解語には * を付けておきます．
+<br>
+<br>3.　＝　<span style="color: royalblue;">正しい文をチェックする問題</span>
+<br>　　<span style="color: crimson;">#[<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span> の中に文を書き，それをいくつか並べます．正解文には * を付けておきます．
+<br>　　文が長くなった場合，ひとつの文は複数行にまたがっても構いません．
+<br>　　　　<span style="font-size: 10px; line-height: _lineheight%;"><span style="color: #666666;">#[あいうえおかきくけこ
+<br>　　　　　　　　さしすせそたちつてと /]
+<br>　　　　　という書き方も可能です．</span></span>
+<br>
+<br>4.　＝　<span style="color: royalblue;">下段の選択肢から言葉を選んで，その番号を記入する問題</span>
+<br>　　<span style="color: crimson;">![<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span> の中に正解語を<span style="border-bottom:1px dotted red">ひとつだけ</span>書きます．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "610" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+4.はこの他に17行目の<span style="color: crimson;">[&<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span>がダミーの解答語を選択肢に追加する働きをします．また18行目の<span style="color: crimson;">[+<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span>は，選択肢一覧表をこの行に書くことを指示するものです．4.の形式の問題がこの位置で終わりであることも示しますので，必ず書かねばなりません．なお，<span style="color: royalblue;">(3)</span> という指定は，選択肢一覧表で，１行に何個の選択肢を並べるか，の指示です．省略可能ですが，省略すると(5)を指定したとみなされます．また，指定するときは<span style="color: crimson;">(<img src=files/spacer.gif border="0" height="1" width="12">)</span>は省略できません．
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle"> 配点
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+配点は<span style="color: crimson;">[@<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span>の中に数値を書いて指示します．これを<span style="color: crimson;">配点指示子</span>といいます．配点指示子はどこに書いてもよく，問題の中に表示されることはありません．問題の中にいくつでも書くことができます．<span style="border-bottom:1px dotted red">最初の配点指示子は，問題の中で，次の配点指示子が指定されるまでの範囲について影響力をもちます．</span>例題では，02行，08行，14行に指定されていますので，1. 2. は各５点，3. は２０点，4. は各１０点となります．
+<br>
+<br>　配点を受験者に知らせたいときは，(各５点)などの文字を問題文に書き込んでください．　
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n04.gif" border="0" align="absmiddle"> 制限時間
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+問題の制限時間を<span style="color: royalblue;">分単位</span>で指定するのに<span style="color: crimson;">{@<img src=files/spacer.gif border="0" height="1" width="12"><img src=files/spacer.gif border="0" height="1" width="12">/]</span>を使います．配点指示子と似ているので間違わないように注意してください．試験の時間制限をしたい場合に指定しますが，必須ではありません．どこに書いてもよく，表示されることはありません．
+<br>
+<br>　この指定をして，時間制限のある試験をPowerCampusで行う時，受験者のパソコンの内臓時計が正確であることが前提されています．PowerCampusはタイムサーバーと同期して時間を計測します．
+<br>　Windowsでは，最近インターネット上のタイムサーバーに同期する機能がつきましたが，同期間隔が長いので数秒の誤差がある可能性があります．大学では学内のタイムサーバーに短い間隔で同期させますので大方は正確かと思われますが，管理者に確かめてください．なお，サードパーティ製のソフトウェアとしては，<a href="http://homepage1.nifty.com/kazubon/" target ="_blank" >Tclock</a>というフリーウェアをインストールされることをお勧めします．
+<br>
+<br>　制限時間を受験者に知らせたいときは，(制限時間 ３０分)などの文字を問題文に書き込んでください．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+#**************************************************************
+#   Power Campus for Windows Version 1.0.02a 
+#   Cpoyright (C) T.Kawaba 2005 - 2006
+#   All rights reserved.
+#
+                 pc.conf (Windows MS932) source file
+#
+#   %base% -------------- System base directory
+#                        [ex. C:\Program Files\Apache Software Foundation\Tomcat 5.5\webapps\pc\]
+base = %systemBase%
+#
+#
+#
+#   %userhome% ---------- user data base directory
+#                        [ex. d:\PC_DATA\]
+userhome = %homedir%
+#
+#
+#
+#   %html_docroot% ------ WWW server document root directory
+#                        [ex. C:\Program Files\Apache Group\Apache2\htdocs](not need last '\')
+html_docroot = %htdocs%
+#
+#
+#
+# other parameters
+#
+serverFQDN      =  %serverName%
+serverIP        =  %ipaddress%
+adminUid        =  %adminUid%
+adminMail       =  %adminMail%
+#
+db_name         =  %dbName%
+db_superUser    =  %dbUser%
+db_password     =  %dbpassword%
+#
+domain          =  %domain%
+#
+mail_host       =  %mailServer%
+mailmaster      =  %mailUid%
+mailpassword    =  %mailPassword%
+PopBeforSmtp    =  %pbs%
+#
+mail_host_k     =  %mailServerK%
+mailmaster_k    =  %mailUidK%
+mailpassword_k  =  %mailPasswordK%
+PopBeforSmtp_k  =  %pbsK%
+
+reg_user        =  %adminUid%
+reg_passwd      =  %db_password%
+
+#****************************************************************
+#
+# (1) System data
+#
+#
+sysBaseDir          %base%
+tomcat_home         %base%
+#
+imagedir            = %base%images\
+cssdir              = %base%css\
+htmldir             = %base%htmls\
+launchdir           = %base%launch\
+#
+sysImgDir           = %base%sysimg\
+sysHelpDir          = %base%help\
+#
+#
+logdir              = %base%system\log\
+confdir             = %base%system\config\
+epmldir             = %base%system\epml\
+sysBbsdir           = %base%system\jbbs\
+textdir             = %base%system\text\
+datadir             = %base%system\data\
+orderdir            = %base%system\order\
+tempdir             = %base%system\temp\
+iconDir             = %base%system\jbbsIcons\
+iconFileDir         = %base%system\jbbsIcons\icons\
+
+#
+#
+# (2) user data 
+#
+userhome            = %userhome%
+#
+homedir             = %userhome%user\
+groupdir            = %userhome%group\
+bbsdir              = %userhome%bbs\
+#
+#  URL
+#
+homeURL            = /user/
+homeurl            = /web/
+bbsURL             = /bbs/
+
+groupURL           = /group/
+#
+SYS_CONF_PATH      = %confdir%pc.conf
+BBS_CONF_PATH      = %confdir%pc.conf
+#
+titleLogo          = %datadir%PcLogo.gif
+numberFile         = %orderdir%order.txt
+#
+#
+logoDir            = %imagedir%logo\
+#
+# PowerCampus
+sysLog             = %logdir%system.log.txt
+#
+# PowerCampusST
+studentLog         = %logdir%student.log.txt
+#
+# PowerCampus(all)
+accessLog          = %logdir%access.log.txt
+#
+#
+dispatch           = %confdir%dispatch.xml
+i_confRegPath      = %textdir%confReg.txt
+k_confRegPath      = %textdir%confReg_k.txt
+stInfo             = %textdir%stInfo.txt
+stInfo_k           = %textdir%stInfo_k.txt
+CONFMAILTEMPLATE   = %textdir%confmail.txt
+CONFMAILTEMPLATE_K = %textdir%confmail_k.txt
+TEMPLATE           = %textdir%template.txt
+TEMPLATE_K         = %textdir%template_k.txt
+HTML_TEMPLATE      = %textdir%htmlTemplate.txt
+INFO_MAIL          = %textdir%infomail.txt
+#
+#
+#
+# (3) eml libraly
+#
+# 1.this file, constractor's parameter
+emlConfPath           = %confdir%pc.conf
+#
+# 2.template files 
+#
+epmlTemplatePath      = %epmldir%epml.txt
+wikiTemplatePath      = %epmldir%hmac.txt
+#
+# 3.templeat files to make exported html-files.
+#
+ex_wikiTemplatePath   = %epmldir%hmac_ex.txt
+spacerFilePath        = %epmldir%spacer.gif
+#
+# 4.graphics url
+#
+sysURL                = /pc/sysimg/
+imgURL                = files/
+# 
+#
+# 5. PML editor format
+#
+FORMAT_TEMPLATE       =  %textdir%parserInitialData.txt
+#
+#
+# 6.default typing Level
+#
+typingLevel1 = 249-0,269-40,289-45,309-50,329-55,349-55,369-60,389-70,409-75,429-80,449-85,469-90,489-95
+typingLevel2 = 89-0,99-50,109-60,119-70,129-80,139-90
+#
+#
+# (4) BBS
+#
+#
+# 1. profile
+profilehome           = %groupdir%
+profiledir            = %profilehome%profile\
+profile               = profile
+#
+# 2. directory
+bbshome               = %bbsdir%
+bbsfilesdir           = %bbsdir%files\
+bbsiconsdir           = %bbsdir%files\icons\
+
+bbsurl                = /bbs/
+bbsfilesurl           = /bbs/files/
+bbsiconsurl           = /bbs/files/icons/
+#
+#
+bbsAdminMail          = %adminMail%
+#
+# 3. template
+bbstemplate           = %sysBbsdir%jbbsTemplate.txt
+#
+#
+#
+# (5) export/import
+#
+# 1.template
+kamokuExportMail      = %textdir%kamokuExportMail.txt
+#
+#
+#
+# (6) syllabus
+#
+# 1. default syllabus xml
+SYLLABUS           = %confdir%syllabus.xml
+#
+# 2. group default syllabus xml
+GROUP_SYLLABUS      = %datadir%_szDB.xml
+#
+# 3. user default syllabus xml
+USER_SYLLABUS      = %groupdir%_szDB\_userid\syllabus\syllabus.xml
+#
+# 4. template file for xml-html exchanging
+KAMOKU_TEMPLATE    = %textdir%kamokuTemplate.txt
+#
+#
+#
+# (7) file cabinet
+#
+# 1. file cabinet path
+FILE_CABINET        =  %groupdir%_szDB\_userid\filecabinet\
+#
+# 2. file cabinet URL
+FILE_CABINET_URL    =  /web/_szDB/_userid/filecabinet/
+#
+#
+# (8) refer
+#
+# 1. webTemplateFile
+#
+webTemplateFile     = %textdir%webTemplate.txt
+#
+#
+#
+# (9) mail server
+#
+PopBeforSmtp     = %PopBeforSmtp%
+PopBeforSmtp_k   = %PopBeforSmtp_k%
+#
+MAIL_HOST        = %mail_host%
+mailmaster       = %mailmaster%
+mailmasterPass   = %mailpassword%
+#
+MAIL_HOST_K      = %mail_host_k%
+mailmaster_k     = %mailmaster_k%
+mailmasterPass_k = %mailpassword_k%
+#
+#
+# (10) database
+#
+#tcp/ip , with option  -i
+#db_url           = jdbc:postgresql://localhost:5432/%db_name%
+#
+#
+db_driver         = org.postgresql.Driver
+db_url            = jdbc:postgresql:%db_name%
+db_user           = %db_superUser%
+db_passwd         = %db_password%
+#
+# (11) admin
+#
+SYS_USER          = %adminUid%
+SYS_MAIL          = %adminMail%
+#
+# (12) system URL
+#
+SERVER            = %serverFQDN%
+SERVLET_URL       = http://%ipaddress%/exmail/servlet/exmail
+#
+# (13) initial value (szDB,url_s)
+#
+SHOZOKU_DB        = dummy
+initValue         = 5$0$1$19$19$19
+initValue_s       = *$18$50$15$3
+TEACHER_URL       = /pc/top/index2.html
+STUDENT_URL       = /pc/top/index.html
+
+TEST              = USER
+LOG               = NO
+#
+# (14) UID & passwd to register
+#
+commonUsername    = %reg_user%
+commonPasswd      = %reg_passwd%
+#
+# (15) directories and  extentions
+#
+KAMOKU            = kamoku.csv
+KADAI             = kadai.lst
+ANSWERS           = answers
+AnsTemp           = anstemp
+ans_EXT           = .ans
+CLASS_MEIBO_TEMP  = temp
+CLASS_MEIBO       = classes
+MEIBO             = meibo
+BACKUP            = backup
+TEMPDIR           = temp
+POSTDIR           = file
+ZIPDIR            = zip
+MAILTEMP          = mailtemp
+HTMLDIR           = html
+EPMLDIR           = epml
+QDIR              = qdir
+KADAIDIR          = kadai
+#
+# --- end of file ---

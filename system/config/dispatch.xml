@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="EUC_JP" ?>
+<variableSection>
+	#
+	# System Information
+	#
+	#   1.Web Sheet Number
+	#   2.return code
+	#   3.timestamp
+	#   4.usergroup name
+	#   5.Multipart input File flag
+	#
+	<var NUMBER 	= sheet />
+	<var SUBMIT		= menu />
+	<var CMD        = menu />
+	<var STAMP 		= stay />
+	<var GROUP 		= szDB />
+	<var UPLODE		= opFile />
+
+	# BBS owner's key & relation
+	<var BBS_OWNER_KEY	= bbs_owner_key />
+	<var BBS_RELATION	= relation />
+	
+	# User Imformation 
+	<var PASSWORD	= passwd />
+	<var UID 		= userid />
+	<var MAIL 		= userMail />
+	<var UNAME 		= userName />
+	<var KANA       = user_hurigana>
+	<var HOMEURL 	= url />
+	<var DIVISION   = division />
+	
+	<var TUID 		= teUid />
+	<var TMAIL 		= teMail />
+	<var TNAME 		= userName />
+
+	# Student Imformation 
+	<var StUID 		 = stNumber />
+	<var StPASSWD    = stPasswd />
+	<var StCLASSINFO = classInfo />
+	<var StNAME 	 = kname />
+	<var StMAIL 	 = stMail />
+	<var StKEITAI 	 = stKeitai />
+
+</variableSection>
+
+<programSection>
+ 	#
+	# #######
+	#   post
+	# #######
+	#
+	<program $jbbs.BbsPost>
+		<dispatch  html=PostList.html    number=3310       class=jbbs.BbsPost />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL DIVISION forumkey threadkey />
+		  <accept   SUBMIT   sortmode  postkey  />
+		  <keep      />
+	   </variable>
+	</program>
+	<program $jbbs.BbsMakePost>
+		<dispatch  html=mkPost.html      number=3320       class=jbbs.BbsMakePost />
+		<variable>
+		 <receive  NUMBER  STAMP  GROUP BBS_OWNER_KEY UID MAIL UNAME  HOMEURL DIVISION 
+		           forumkey threadkey postkey quotedkey  pastLink  mail_to mail_from mail_title  mail_body  />
+		 <accept   SUBMIT  UPLODE deleteFile chgFile />
+         <keep      editor  date   attachment link dispname  writeFlag />
+         
+         <form      content listsw tagmark />
+         
+        </variable>
+	</program>
+	<program $jbbs.BbsPostPreview>
+		<dispatch  html=PostPreview.html number=3330       class=jbbs.BbsPostPreview />
+		<variable>
+		    <receive  NUMBER STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL DIVISION forumkey threadkey postkey  />
+		    <accept   SUBMIT />
+            <keep     date />
+        </variable>
+	</program>	
+	#
+	# #########
+	#  thread
+	# #########
+	#
+	<program $jbbs.BbsThread>
+		<dispatch  html=threadList.html  number=3210       class=jbbs.BbsThread />
+		<variable>
+		  <receive  NUMBER STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL DIVISION forumkey />
+		  <accept   CMD threadkey sortmode listMode />
+		  <keep      />
+		</variable>
+	</program>
+	<program $jbbs.BbsMakeThread>
+		<dispatch  html=mkThread.html    number=3220       class=jbbs.BbsMakeThread />
+		<variable>
+		  <receive  NUMBER STAMP  GROUP   BBS_OWNER_KEY UID MAIL UNAME  HOMEURL DIVISION forumkey threadkey />
+		  <accept   SUBMIT UPLODE deleteFile chgFile />
+		  <keep      editor date attachment views />
+		  
+		  <form      content listsw tagmark />
+		  
+		</variable>
+	</program>
+	<program $jbbs.BbsThreadPreview>
+		<dispatch  html=ThreadPreview.html number=3230     class=jbbs.BbsThreadPreview />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL DIVISION forumkey threadkey />
+		  <accept   SUBMIT/>
+		  <keep      date />
+		</variable>		
+	</program> 
+	#
+	# ######################################
+	# forum
+	#       GROUP = DOMAIN GROUP
+	#       RELATION == DOMAINGROUP
+	#
+	#    html --> forum.html 
+	#             terminate mode
+	#
+	# ######################################
+	#
+	<program $jbbs.BbsForumSA>
+		<dispatch  html=forum.html   number=3111       class=jbbs.BbsForum />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  UID MAIL UNAME HOMEURL DIVISION  BBS_OWNER_KEY  BBS_RELATION />
+		  <accept   SUBMIT   forumkey />
+		  <keep       />
+		</variable>
+	</program> 	
+	#
+	# ######################################
+	# forum
+	#       (note) TUID == ownerkey
+	#       RELATION == year+season_TUID_apleckey
+	#
+	#  html --> forumList.html
+	#           return  mode
+	#
+	# ######################################
+	#
+	<program $jbbs.BbsForum>
+		<dispatch  html=forumList.html   number=3110       class=jbbs.BbsForum />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL BBS_RELATION DIVISION />
+		  <accept   SUBMIT   forumkey />
+		  <keep       />
+		</variable>
+	</program>
+	<program $jbbs.BbsMakeForum>
+		<dispatch  html=mkForum.html     number=3120       class=jbbs.BbsMakeForum />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  BBS_OWNER_KEY UID MAIL UNAME HOMEURL BBS_RELATION DIVISION forumkey />
+		  <accept   SUBMIT UPLODE deleteFile chgFile/>
+		  <keep      editor date   attachment relation alive  hdflag  gpflag rtflag />
+		  
+		  <form      subject content listsw tagmark />
+		  
+		</variable>
+	</program>
+	<program $jbbs.BbsForumPreview>
+		<dispatch  html=ForumPreview.html number=3130      class=jbbs.BbsForumPreview />
+		<variable>
+		  <receive  NUMBER STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL DIVISION forumkey />
+		  <accept   SUBMIT />
+		  <keep      date />
+		</variable>		
+	</program>
+	<program $jbbs.Relation>
+		<dispatch  html=Relation.html   number=3140      class=jbbs.Relation />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP  BBS_OWNER_KEY  UID MAIL UNAME  HOMEURL BBS_RELATION DIVISION />
+		  <accept   SUBMIT   forumkey />
+		  <keep     cnt  />
+		</variable>
+	</program> 	
+	
+	#
+	# ##################
+	# 	BbsInfo
+	# ##################
+	#
+	<program $jbbs.BbsInfo>
+		<dispatch  html=mkSeqUserInfo.html  number=3010     class=jbbs.BbsInfo />
+		<variable>
+		  <receive  NUMBER   STAMP  GROUP BBS_OWNER_KEY  UID MAIL UNAME DIVISION />
+		  <accept   SUBMIT   UPLODE deleteFname />
+		  <keep     editor />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     FaqEditor
+	# ##################
+	#
+	<program $faq.FaqEditor>
+		<dispatch  html=FaqEditor.html  number=2730  class=faq.FaqEditor />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION  title lec_key aplec_key rec_key/>
+		  <accept    CMD      />
+		  <keep      editor_rows />
+		  
+		  <form      />
+		</variable>
+	</program>  
+ 	#
+	# ##################
+	#     FaqTeacher
+	# ##################
+	#
+	<program $faq.FaqTeacher>
+		<dispatch  html=FaqTeacher.html  number=2720  class=faq.FaqTeacher />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION  title lec_key aplec_key />
+		  <accept    CMD    faq_seq_no  />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   CommentSheet
+	# ##################
+	#
+	<program $faq.CommentSheet>
+		<dispatch  html=CommentSheet.html  number=2710  class=faq.CommentSheet />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION title lec_key aplec_key />
+		  <accept    CMD  w_k  w_te_aplec_key  w_seq_no  w_lec_key  w_st_email w_st_keitai w_mail_title w_stName w_faq_flag_save />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#    MailPreview
+	# ##################
+	#
+	<program $hybridmail.MailPreview>
+		<dispatch  html=MailPreview.html  number=2620  class=hybridmail.MailPreview />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION HOMEURL title lec_key aplec_key 
+		             ckbox  max_students  total_view sendEmail sendKmail emText  kmText />
+		  <accept    CMD    UPLODE  />
+		  <keep      view    />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#     HybridMail
+	# ##################
+	#
+	<program $hybridmail.HybridMail>
+		<dispatch  html=HybridMail.html  number=2610  class=hybridmail.HybridMail />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION HOMEURL title lec_key aplec_key/>
+		  <accept    CMD    UPLODE  />
+		  <keep      rv_flag  clear_mode  ckbox  mail_edit_mode mail_mode  mail_flag  sendEmail  sendKmail  max_students  total_view  view />
+		  
+		  <form      />
+		</variable>
+	</program> 	
+ 	#
+	# ##################
+	#   CorrectAnswer (absolute)
+	# ##################
+	#
+	<program $stkadai.CorrectAnswer>
+		<dispatch  html=CorrectAnswer.html  number=9920  class=stkadai.CorrectAnswer />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StNAME TUID aplec_key lec_key kadai_key title/>
+		  <accept    CMD    />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program>
+	#
+	# ######################
+	#   StKadaiWritingView
+	# ######################
+	#
+	<program $stkadai.StKadaiWritingView>
+		<dispatch  html=StKadaiWritingView.html  number=2540  class=stkadai.StKadaiWritingView />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StNAME TUID  aplec_key lec_key kadai_key title/>
+		  <accept    CMD     />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program>	
+	#
+	# ##################
+	#   StKadaiExamView
+	# ##################
+	#
+	<program $stkadai.StKadaiExamView>
+		<dispatch  html=StKadaiExamView.html  number=2530  class=stkadai.StKadaiExamView />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StNAME TUID  aplec_key lec_key kadai_key title/>
+		  <accept    CMD     />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   StKadaiWriting
+	# ##################
+	#
+	<program $stkadai.StKadaiWriting>
+		<dispatch  html=StKadaiExam.html  number=2525  class=stkadai.StKadaiWriting />
+		<variable>
+		<receive     NUMBER STAMP GROUP StUID TUID  aplec_key lec_key title kadai_key clock />
+		  <accept    CMD    UPLODE  />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#     StKadaiExam
+	# ##################
+	#
+	<program $stkadai.StKadaiExam>
+		<dispatch  html=StKadaiExam.html  number=2520  class=stkadai.StKadaiExam />
+		<variable>
+		<receive     NUMBER STAMP GROUP StUID TUID  aplec_key lec_key title kadai_key clock />
+		  <accept    CMD    UPLODE  />
+		  <keep />
+		  
+		  <form      />
+		</variable>
+	</program>
+	#
+	# #######################
+	#     StKadaiStartExam
+	# #######################
+	#
+	<program $stkadai.StKadaiStartWriting>
+		<dispatch  html=StKadaiStartExam.html  number=2515  class=stkadai.StKadaiStartWriting />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID TUID aplec_key lec_key title kadai_key/>
+		  <accept    CMD    UPLODE  />
+		  <keep      clock />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# #######################
+	#     StKadaiStartExam
+	# #######################
+	#
+	<program $stkadai.StKadaiStartExam>
+		<dispatch  html=StKadaiStartExam.html  number=2510  class=stkadai.StKadaiStartExam />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID TUID aplec_key lec_key title kadai_key/>
+		  <accept    CMD    UPLODE  />
+		  <keep      clock />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#     StKadaiTyping
+	# ##################
+	#
+	<program $stkadai.StKadaiTyping>
+		<dispatch  html=StKadaiTyping.html  number=2445  class=stkadai.StKadaiTyping />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID  StNAME  TUID aplec_key lec_key title kadai_key/>
+		  <accept    CMD    UPLODE  deleteFname />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#     StKadaiFile
+	# ##################
+	#
+	<program $stkadai.StKadaiFile>
+		<dispatch  html=StKadaiFile.html  number=2440  class=stkadai.StKadaiFile />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID  StNAME  TUID aplec_key lec_key title kadai_key/>
+		  <accept    CMD    UPLODE  deleteFname />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#     StKadaiExp(absolute)
+	# ##################
+	#
+	<program $stkadai.StKadaiExp>
+		<dispatch  html=StKadaiExp.html  number=9940  class=stkadai.StKadaiExp />
+		<variable>
+		  <receive   NUMBER  STAMP  GROUP StUID  StNAME   TUID  aplec_key lec_key title  kadai_key/>
+		  <accept    CMD />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     StKadaiPrev(absolute)
+	# ##################
+	#
+	<program $stkadai.StKadaiPrev>
+		<dispatch  html=StKadaiPrev.html  number=9930  class=stkadai.StKadaiPrev />
+		<variable>
+		  <receive   NUMBER STAMP TUID GROUP StUID lec_key aplec_key kadai_key />
+		  <accept    CMD />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#  StKadaiRepoView
+	# ##################
+	#
+	<program $stkadai.StKadaiRepoView>
+		<dispatch  html=StKadaiRepoView.html  number=2405  class=stkadai.StKadaiRepoView />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID aplec_key lec_key title kadai_key />
+		  <accept    CMD  />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     StKadaiReport
+	# ##################
+	#
+	<program $stkadai.StKadaiReport>
+		<dispatch  html=stKadaiReport.html  number=2410  class=stkadai.StKadaiReport />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID aplec_key lec_key title kadai_key />
+		  <accept    CMD    UPLODE deleteFname />
+		  <keep      editor_rows  alias />
+		  
+		  <form      answer radio_disposal />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#     StKougi
+	# ##################
+	#
+	<program $student.StKougi>
+		<dispatch  html=stKougi.html  number=2300  class=student.StKougi />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID DIVISION aplec_key lec_key title/>
+		  <accept    CMD    kadai_key />
+		  <keep      sect_seq totalSections edit_mode />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#     StFaq
+	# ##################
+	#
+	<program $student.StFaq>
+		<dispatch  html=StFaq.html  number=2260  class=student.StFaq />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID DIVISION aplec_key lec_key title />
+		  <accept    CMD />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#     stMail
+	# ##################
+	#
+	<program $student.StMail>
+		<dispatch  html=stMail.html  number=2250  class=student.StMail />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID DIVISION aplec_key lec_key title/>
+		  <accept    CMD />
+		  <keep      />
+		  
+		  <form      ml_title  ml_body/>
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   StSyllabus
+	# ##################
+	#
+	<program $student.StSyllabus>
+		<dispatch  html=StSyllabus.html  number=2240  class=student.StSyllabus />
+		<variable>
+		  <receive   GROUP  NUMBER STAMP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID DIVISION  lec_key/>
+		  <accept    CMD     />
+		  <keep      />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   StPasswd
+	# ##################
+	#
+	<program $student.StPasswd>
+		<dispatch  html=stPasswd.html  number=2230     class=student.StPasswd />
+		<variable>
+		  <receive  GROUP  NUMBER STAMP StUID StCLASSINFO StNAME StMAIL StKEITAI DIVISION />
+		  <accept   SUBMIT    />
+		  <keep      />
+		  
+		  <form    _passwd1 _passwd2 />
+		</variable>
+	</program>
+	#
+	# ##################
+	#   StRegistMail
+	# ##################
+	#
+	<program $student.StRegistMail>
+		<dispatch  html=regMail.html  number=2220 class=student.StRegistMail />
+		<variable>
+		  <receive  GROUP  NUMBER STAMP StUID StCLASSINFO StNAME StMAIL StKEITAI DIVISION />
+		  <accept   CMD  />
+		  <keep      />
+		  
+		  <form     stMail  stKeitai conf_i  conf_k />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     StTable
+	# ##################
+	#
+	<program $student.StTable>
+		<dispatch  html=stTable.html  number=2210  class=student.StTable />
+		<variable>
+		  <receive   NUMBER STAMP GROUP StUID StCLASSINFO StNAME StMAIL StKEITAI DIVISION />
+		  <accept    CMD shubetsu worder wdate TUID lec_key aplec_key title />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   StLogin (absolute)
+	# ##################
+	#
+	<program $login.StLogin>
+		<dispatch  html=stLogin.html  number=9910  class=login.StLogin />
+		<variable>
+		  <receive   NUMBER    />
+		  <accept    CMD  />
+		  <keep          />
+
+		  <form      GROUP StUID StPASSWD/>
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     ExamOnWeb
+	# ##################
+	#
+	<program $eval.ExamOnWeb>
+		<dispatch  html=EvalWeb.html  number=1560  class=eval.ExamOnWeb />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION
+		             title lec_key aplec_key kadai_key initRecNo />
+		  <accept    CMD    />
+		  <keep      recNo stNumber />
+		  
+		  <form      sortMode search/>
+		</variable>
+	</program>	
+ 	#
+	# ##################
+	#     EvalExam
+	# ##################
+	#
+	<program $eval.EvalExam>
+		<dispatch  html=EvalExam.html  number=1550  class=eval.EvalExam />
+		<variable>
+ 		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION title lec_key aplec_key kadai_key kadai_title start end/>
+		  <accept    CMD  />
+		  <keep      correctEPML recNo max />
+		  
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#     EvalFile
+	# ##################
+	#
+	<program $eval.EvalFile>
+		<dispatch  html=EvalFile.html  number=1540  class=eval.EvalFile />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA title lec_key aplec_key kadai_key/>
+		  <accept    CMD  stNumber k  />
+		  <keep      delta page />
+		  
+		  <form      sortMode />
+		</variable>
+	</program> 	
+ 	#
+	# ##################
+	#     EvalText
+	# ##################
+	#
+	<program $eval.EvalText>
+		<dispatch  html=EvalText.html  number=1530  class=eval.EvalText />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION
+		              title lec_key aplec_key kadai_key initRecNo  />
+		              
+		  <accept    CMD  UPLODE deleteFname  />
+		  <keep      editor_rows recNo stNumber />
+		  
+		  <form      sortMode listsw search />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     EvalWeb
+	# ##################
+	#
+	<program $eval.EvalWeb>
+		<dispatch  html=EvalWeb.html  number=1520  class=eval.EvalWeb />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION
+		             title lec_key aplec_key kadai_key initRecNo />
+		  <accept    CMD    />
+		  <keep      recNo stNumber />
+		  
+		  <form      sortMode search/>
+		</variable>
+	</program> 		
+ 	#
+	# ##################
+	#     EvalList
+	# ##################
+	#
+	<program $eval.EvalList>
+		<dispatch  html=evalList.html  number=1510  class=eval.EvalList  />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA title lec_key aplec_key kadai_key/>
+		  <accept    CMD    UPLODE  stNum/>
+		  <keep      kadai_title start end/>
+		  
+		  <form      sortMode />
+		</variable>
+	</program>	
+ 	#
+	# ##################
+	#   WorkTerm
+	# ##################
+	#
+	<program $kadai.WorkTerm>
+		<dispatch  html=workTerm.html  number=1440  class=kadai.WorkTerm />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION lec_key aplec_key kadai_key />
+		  <accept    CMD    UPLODE  />
+		  <keep      offset kadai_shubetsu kadai_title/>
+		  
+		  <form      passwd s_yyyy s_month s_day s_hour s_minute 
+		                    e_yyyy e_month e_day e_hour e_minute />
+		</variable>
+	</program>
+	#
+	# ##################
+	#      WorkPrev
+	# ##################
+	#
+	<program $kadai.WorkPrev>
+		<dispatch  html=workPrev.html  number=9960  class=kadai.WorkPrev />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION lec_key  kadai_key/>
+		  <accept    CMD    UPLODE  />
+		  <keep      />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program>
+	#
+	# ##################
+	#   WorkEdit
+	# ##################
+	#
+	<program $kadai.WorkEdit>
+		<dispatch  html=workEdit.html  number=1420  class=kadai.WorkEdit />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION title lec_key kadai_key kadai_seqNum />
+		  <accept    CMD    UPLODE  deleteFname />
+		  <keep      editor_rows alias />
+		  
+		  <work      />
+		  <form      kadai_title kadai_shubetsu  kadai_content  listsw  />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   WorkList
+	# ##################
+	#
+	<program $kadai.WorkList>
+		<dispatch  html=workList.html  number=1410  class=kadai.WorkList />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION lec_key sect_key title />
+		  <accept    CMD    kadai_key  past_kadai_seq page />
+		  <keep       />
+		  
+		  <work      />
+		  <form      ref_seqNum_%_n% _assign_%_n% />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#   RefPrev(absolite)
+	# ##################
+	#
+	<program $refer.RefPrev>
+		<dispatch  html=refPrev.html  number=9970  class=refer.RefPrev/>
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION lec_key  />
+		  <accept    CMD    UPLODE />
+		  <keep      pmlFilePath />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   RefEditor
+	# ##################
+	#
+	<program $refer.RefEditor>
+		<dispatch  html=refEditor.html  number=1320  class=refer.RefEditor/>
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION title lec_key ref_key ref_url ref_title />
+		  <accept    CMD    UPLODE  deleteFname />
+		  <keep      editor_rows  pmlFilePath alias/>
+		  
+		  <work      />
+		  <form      ref_content listsw />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   RefList
+	# ##################
+	#	
+	<program $refer.RefList>
+		<dispatch  html=refList.html  number=1310  class=refer.RefList />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION lec_key sect_key title />
+		  <accept    CMD    ref_key past_ref_seq />
+		  <keep      ref_seqNum past_ref_url/>
+		  
+		  <work      />
+		  <form      ref_shubetsu  ref_title  ref_url  ref_seqNum_%_n% _assign_%_n% />
+		</variable>
+	</program>
+	#
+	# ##################
+	#     RegMeibo
+	# ##################
+	#
+	<program $meibo.RegMeibo>
+		<dispatch  html=RegMeibo.html  number=1220  class=meibo.RegMeibo />
+		<variable>
+ 		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION  title lec_key aplec_key />
+		  <accept    CMD    UPLODE StUID />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program> 	
+	#
+	# ##################
+	#   Kougi
+	# ##################
+	#
+	<program $teacher.Kougi>
+		<dispatch  html=kougi.html  number=1210  class=teacher.Kougi />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL DIVISION title lec_key aplec_key  stNumber stPasswd stMail />
+		  <accept    CMD    UPLODE    kadai_key sect_key />
+		  <keep      sect_seq totalSections edit_mode/>
+		  
+		  <form      autodate_off secList memo/>
+		</variable>
+	</program>
+	#
+	# ##################
+	#   Assignment
+	# ##################
+	#
+	<program $kamoku.Assignment>
+		<dispatch  html=assign.html  number=1160  class=kamoku.Assignment />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION shubetsu worder wdate  aplec_key/>
+		  <accept    CMD    UPLODE  />
+		  <keep      />
+		  
+		  <form      assign/>
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   KamokuPlan
+	# ##################
+	#
+	<program $kamoku.KamokuPlan>
+		<dispatch  html=kamokuPlan.html  number=1150  class=kamoku.KamokuPlan />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA lec_key notation />
+		  <accept    CMD    UPLODE />
+		  <keep      totalSections   seq_old  sect_key />
+		  
+		  <form      seq  wseq  subject  contentPlan  todo/>
+		</variable>
+	</program>
+	#
+	# ##################
+	#   Restore
+	# ##################
+	#
+	<program $export.Restore>
+		<dispatch  html=restore.html  number=1140  class=export.Restore />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION />
+		  <accept    CMD    UPLODE  />
+	  	<keep      />
+	  	<form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   FileCabinet
+	# ##################
+	#
+	<program $cabinet.FileCabinet>
+		<dispatch  html=FileCabinet.html  number=2000  class=cabinet.FileCabinet />
+		<variable>
+		  <receive   NUMBER STAMP GROUP UID MAIL UNAME DIVISION StCLASSINFO />
+		  <accept    CMD    UPLODE  te_lec_key seqkey subject/>
+		  <keep      />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   SyllabusPrev
+	# ##################
+	#
+	<program $kamoku.SyllabusPrev>
+		<dispatch  html=SyllabusPrev.html  number=1135  class=kamoku.SyllabusPrev />
+		<variable>
+		  <receive   GROUP  NUMBER STAMP StUID StCLASSINFO StNAME StMAIL StKEITAI  TUID  lec_key/>
+		  <accept    CMD     />
+		  <keep      />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   KamokuEdit
+	# ##################
+	#
+	<program $kamoku.KamokuEdit>
+		<dispatch  html=kamokuEdit.html  number=1130  class=kamoku.KamokuEdit />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA  lec_key DIVISION />
+		  <accept    CMD    UPLODE  />
+		  <keep      alterFlag />
+		  
+		  <work      />
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   import
+	# ##################
+	#
+	<program $export.Import>
+		<dispatch  html=import.html  number=1120  class=export.Import />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION />
+		  <accept    CMD    UPLODE  />
+		  <keep      />
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   KamokuList
+	# ##################
+	#
+	<program $kamoku.KamokuList>
+		<dispatch  html=kamokuList.html  number=1110  class=kamoku.KamokuList />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION />
+		  <accept    CMD    UPLODE  lec_key/>
+		  <keep      />
+		  <form      />
+		</variable>
+	</program> 
+	#
+	# ##################
+	#   SetupView
+	# ##################
+	#
+	<program $setup.SetupView>
+		<dispatch  html=setup.html  number=1030  class=setup.SetupView />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION />
+		  <accept    CMD    UPLODE  />
+		  <keep             />
+		  <form     rows night eLearning kadai_editorsRows html_editorsRows faq_editorsRows />
+		  <work            />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#   TePassword
+	# ##################
+	#
+	<program $setup.TePassword>
+		<dispatch  html=passwd_teacher.html  number=1020  class=setup.TePassword />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA DIVISION  />
+		  <accept    CMD    UPLODE  />
+		  <keep      />
+		  <work      />
+		  <form      passwd1 passwd2/>
+		</variable>
+	</program> 	
+	#
+	# ##################
+	#   Timetable
+	# ##################
+	#
+	<program $teacher.Timetable>
+		<dispatch  html=top.html  number=1010  class=teacher.Timetable />
+		<variable>
+		  <receive   NUMBER STAMP GROUP TUID TMAIL TNAME KANA HOMEURL/>
+		  <accept    CMD UPLODE shubetsu worder wdate remoteurl title lec_key aplec_key />
+		  <keep      stNumber   stPasswd  stMail/>
+
+		  <form      />
+		</variable>
+	</program> 
+ 	#
+	# ##################
+	#   BbsRegist
+	# ##################
+	#
+	<program $login.BbsRegist>
+		<dispatch  html=BbsRegist.html  number=30  class=login.BbsRegist />
+		<variable>
+		  <receive   NUMBER />
+		  <accept    CMD />
+		  
+		  <form      UID PASSWORD MAIL UNAME />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#   Regist
+	# ##################
+	#
+	<program $login.Regist>
+		<dispatch  html=Regist.html  number=20  class=login.Regist />
+		<variable>
+		  <receive   NUMBER />
+		  <accept    CMD />
+		  
+		  <form      GROUP DOMAIN TMAIL PASSWORD TNAME THKANA shozoku url_t url_s />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#   BbsLogin
+	# ##################
+	#
+	<program $login.BbsLogin>
+		<dispatch  html=BbsLogin.html  number=15  class=login.BbsLogin />
+		<variable>
+		  <receive   NUMBER />
+		  <accept    CMD />
+		  
+		  <form      UID PASSWORD />
+		</variable>
+	</program>	
+	#
+	# ##################
+	#   Tlogin
+	# ##################
+	#
+	<program $login.Tlogin>
+		<dispatch  html=tlogin.html  number=10  class=login.Tlogin />
+		<variable>
+		  <receive   NUMBER />
+		  <accept    CMD />
+		  
+		  <form      MAIL PASSWORD/>
+		</variable>
+	</program>
+	#
+	# ##################
+	#     Message
+	# ##################
+	#
+	<program $framework.Message>
+		<dispatch  html=sysMessage.html  number=9020  class=framework.Message />
+		<variable>
+		  <receive   title msg switch DIVISION />
+		  <accept    CMD />
+		  <keep      />
+		  
+		  <form      />
+		</variable>
+	</program>
+	#
+	# ##################
+	#     PcCalendar
+	# ##################
+	#
+	<program $calendar.PcCalendar>
+		<dispatch  html=pcCalendar.html  number=9950  class=calendar.PcCalendar />
+		<variable>
+		  <receive   NUMBER STAMP/>
+		  <accept    CMD />
+		  <keep      offset />
+		  
+		  <form      />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#     PCtest
+	# ##################
+	#
+	<program $framework.PCtest>
+		<dispatch  html=PCtest.html  number=99999  class=framework.PCtest />
+		<variable>
+		  <receive   NUMBER STAMP/>
+		  <accept    CMD />
+		  
+		  <form      enter  />
+		</variable>
+	</program>
+	#
+	# ##################
+	#  DownloadRegist
+	# ##################
+	#
+	<program $framework.DownloadRegist>
+		<dispatch  html=DownloadRegist.html  number=99991  class=framework.DownloadRegist />
+		<variable>
+		  <receive   NUMBER STAMP />
+		  <accept    CMD />
+		  
+		  <form      name mail shozoku  />
+		</variable>
+	</program>
+ 	#
+	# ##################
+	#   DownloadList
+	# ##################
+	#
+	<program $framework.DownloadList>
+		<dispatch  html=DownloadList.html  number=99992  class=framework.DownloadList />
+		<variable>
+		  <receive   NUMBER STAMP name mail shozoku/>
+		  <accept    CMD />
+		  
+		</variable>
+	</program>	
+</programSection>

@@ -1,0 +1,485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>mail-and-work</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+var	 invokeName	=	"%_invokeName%";
+function init(){
+	if(invokeName=="$jbbs.BbsInfo.old"){
+		invokeProg('/pc/launch/postStMkInfo.html') ;
+	}else if(invokeName=="$jbbs.BbsForum"){
+		invokeProg('/pc/launch/postStBbsForum.html') ;
+	}else if(invokeName=="$StPasswd"){
+		invokeProg('/pc/launch/postStPasswd.html') ;
+	}else if(invokeName=="$StRegistMail"){
+		invokeProg('/pc/launch/postStRegistMail.html') ;
+	}
+	//window.alert("postBbsForum.html起動しません");
+}
+
+function invokeProg(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=820,height=670,left=5,top=5,scrollbars=yes,status=yes,toolbar=yes,menubar=yes,location=yes,resizable=yes");
+  }
+}
+
+function setw(sw) {
+	document.form1._menu.value = sw;	// CHG_PASSWD,RETURN,REG_MAIL,CONF_MAIL
+	document.form1.submit();
+}
+function setSubmit(sw,shubetsu,gyo,datew,teUid,aplec_key,title,lec_key){
+	document.form1._menu.value      = sw;
+	document.form1._shubetsu.value  = shubetsu;
+	document.form1._worder.value     = gyo;
+	document.form1._wdate.value      = datew;
+	document.form1._teUid.value      = teUid;
+	document.form1._aplec_key.value = aplec_key;
+	document.form1._title.value 	= title;
+	document.form1._lec_key.value 	= lec_key;
+	document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!-- 基本フォントの設定（部分的な変更は div や span を使う）
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:active{text-decoration:none;}
+-->
+</style>
+</head>
+
+<body onLoad="init(); MM_preloadImages('/pc/images/corner-2.gif','/pc/images/uline_2.gif','/pc/images/passwd-B.gif','/pc/images/mailAD-2.gif')" link="#666666" vlink="#666666" alink="#666666">
+<form  name="form1" method="post" action="%_action%">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="10" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td height="34" colspan="2" valign="top"><img src="/pc/images/logo/%_szDB%.gif"></td>
+      <td width="12" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="35" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0"></a></td>
+      <td width="59" rowspan="2" valign="middle"><a href="#" onClick="JumpCL('/pc/help/calendarST.html');"><img src="/pc/images/calendar-icon.gif" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setw('$StPasswd')"><img src="/pc/images/reg_passwd-1.gif" width="35" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setw('$StRegistMail')"><img src="/pc/images/reg_mail-1.gif" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setw('$jbbs.BbsInfo.old')"><img src="/pc/images/reg_info-1.gif" width="32" height="38" border="0"></a></td>
+      <td width="39" rowspan="2" valign="middle"><a href="%_url_s%"><img src="/pc/images/endRan.gif" width="32" height="38" border="0"></a></td>
+    </tr>
+    <tr> 
+      <td height="9" colspan="2" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="10" valign="top"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="18" colspan="2" valign="top"><img src="/pc/images/spacer.gif" width="100" height="10"></td>
+      <td colspan="8" valign="top"> <input type="hidden" name="_sheet" 		value="300"> 
+        <input type="hidden" name="_stay" 		value="%_stay%"> <input type="hidden" name="_stNumber"	value="%_stNumber%"> 
+        <input type="hidden" name="_stMail"	    value="%_stMail%"> <input type="hidden" name="_kname"		value="%_kname%"> 
+        <input type="hidden" name="_szDB"   	value="%_szDB%"> <input type="hidden" name="_url_s"   	value="%_url_s%"> 
+        <input type="hidden" name="_relation"   value="%_relation%"> <input type="hidden" name="_menu"> 
+        <input type="hidden" name="_shubetsu"> <input type="hidden" name="_worder"> 
+        <input type="hidden" name="_wdate" > <input type="hidden" name="_title" > 
+        <input type="hidden" name="_lec_key" > <input type="hidden" name="_aplec_key"> 
+        <input type="hidden" name="_teUid"> </td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="15" height="1"></td>
+      <td width="85"><img src="/pc/images/spacer.gif" alt="" width="85" height="1"></td>
+      <td width="415"><img src="/pc/images/spacer.gif" alt="" width="415" height="1"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="39" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="13" colspan="17" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top"><img src="/pc/images/date2_mon.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td colspan="2" valign="top"><img src="/pc/images/date2_tue.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/date2_wed.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/date2_thu.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/date2_fri.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td colspan="2" valign="top"><img src="/pc/images/date2_sat.gif" width="120" height="20"></td>
+      <td width="8">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="49" height="1"></td>
+      <td></td>
+      <td width="22"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="4" height="1"></td>
+      <td width="23"><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+      <td width="97"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="4" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="120" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="4" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="120" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="4" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="120" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="4" height="1"></td>
+      <td width="80"><img src="/pc/images/spacer.gif" alt="" width="80" height="1"></td>
+      <td width="40"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="8" height="1"></td>
+    </tr>
+  </table>
+%#top_table_1%
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+%@table_1% 
+<< 
+  <tr> 
+    <td width="30" rowspan="2" align="right" valign="top"><img src="/pc/images/spacer.gif" width="30" height="2"><br><img src="/pc/images/gyo-%_gyo%.gif" width="15" height="32"><br> 
+      <img src="/pc/images/spacer.gif" width="30" height="1"></td>
+    <td width="2" height="32" valign="top"><img src="/pc/images/spacer.gif" width="2" height="32"></td>
+<!--$_flag0
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><span style="color: #333366;font-size: %_sz-0%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-0%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag1
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><span style="color: #333366;font-size: %_sz-1%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-1%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag2
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><span style="color: #333366;font-size: %_sz-2%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-2%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag3
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><span style="color: #333366;font-size: %_sz-3%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-3%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag4
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><span style="color: #333366;font-size: %_sz-4%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-4%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag5
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','1','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><span style="color: #333366;font-size: %_sz-5%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-5%</span></a></td>
+    <td width="8" valign="top"><img src="/pc/images/spacer.gif" width="8" height="32"></td>
+  </tr>
+  <tr> 
+    <td height="10" valign="top" heignt="10"><img src="/pc/images/spacer.gif" width="2" height="10"></td>
+<!--$_flag0
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image90%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/uline_1.gif" name="Image90%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image01%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/corner.gif" name="Image01%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top" heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag1
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image91%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/uline_1.gif" name="Image91%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image02%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/corner.gif" name="Image02%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top" heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag2
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image92%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/uline_1.gif" name="Image92%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image03%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/corner.gif" name="Image03%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag3
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image93%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/uline_1.gif" name="Image93%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image04%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/corner.gif" name="Image04%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag4
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image94%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/uline_1.gif" name="Image94%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image05%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/corner.gif" name="Image05%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag5
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image95%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','1','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/uline_1.gif" name="Image95%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image06%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','1','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/corner.gif" name="Image06%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="8" height="8"></td>
+  </tr>
+  <tr> 
+    <td height="2" colspan="14" valign="top" ><img src="/pc/images/spacer.gif" width="780" height="2"></td>
+  </tr>
+>> 
+  <tr>
+  <td height="2" colspan="14" valign="top" ><img src="/pc/images/spacer.gif" width="780" height="2"></td>
+  </tr>
+
+</table>  
+#end
+%#top_table_2%
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+%@table_2%
+<<
+  <tr> 
+    <td width="30" hiight="42" rowspan="2" align="right" valign="top"><img src="/pc/images/spacer.gif" width="30" height="2"><br><img src="/pc/images/gyo-b%_gyo%.gif" width="15" height="32"><br><img src="/pc/images/spacer.gif" width="30" height="1"></td>
+    <td width="2" height="32" valign="top"><img src="/pc/images/spacer.gif" width="2" height="32"></td>
+<!--$_flag0
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><span style="color: #333366;font-size: %_sz-0%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-0%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag1
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><span style="color: #333366;font-size: %_sz-1%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-1%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag2
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><span style="color: #333366;font-size: %_sz-2%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-2%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag3
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><span style="color: #333366;font-size: %_sz-3%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-3%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag4
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><span style="color: #333366;font-size: %_sz-4%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-4%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+
+<!--$_flag5
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','2','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><span style="color: #333366;font-size: %_sz-5%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-5%</span></a></td>
+    <td width="8" valign="top"><img src="/pc/images/spacer.gif" width="8" height="32"></td>
+  </tr>
+  <tr> 
+    <td height="10" heignt="10"><img src="/pc/images/spacer.gif" width="2" height="10"></td>
+<!--$_flag0
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom"style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/uline_1.gif" name="Image11%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image011%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/corner.gif" name="Image011%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag1
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" class="mormalD"  style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image12%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/uline_1.gif" name="Image12%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image012%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/corner.gif" name="Image012%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag2
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" class="mormalD"  style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image13%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/uline_1.gif" name="Image13%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image013%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/corner.gif" name="Image013%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag3
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" class="mormalD"  style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image14%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/uline_1.gif" name="Image14%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image014%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/corner.gif" name="Image014%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag4
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" class="mormalD"  style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image15%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/uline_1.gif" name="Image15%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image015%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/corner.gif" name="Image015%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag5
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_1.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="bottom" class="mormalD"  style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image16%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','2','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/uline_1.gif" name="Image16%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image016%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','2','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/corner.gif" name="Image016%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="8" height="8"></td>
+  </tr>
+  <tr>
+  <td height="2" colspan="14" valign="top" ><img src="/pc/images/spacer.gif" width="780" height="2"></td>
+  </tr>
+>>
+  <tr>
+  <td height="10" colspan="14" valign="top" ><img src="/pc/images/spacer.gif" width="780" height="10"></td>
+  </tr>
+</table>  
+#end
+%#top_table_3%
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td height="13" colspan="13" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+    <tr> 
+      <td width="32" height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="120" valign="top"><img src="/pc/images/course_a.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/course_b.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/course_c.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/course_d.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/course_e.gif" width="120" height="20"></td>
+      <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+      <td width="120" valign="top"><img src="/pc/images/course_f.gif" width="120" height="20"></td>
+      <td width="8">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+%@table_3%
+<<
+  <tr> 
+    <td width="30" hiight="42" rowspan="2" valign="top"><img src="/pc/images/spacer.gif" width="30" height="1"></td>
+    <td width="2" height="32" valign="top"><img src="/pc/images/spacer.gif" width="2" height="32"></td>
+<!--$_flag0
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><span style="color: #333366;font-size: %_sz-0%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-0%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag1
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><span style="color: #333366;font-size: %_sz-1%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-1%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag2
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><span style="color: #333366;font-size: %_sz-2%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-2%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag3
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><span style="color: #333366;font-size: %_sz-3%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-3%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+<!--$_flag4
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><span style="color: #333366;font-size: %_sz-4%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-4%</span></a></td>
+    <td width="4" valign="top"><img src="/pc/images/spacer.gif" width="4" height="32"></td>
+
+<!--$_flag5
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;">&nbsp;</td>
+-->
+    <td width="120" align="center" valign="middle" class="mormalD" style="border-top:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;text-decoration:none;"><a href="#" style="text-decoration:none;" onClick="setSubmit('VIEW_CLASS','3','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><span style="color: #333366;font-size: %_sz-5%px; font-family:'ＭＳ ゴシック','ＭＳ 明朝','Osaka'">%_title-5%</span></a></td>
+    <td width="8" valign="top"><img src="/pc/images/spacer.gif" width="8" height="32"></td>
+  </tr>
+  <tr> 
+    <td height="10" heignt="10"><img src="/pc/images/spacer.gif" width="2" height="10"></td>
+<!--$_flag0
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb1%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/uline_g.gif" name="Imageb1%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb01%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','0','%_teUid-0%','%_aplec_key-0%','%_title-0%','%_lec_key-0%')"><img src="/pc/images/corner.gif" name="Imageb01%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag1
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb2%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/uline_g.gif" name="Imageb2%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb02%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','1','%_teUid-1%','%_aplec_key-1%','%_title-1%','%_lec_key-1%')"><img src="/pc/images/corner.gif" name="Imageb02%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag2
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb3%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/uline_g.gif" name="Imageb3%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb03%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','2','%_teUid-2%','%_aplec_key-2%','%_title-2%','%_lec_key-2%')"><img src="/pc/images/corner.gif" name="Imageb03%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag3
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb4%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/uline_g.gif" name="Imageb4%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb04%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','3','%_teUid-3%','%_aplec_key-3%','%_title-3%','%_lec_key-3%')"><img src="/pc/images/corner.gif" name="Imageb04%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td heignt="10"><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag4
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb5%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/uline_g.gif" name="Imageb5%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb05%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','4','%_teUid-4%','%_aplec_key-4%','%_title-4%','%_lec_key-4%')"><img src="/pc/images/corner.gif" name="Imageb05%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td><img src="/pc/images/spacer.gif" width="4" height="10"></td>
+<!--$_flag5
+	<td valign="bottom" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><img src="/pc/images/uline_g.gif"  width="98" height="7" border="0" ><img src="/pc/images/corner.gif" width="17" height="9" border="0" ></td>
+-->    
+    <td valign="top" style="border-bottom:1px solid #666666; border-right:1px solid #666666; border-left:1px solid #666666;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb6%_gyo%','','/pc/images/uline_2.gif',1)" onClick="setSubmit('SYLABUS','3','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/uline_g.gif" name="Imageb6%_gyo%" width="98" height="7" border="0" alt="シラバスを見る"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Imageb06%_gyo%','','/pc/images/corner-2.gif',1)" onClick="setSubmit('SEND_Q','3','%_gyo%','5','%_teUid-5%','%_aplec_key-5%','%_title-5%','%_lec_key-5%')"><img src="/pc/images/corner.gif" name="Imageb06%_gyo%" width="17" height="9" border="0" alt="この科目の担当教員に質問メールを出す"></a></td>
+    <td valign="top"><img src="/pc/images/spacer.gif" width="8" height="8"></td>
+  </tr>
+  <tr> 
+    <td height="2" colspan="14" valign="top" ><img src="/pc/images/spacer.gif" width="780" height="2"></td>
+  </tr>
+>> 
+</table>
+#end
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="30" colspan="4" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="31" height="21" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="603" valign="top" class="normal_brown2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      
+    <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="4" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="15">&nbsp;</td>
+      <td>&nbsp;</td>
+      <td width="60">&nbsp;</td>
+      <td width="86" valign="middle"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

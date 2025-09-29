@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>９．ハイブリッドメールで連絡する － (2)差込み送信</title>
+</head>
+<body link="#3366CC" alink="#3366CC" vlink="#3366CC">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+ 
+<img src="files/1B.gif" border="0" align="absmiddle"> ９．ハイブリッドメールで連絡する
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/03r.gif" border="0" align="absmiddle"> 差込み送信
+<br>
+<br>　<span style="font-size: 12px; line-height: _lineheight%;">例えば検定試験などを実施して，その結果を学生に伝えたいとき，<span style="border-bottom:1px dotted red">一覧表を掲示するとプライバシーの侵害として問題になりかねません</span>．このような時，<span style="color: royalblue;">差込み送信</span>をします．まず，「あなたは<span style="color: limegreen;">｛$合否｝</span>でした」という文面を書いておきまず．次に，別途用意したデータファイルから，｛＄合否｝の部分に埋め込むべきデータを学籍番号をキーとして検索します．そして｛＄合否｝を検索で得られた文字列で置き換えて送信します．これが差し込み送信です．PowerCampusはバックエンドで差込み送信サーバーを動かしていますので，どんな大量の差込み送信でも一瞬で完了します．</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/n01.gif" border="0" align="absmiddle"> 差込みデータファイルの準備
+<br>
+<br>　差込みデータファイルはEXCELなど表計算ソフトの表として作成し，<span style="color: blue;">CSV形式</span>で保存します．表の１行目が差し込み項目名になります．ただし，左端の第１列目は学籍番号がなければいけません．簡単な例を示します．
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top"><img src="files/a9.050.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "500" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #666666 ; white-space:normal; text-align: left;">
+
+<br>この例のように，差込みデータファイルは必ずしも全員分である必要はありません．
+<br>メールが送信されるのは差込みデータファイルに書いてある学生だけです．
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle"> 差込みデータファイルをアップロードする
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/01.gif" border="0" align="absmiddle"> <span style="color: royalblue;">参照ボタンをクリックする</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.051.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/02.gif" border="0" align="absmiddle"> <span style="color: royalblue;">ファイルダイアログで差込みファイルを選択する</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.052.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/03.gif" border="0" align="absmiddle"> <span style="color: royalblue;">File送信ボタンをクリックする</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.053.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+名簿が差し込みファイルに記載のある学生だけになり，差込み項目タグも表示されます．差込み項目タグは，元のデータの項目名を<span style="color: blue;">半角の {$　}</span> で囲ったものです．
+<br>メール本文を書くとき，実際の値ではなく，差込み項目タグを書いておくと，送信時に実際の値と置き換えられます．
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.054.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle"> メール本文を書いて送信する
+<br>
+<br>　差込み項目タグは，元になったデータの１行目に付けた項目名です．以下ではこれを使ってメールを書き，送信します．赤い枠で囲った部分の書き方に注目してください．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/01.gif" border="0" align="absmiddle"> <span style="color: royalblue;">メール本文を書く</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.055.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+  
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+差込み項目タグを手書きすると間違いやすいので，次に示すように，下段の差込み項目タグ一覧表で必要なタグをドラッグしてマークし，コピー＆ペーストでメール本文に移すといいでしょう．
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+<img src="files/a9.056.gif" border="0" align="absmiddle"><img src="files/g05.gif" border="0" align="absmiddle"><img src="files/a9.057.gif" border="0" align="absmiddle"><img src="files/g05.gif" border="0" align="absmiddle"><img src="files/a9.058.gif" border="0" align="absmiddle">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">　
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/02.gif" border="0" align="absmiddle"> <span style="color: royalblue;">確認タブをクリックする</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.060.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+  
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+          <td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" > 
+            <p><a name="MailPreview"></a><br>
+              <img src="files/03.gif" border="0" align="absmiddle"> <span style="color: royalblue;">送り・戻しボタンをクリックして確認する</span> 
+              <br>
+              <br>
+              差込み項目タグを実際の値に置き換えた文面を見ることができます．送り・戻しボタンで数件確認した上で送信します． <br>
+              <br>
+            </p>
+            </td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.061.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+  
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<img src="files/04.gif" border="0" align="absmiddle"> <span style="color: royalblue;">作成/送信画面画面に戻って送信ボタンをクリックする</span>
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.062.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+  
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+送信が完了するとサーバーから完了メッセージが送られてきます．
+<br>
+<br></td></tr></table></td>
+</tr>
+<tr> 
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top"><img src="files/a9.063.gif" border="0"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+  
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

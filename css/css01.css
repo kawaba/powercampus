@@ -1,0 +1,184 @@
+body {  font-size: 12px; color: #333333}
+table {  font-size: 12px; color: #333333}
+.gn7 {  font-size: 36px; color: #333333}
+.gn6 {  font-size: 24px; color: #333333}
+.gn5 {  font-size: 18px; color: #333333}
+.gn4 {  font-size: 16px; color: #333333}
+.gn3 {  font-size: 14px; color: #666666}
+.gn2 {  font-size: 12px; color: #333333; font-family: "ＭＳ ゴシック", "Osaka－等幅"}
+.gn1 {  font-size: 10px; color: #333333}
+.gn0 {  font-size: 8px; color: #333333}
+.grn1 {  font-size: 10px; color: #009900}
+.grn2 {  font-size: 12px; color: #009900}
+.grn3 {  font-size: 14px; color: #009900}
+.grn4 {  font-size: 16px; color: #009900}
+.grn5 {  font-size: 18px; color: #009900}
+.grn6 {  font-size: 24px; color: #009900}
+.grn7 {  font-size: 36px; color: #009900}
+.grn0 {  font-size: 8px; color: #009900}
+.bn0 {  font-size: 8px; color: #0033FF}
+.bn1 {  font-size: 10px; color: #0033FF}
+.bn2 {  font-size: 12px; color: #0033FF}
+.bn3 {  font-size: 14px; color: #0033FF}
+.bn4 {  font-size: 16px; color: #0033FF}
+.bn5 {  font-size: 18px; color: #0033FF}
+.bn6 {  font-size: 24px; color: #0033FF}
+.bn7 {  font-size: 36px; color: #0033FF}
+.rn3 {  font-size: 14px; color: #FF0000}
+.rn2 { font-size: 12px; color: #FF0000 }
+.gb-3 {  font-size: 14px; font-weight: bold; color: #333333}
+.gb3 { font-size: 14px; font-weight: bold; color: #333333 }
+.bn8 {  font-size: 50px; color: #000099}
+.bbn8 {  font-size: 50px; color: #0066CC}
+body {  }
+.whn5 { font-size: 22px; color: #FFFFFF; font-family: "Times New Roman", "Times", "serif"; font-style: italic; font-weight: normal}
+.wh2 {  font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 12px; color: #FFFFFF}
+.wn4 {  font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 18px; color: #FFFFFF}
+.yn2 {  font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 12px; color: #FFFF66}
+.yn1 {  font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 10px; color: #FFFF33}
+.wh1 {  font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 10px; color: #FFFFFF}
+.wh2 { font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 12px; color: #FFFFFF ; font-style: normal}
+.whn4 { font-size: 16px; color: #FFFFFF; font-family: "Times New Roman", "Times", "serif"; font-style: italic; font-weight: normal }
+.whn6 { font-size: 30px; color: #FFFFFF; font-family: "Times New Roman", "Times", "serif"; font-style: italic; font-weight: normal }
+.wh2_i { font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 12px; color: #FFFFFF; font-family: "ＭＳ ゴシック", "Osaka－等幅"; font-size: 14px; color: #FFFFFF ; font-style: italic }
+.whn6Copy { font-size: 30px; color: #FFFFFF; font-family: "Times New Roman", "Times", "serif"; font-style: italic; font-weight: normal }
+.wh3 {
+	FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.kyoucho {
+	FONT-WEIGHT: 400; FONT-SIZE: 12px; COLOR: #0000ff; LINE-HEIGHT: 18px; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"; TEXT-DECORATION: underline
+}
+.large {
+	FONT-SIZE: 14px; COLOR: #333333; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.compact {
+	FONT-SIZE: 10px; COLOR: #666666; LINE-HEIGHT: 18px; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.large_blue {
+	FONT-SIZE: 14px; COLOR: #6633ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.large_red {
+	FONT-SIZE: 14px; COLOR: #ff0000; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_uline {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"; TEXT-DECORATION: underline
+}
+.large_green {
+	FONT-SIZE: 14px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_blue {
+	FONT-SIZE: 12px; COLOR: #6699ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_green {
+	FONT-SIZE: 12px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"; TEXT-DECORATION: underline
+}
+.mormal_red {
+	FONT-SIZE: 12px; COLOR: #FF6633; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_wide {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: 18px; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_blue_wide {
+	FONT-SIZE: 12px; COLOR: #3300cc; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.large_green_wide {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_small__blue {
+	FONT-SIZE: 10px; COLOR: #6666ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.morma_large {
+	FONT-SIZE: 14px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_samll {
+	FONT-SIZE: 10px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_very_small__blue {
+	FONT-SIZE: 10px; COLOR: #0000cc; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.large_white {
+	FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_green_no_line {
+	FONT-SIZE: 12px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_samll_red {
+	FONT-SIZE: 10px; COLOR: #cc0000; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.large_green_U {
+	FONT-SIZE: 14px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"; TEXT-DECORATION: underline
+}
+.mormal_yellow {
+	FONT-SIZE: 12px; COLOR: #ff6600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.normal_yellow_bol {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffff99; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_small_green {
+	FONT-SIZE: 10px; COLOR: #006600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_white {
+	FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_very_small__blue_bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #6699ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.morma_large2 {
+	FONT-SIZE: 16px; COLOR: #333333; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_miduam {
+	FONT-SIZE: 11px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_blue2 {
+	FONT-SIZE: 12px; COLOR: #6666ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.miduam_yellow {
+	FONT-SIZE: 11px; COLOR: #336600; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.normal_brown {
+	FONT-SIZE: 12px; COLOR: #ff9900; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.normal_small_brown {
+	FONT-SIZE: 10px; COLOR: #ff9900; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_green2 {
+	FONT-SIZE: 12px; COLOR: #009900; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_samll2 {
+	FONT-SIZE: 11px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_white_samll2 {
+	FONT-SIZE: 11px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_yellow_samll2 {
+	FONT-SIZE: 11px; COLOR: #ffff33; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_blue3 {
+	FONT-SIZE: 12px; COLOR: #ccffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_small_blue3 {
+	FONT-SIZE: 10px; COLOR: #ccffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_uline {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.aBOLD_white12 {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+.mormal_Red_wide {
+	FONT-SIZE: 12px; COLOR: #ff3366; LINE-HEIGHT: 18px; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka"
+}
+.mormal_blue4 { FONT-SIZE: 12px; COLOR: #9999FF; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" }
+.normal_brown3 { FONT-SIZE: 12px; COLOR: #FF6699; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" }
+.mormal_blue2BOLD { FONT-SIZE: 12px; COLOR: #6666ff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" ; font-weight: bold}
+.mormal_whiteBOLD { FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" ; font-weight: bold}
+.mormal_whiteLarge_BOLD { FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" ; font-weight: bold }
+.GreenN { font-size: 12px; color: #99CC66; font-family: "ＭＳ ゴシック", "Osaka－等幅" }
+.GreenR { font-size: 12px; color: #FF9900; font-family: "ＭＳ ゴシック", "Osaka－等幅" }
+.normal_brown2 { FONT-SIZE: 12px; COLOR: #993333; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" }
+.morma_large3 { FONT-SIZE: 16px; COLOR: #666666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" }
+.mormal_blue_0 { FONT-SIZE: 12px; COLOR: #3366CC; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" }
+.normal_brown2UL { FONT-SIZE: 12px; COLOR: #993333; FONT-STYLE: normal; FONT-FAMILY: "ＭＳ Ｐゴシック", "Osaka" ; text-decoration: underline}

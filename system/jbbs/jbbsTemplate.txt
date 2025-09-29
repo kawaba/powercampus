@@ -1,0 +1,35 @@
+@forum
+## $p1(size=16px flow=450 weight=bold)
+## $p2(size=14px flow=450 height=120)
+## $p3(size=12px flow=450 height=130)
+## $p4(indent=12 size=12px flow=438 height=130)
+## $p5(indent=24 size=12px flow=426 height=130)
+## p3
+-----
+
+@thread
+## $p1(size=16px flow=430 weight=bold)
+## $p2(size=14px flow=430 height=120)
+## $p3(size=12px flow=430 height=130)
+## $p4(indent=24 size=12px flow=426 height=130)
+## $p5(indent=48 size=12px flow=402 height=130)
+## p3
+-----
+@post
+## $p1(size=16px flow=560 weight=bold)
+## $p2(size=14px flow=560 height=120)
+## $p3(size=12px flow=560 height=130)
+## $p4(indent=24 size=12px flow=556 height=130)
+## $p5(indent=48 size=12px flow=532 height=130)
+## p3 
+-----
+
+@attach
+<a href="%_fileUrl%" target="_blank"><img src="%_image%" border="0" alt="%_alt%" align="absmiddle">&nbsp;<span style="font-size:12px; color:%_colorClass%">%_fileName%</span></a>&nbsp;&nbsp;
+-----
+
+@attach2
+<SPAN onclick="fileEdit('%_uploadFile%');" style="cursor:hand;"><img src="/pc/images/delIcon.gif" width="12" height="12" border="0" align="absmiddle" alt="このファイルを削除"></span>&nbsp;
+<a href="%_fileUrl%" target="_blank"><span style="font-size:12px; color:%_colorClass%">%_uploadFile%</span></a>
+<SPAN onclick="fileMODE('%_uploadFile%');" style="cursor:hand;"><img src="/pc/images/%_attachIcon%" width="8" height="8" border="0" align="absmiddle" alt="送信モード変更"></span>
+-----

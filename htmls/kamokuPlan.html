@@ -1,0 +1,468 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>科目登録・変更</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function note(){
+	w = window.open("/pc/help/help01.html", "help01", "width=700,height=300");
+}
+function setsubmit(sw) {
+	document.form1._menu.value = sw; // UPDATE,DELETE,RETURN,HTLP,DEFINE,SYLLABUS
+	document.form1.submit();
+}
+function setEdit(sw,key) {
+	document.form1._menu.value = sw; // EDIT,REF_EDIT,KADAI_EDIT  | (SECT_KEY)
+	document.form1._sect_key.value = key;
+	document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+.txaria{ font-size:14px; 
+		line-height: 15px; 
+		color: #333333; 
+		font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+		background-color:#FAFAFF; 
+		border:1px solid #849898; 
+		scrollbar-arrow-color:#666666; 
+		scrollbar-highlight-color:#666666; 
+		scrollbar-shadow-color:#666666; 
+		scrollbar-base-color:#E0E0E0; 
+		scrollbar-darkshadow-color:#E0E0E0; 
+		scrollbar-track-color:#E0E0E0; 
+		padding: 5px 5px 5px 5px;
+		margin: 10px 0px 0px 0px;
+}
+.txfield{
+	font-size:14px; 
+	color: #3366CC; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 3px 5px 3px 5px;
+}
+.txlist{
+	font-size:14px; 
+	color: #333333;
+	font-family:"ＭＳ ゴシック", "Osaka－等幅";
+	background-color:#FAFAFF; 
+	padding: 1px 3px 1px 3px;; 
+}
+.txlist-2{
+	font-size:12px; 
+	color: #000066;
+	font-family:"ＭＳ ゴシック", "Osaka－等幅";
+	background-color:#E0E4FF; 
+	padding: 1px 3px 1px 3px;; 
+}
+.itemLabel {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 14px;
+	color: #333333;
+}
+.content {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 14px;
+	color: #333333;
+}
+.contentBlue {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #000066;
+}
+.message {
+	font-size: 12px;
+	color: #CC6666;
+}
+.serial {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #3366FF;
+}
+.number {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #3366FF;
+}
+.icon {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #333333;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.str {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #333333;
+	padding-right: 10px;
+}
+.bun {
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #333333;
+	padding-right: 30px;
+	line-height: 130%_PERCENT_%;
+}
+.bunBreen{
+	font-family: "ＭＳ ゴシック", "Osaka－等幅";
+	font-size: 12px;
+	color: #006600;
+	padding-right: 30px;
+	line-height: 130%_PERCENT_%;
+}
+-->
+</style>
+</head>
+
+<body onLoad="MM_preloadImages('/pc/images/refIcon-02.gif','/pc/images/kadaiIcon-02.gif','/pc/images/sankaku_L2.gif','/pc/images/sankaku_R2.gif')">
+<form name="form1" method="post" action="%_action%">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+    <td height="15" colspan="9" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="1">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="マニュアルを見る"></a></td>
+    <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('DELETE')"><img src="/pc/images/DeleteIt.gif" width="32" height="38" border="0" alt="講義計画のこの回を削除する"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('CLEAR')"><img src="/pc/images/eraserIcon.gif" width="32" height="38" border="0" alt="表示をクリアする"></a></td>
+    <td width="40" rowspan="2" valign="middle"><a href="#"  onClick="setsubmit('UPDATE')"><img src="/pc/images/saveCont.gif" width="32" height="38" border="0" alt="講義計画のこの回を保存する"></a></td>
+    <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setsubmit('RETURN')"><img src="/pc/images/retback.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+    <td width="25" rowspan="2" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="13" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    <td></td>
+  </tr>
+  <tr> 
+      <td height="13" colspan="9" valign="bottom"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    <td></td>
+  </tr>
+</table>
+<table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#F0F3FF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="18" height="31" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="234" valign="bottom"><img src="/pc/images/kamokuPlan.gif"></td>
+      <td width="549" valign="bottom" class="message">%_msg%</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="234" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="528" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#F0F3FF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="762" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td height="24" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="378" height="24" valign="middle"><img src="/pc/images/spacer.gif" alt="" width="100" height="10"><span class="str"> 
+              <input name="_autoChange" type="checkbox" id="_autoChange" value="ON" %_checked_autoMode%>
+              保存したら次の回へ自動送りする</span></td>
+            <td width="384" valign="middle" class="contentBlue"> <img src="/pc/images/finger01.gif" width="17" height="13" align="absmiddle"><img src="/pc/images/spacer.gif" width="5" height="5">第%_seq%回を 
+              <select name="_wseq" class="txlist-2" id="_wseq" onChange="setsubmit('UPDATE')">
+                <pct: @changeSectionSeq> 
+				<pct: block> 
+                <option value="%_x%" %_sel%>第%_xx%回</option>
+                <pct: /block> 
+              </select>
+              に順序変更する</td>
+          </tr>
+          <tr> 
+            <td height="0"></td>
+            <td></td>
+          </tr>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="378" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="384" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td height="1"></td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="middle" class="content"> <img src="/pc/images/titleSymbol.gif" width="54" height="18" align="absmiddle"> 
+        <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image32','','/pc/images/sankaku_L2.gif',1)" onClick="setsubmit('BACK')"><img src="/pc/images/sankaku_L1.gif" name="Image32" width="20" height="14" border="0" align="absmiddle" alt="ひとつ前の回の講義"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image33','','/pc/images/sankaku_R2.gif',1)" onClick="setsubmit('FWD')"><img src="/pc/images/sankaku_R1.gif" name="Image33" width="20" height="14" border="0" align="absmiddle" alt="ひとつ後の回の講義"></a> 
+        <select name="_seq" class="txlist" id="_seq"  onChange="setsubmit('SECT_LIST')">
+          <pct: @selectSection> 
+		  <pct: block> 
+          <option value="%_x%" %_sel%>第%_xx%回</option>
+          <pct: /block> 
+		  </select> <input name="_subject" type="text" class="txfield" id="_subject" value="%_subject%" size="60" maxlength="200"> 
+      </td>
+    </tr>
+    <tr> 
+      <td width="18" height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp; </td>
+      <td valign="bottom" class="itemLabel"><img src="/pc/images/contSymbol.gif" width="54" height="18" align="absbottom"></td>
+    </tr>
+    <tr> 
+      <td height="300" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"  class="content"><img src="/pc/images/spacer.gif" width="17" height="10"> 
+        <textarea name="_contentPlan" cols="90" rows="18" class="txaria" id="_contentPlan">%_contentPlan%</textarea></td>
+    </tr>
+    <tr> 
+      <td width="18" height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp; </td>
+      <td valign="bottom" class="itemLabel"><img src="/pc/images/bikouSymbol.gif" width="54" height="18" align="absbottom"></td>
+    </tr>
+    <tr> 
+      <td height="97" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"  class="content"><img src="/pc/images/spacer.gif" width="17" height="10"> 
+        <textarea name="_todo" cols="90" rows="5" class="txaria" id="_todo">%_todo%</textarea></td>
+    </tr>
+    <tr> 
+      <td width="18" height="14" valign="top"><!--DWLayoutEmptyCell-->&nbsp; </td>
+      <td valign="bottom" class="itemLabel"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="18" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="762" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E4FF">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="41" height="13" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="62" valign="top"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image_a%_e%1','','/pc/images/refIcon-02.gif',1)" onClick="setEdit('REF_EDIT_WRT','%_sect_key%')"><img src="/pc/images/refIcon-01.gif" name="Image_a%_e%1" width="54" height="18" border="0" alt="学習資料を設定・作成する"></a></td>
+      <td width="677" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+		  <pct: @Def_ref_List>
+		  <pct: block>
+          <tr> 
+            <td width="16" height="24" valign="top" class="number">%_kx%</td>
+            <td width="22" align="center" valign="top" class="icon"><img src="/pc/images/%_refIconx%" width="12" height="15"></td>
+            <td width="639" valign="top" class="str"><a href="%_ref_urlx%" target="_blank">%_refx%</a></td>
+          </tr>
+		  <pct: /block>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="22" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="639" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image_b%_e%1','','/pc/images/kadaiIcon-02.gif',1)" onClick="setEdit('KADAI_EDIT_WRT','%_sect_key%')"><img src="/pc/images/kadaiIcon-01.gif" name="Image_b%_e%1" width="54" height="18" border="0"></a></td>
+      <td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+		  <pct: @Def_kadai_List>
+		  <pct: block>
+          <tr> 
+            <td width="16" height="24" valign="top" class="number">%_mx%</td>
+            <td width="22" align="center" valign="top" class="icon"><img src="/pc/images/%_kadaiIconx%" width="12" height="15"></td>
+            <td width="639" valign="top" class="str">%_kadaix%</td>
+          </tr>
+		  <pct: /block>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="22" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="639" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="13" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" bgcolor="#EFEFEF">
+    <!--DWLayoutTable-->
+	<pct: @sectDefList>
+	<pct: block>
+    <tr> 
+      <td height="16" colspan="4" valign="top"><img src="/pc/images/lineBlue640.gif" width="780" height="6"></td>
+    </tr>
+    <tr> 
+      <td width="29" height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="59" valign="top"><img src="/pc/images/titleSymbol.gif" width="54" height="18"></td>
+      <td width="52" valign="top" class="str"><a href="#" onClick="setEdit('EDIT','%_sect_key%')">第%_e%回</a></td>
+      <td width="640" valign="top" class="str"><a href="#" onClick="setEdit('EDIT','%_sect_key%')">%_subject%</a></td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><img src="/pc/images/contSymbol.gif" width="54" height="18"></td>
+      <td colspan="2" valign="top" class="bun">%_$contentPlan%</td>
+    </tr>
+    <tr> 
+      <td height="5"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+      <td ><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+      <td colspan="2"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+    </tr>
+    <tr> 
+      <td height="24" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><img src="/pc/images/bikouSymbol.gif" width="54" height="18"></td>
+      <td colspan="2" valign="top" class="bunBreen">%_$todo%</td>
+    </tr>
+    <tr> 
+      <td height="8"><img src="/pc/images/spacer.gif" width="10" height="8"></td>
+      <td ><img src="/pc/images/spacer.gif" width="10" height="8"></td>
+      <td colspan="2"><img src="/pc/images/spacer.gif" width="10" height="8"></td>
+    </tr>
+    <pct: @referenceList> 
+  	<pct: block>
+    <tr> 
+      <td height="19" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image_a%_e%','','/pc/images/refIcon-02.gif',1)" onClick="setEdit('REF_EDIT','%_sect_key%')"><img src="/pc/images/refIcon-01.gif" alt="学習資料を設定・作成する" name="Image_a%_e%" width="54" height="18" border="0" id="Image_a%_e%11"></a></td>
+      <td colspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <pct: @refDefList> 
+		  <pct: block> 
+          <tr> 
+            <td width="16" height="18" valign="top" class="number">%_k%</td>
+            <td width="22" align="center" valign="top" class="icon"><img src="/pc/images/%_refIcon%" width="12" height="15"></td>
+            <td width="639" valign="top" class="str"><a href="%_ref_url%" target="_blank">%_ref%</a></td>
+          </tr>
+          <pct: /block> 
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="22" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="639" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr> 
+      <td height="5"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+      <td ><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+      <td colspan="2"><img src="/pc/images/spacer.gif" width="10" height="5"></td>
+    </tr>
+    <pct: /block>
+    <pct: @kadaiList> 
+  	<pct: block>
+    <tr> 
+      <td height="19" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image_b%_e%','','/pc/images/kadaiIcon-02.gif',1)" onClick="setEdit('KADAI_EDIT','%_sect_key%')"><img src="/pc/images/kadaiIcon-01.gif" name="Image_b%_e%11" width="54" height="18" border="0" id="Image_b%_e%"></a></td>
+      <td colspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <pct: @kadaiDefList> 
+		  <pct: block> 
+          <tr> 
+            <td width="16" height="18" valign="top" class="number">%_m%</td>
+            <td width="22" align="center" valign="top" class="icon"><img src="/pc/images/%_kadaiIcon%" width="12" height="15"></td>
+            <td width="639" valign="top" class="str">%_kadai%</td>
+          </tr>
+          <pct: /block> 
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="16" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="22" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="639" height="1"></td>
+          </tr>
+        </table></td>
+    </tr>
+    <pct: /block> 
+    <tr> 
+      <td height="16" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="0"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+	<pct: /block>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="29" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="59" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="52" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="640" height="1"></td>
+    </tr>
+  </table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="780" height="20" valign="top" bgcolor="#F0F3FF"><img src="/pc/images/lineBlue640.gif" width="780" height="6"></td>
+      </tr>
+    <tr> 
+      <td height="11" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="15" valign="middle"><div align="right"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

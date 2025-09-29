@@ -1,0 +1,50 @@
+
+@format
+p1:indent=20 size=16px weight=bold 
+p2:indent=20 size=14px flow=650 height=130
+p3:indent=40 size=14px flow=630 height=130
+p4:indent=40 size=12px flow=630 height=130
+p5:indent=60 size=12px flow=610 height=130
+-----
+
+@default
+## $p1 (indent=20 size=16px weight=bold)
+## $p2 (indent=30 size=14px flow=650 height=130)
+## $p3 (indent=40 size=12px flow=640 height=130)
+## $p4 (indent=50 size=12px flow=630 height=130)
+## $p5 (indent=60 size=12px flow=610 height=130)
+-----
+
+@typingLevel
+89-0
+99-50
+109-60
+119-70
+129-80
+139-90
+-----
+
+@trialLevel
+249-0
+269-40
+289-45
+309-50
+329-55
+349-55
+369-60
+389-70
+409-75
+429-80
+449-85
+469-90
+489-95
+-----
+
+@001
+## $p1　(indent=20 size=16px weight=bold)
+## $p2　(indent=30 size=14px flow=650 height=130)
+## $p3　(indent=40 size=12px flow=640 height=130)
+## $p4　(indent=50 size=12px flow=630 height=130)
+## $p5　(indent=60 size=12px flow=610 height=130)
+-----
+

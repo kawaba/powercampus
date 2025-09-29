@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>PowerCampus</display-name>
+    <description>PowerCampus eLearning System</description>
+    
+    <!-- Character encoding filter for UTF-8 -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <session-config>
+      <session-timeout>180</session-timeout>
+    </session-config>
+    
+    <servlet>
+      <servlet-name>PowerCampus</servlet-name>
+      <servlet-class>PowerCampus</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+    </servlet>
+    
+    <servlet>
+      <servlet-name>PowerCampusST</servlet-name>
+      <servlet-class>PowerCampusST</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+   </servlet>
+   
+    <servlet>
+      <servlet-name>PowerCampusBBS</servlet-name>
+      <servlet-class>PowerCampusBBS</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampus</servlet-name>
+       <url-pattern>/servlet/PowerCampus</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampusST</servlet-name>
+       <url-pattern>/servlet/PowerCampusST</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+       <servlet-name>PowerCampusBBS</servlet-name>
+       <url-pattern>/servlet/PowerCampusBBS</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>HelloWorld</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/servlet/HelloWorld</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BasicFrame</servlet-name>
+        <servlet-class>BasicFrame</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BasicFrame</servlet-name>
+        <url-pattern>/servlet/BasicFrame</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>JefTest</servlet-name>
+        <servlet-class>JefTest</servlet-class>
+      <init-param>
+         <param-name>baseUri</param-name>
+         <param-value>/</param-value>
+       </init-param>
+      <init-param>
+         <param-name>confdir</param-name>
+         <param-value>system\config</param-value>
+       </init-param>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JefTest</servlet-name>
+        <url-pattern>/servlet/JefTest</url-pattern>
+    </servlet-mapping>         
+</web-app>

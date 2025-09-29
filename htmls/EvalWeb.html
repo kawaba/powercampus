@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>課題</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<link href="/pc/css/wiki.css" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+  
+        $(function() {
+            $("#js-tab li").click(function() {
+                $("#js-tab li").removeClass("active");
+                $(this).addClass("active");
+                var index = $(this).index();
+
+                $(".tab-content").removeClass("active");
+                $(".tab-content").eq(index).addClass("active");
+            });
+        });
+
+
+function setSubmit(sw) {
+    document.form1._menu.value = sw; // 
+    document.form1.submit();
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+</script>
+<style type="text/css">
+
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+
+.a10{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-top:    1px solid #999999; 
+    border-left:   1px solid #999999; 
+    border-bottom: 1px solid #999999; 
+	padding: 3px 5px 3px 15px;
+}
+.a20{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-bottom: 1px solid #999999; 
+    border-top:    1px solid #999999; 
+	padding: 3px 5px 3px 5px;
+}
+.a30{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-top:    1px solid #999999; 
+    border-left:  1px solid #999999;
+    border-right:  1px solid #999999;
+    border-bottom: 1px solid #999999; 	
+	padding: 3px 5px 3px 5px;
+}
+.b10{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-left:   1px solid #999999; 
+	padding: 3px 5px 3px 15px;
+}
+.b20{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+	padding: 3px 5px 3px 5px;
+}
+.b30{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-right:  1px solid #999999; 
+	padding: 3px 5px 3px 5px;
+}
+.c10{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-left:   1px solid #999999; 
+    border-bottom: 1px solid #999999; 
+	padding: 3px 5px 3px 15px;
+}
+.c20{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-bottom: 1px solid #999999; 	
+	padding: 3px 5px 3px 5px;
+}
+
+.c30{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-right:  1px solid #999999; 
+    border-left: 1px solid #999999;
+	border-bottom: 1px solid #999999;  	
+	padding: 3px 5px 3px 5px;
+}
+.c35{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-left: 1px solid #999999; 	
+    border-bottom: 1px solid #999999; 	
+	padding: 3px 5px 3px 5px;
+}
+.c36{
+    font-size:12px; 
+    color: #333333; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#E7EDFF; 
+    border-right: 1px solid #999999; 
+    border-bottom: 1px solid #999999; 	
+	padding: 3px 5px 3px 5px;
+}
+.hyoka{
+
+	font-size:12px; 
+	font-weight: bold;
+	color: #CC6666; 
+	font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 2px 3px 2px 3px;; 
+}
+.searchBox{	
+    font-size:12px; 
+	color: #000066; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+    background-color:#FAFAFF; 
+	border:1px solid #849898; 
+	padding: 2px 3px 2px 3px;
+}
+.blueStr{
+    font-size:12px; 
+	color: #3366CC; 
+}
+.blueBold{
+    font-size:12px; 
+    font-family: "ＭＳ ゴシック", "Osaka－等幅"; 
+	font-weight: bold;
+	color: #3366CC; 
+}
+.titleName{
+	font-size:14px;
+	color: #FFFF99; 
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	background-color:#6699CC; 
+	font-weight: bold;
+	padding: 3px 10px 3px 15px;
+}
+.titleBar{
+	font-size:12px;
+	color: #FFFFFF; 
+	font-family: "ＭＳ Ｐゴシック", "Osaka"; 
+	font-weight: bold;
+	background-color:#6699CC; 
+	border-left:1px solid #FFFFFF; 
+	padding: 3px 5px 3px 5px;
+}
+
+</style>
+<style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .wrap-tab {
+            overflow: hidden;
+        }
+
+        .list-tab {
+            display: flex;
+            margin: 0 -2px;
+            border-bottom: 3px solid #5bbee5;
+        }
+
+        .list-tab>li {
+            display: block;
+            padding: 0.5em 1em;
+            margin: 0 2px;
+            width: 100%_PERCENT_%;
+            color: #fff;
+            text-align: center;
+            background: #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .list-tab .active {
+            background: #5bbee5;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 1em;
+            border-bottom: 1px solid #5bbee5;
+            border-left: 1px solid #5bbee5;
+            border-right: 1px solid #5bbee5;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body onLoad="MM_preloadImages('/pc/images/textmode-2.gif','/pc/images/ban_search-2.gif','/pc/images/saveLargeIcon-2.gif','/pc/images/LE-2.gif','/pc/images/L-2.gif','/pc/images/R-2.gif','/pc/images/RE-2.gif')">
+<form name="form1" method="post" action="%_action%">
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="9" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="15" height="47" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="500" valign="middle"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="マニュアルを見る"></a></td>
+      <td width="40" valign="middle"><a href="#" onClick="JumpCL('/pc/launch/postPcCalendar.html');"><img src="/pc/images/calendarIcon.gif" width="32" height="38" border="0" alt="カレンダーを見る"></a></td>
+      <td width="40" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" valign="middle"><a href="#"  onClick="setSubmit('RETURN')"><img src="/pc/images/returnIcon.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+      <td width="25" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="9" valign="bottom"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    </tr>
+  </table>
+  
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="20" height="41" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="755" valign="bottom"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image70','','/pc/images/textmode-2.gif',1)"  onClick="setSubmit('TEXT_MODE')"><img src="/pc/images/textmode-1.gif" alt="解答をテキストとして表示する" name="Image70" width="97" height="28" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="755" height="1"></td>
+  </tr>
+</table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0" class="mormalWhite14">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td  width="25" height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="33" align="center" valign="middle" bgcolor="#6699CC" class="mormalWhite14"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="274" valign="middle" class="titleName">%_title%<img src="/pc/images/spacer.gif" width="10" height="10"></td>
+      <td  width="211" valign="middle" bgcolor="#6699CC" class="titleBar">%_start%～%_end%</td>
+      <td  width="2" valign="top" bgcolor="#FFFFFF"><img src="/pc/images/spacer.gif" width="2" height="1"></td>
+      <td  width="49" valign="top" bgcolor="#6699CC"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td  width="163" align="center" valign="middle" bgcolor="#6699CC"> <select name="_sortMode" class="mormal_blue1" id="_sortMode" onChange="setSubmit('SORT')">
+          <option value="OFF" %_no_dateTime%>番号順で並べる</option>
+          <option value="ON" %_yes_dateTime%>提出順で並べる</option>
+        </select></td>
+      <td  width="23" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="3" colspan="8" valign="top"><img src="/pc/images/spacer.gif" width="10" height="3"></td>
+    </tr>
+    <tr> 
+      <td height="79" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="6" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td height="26" colspan="3" valign="middle" class="a10"><img src="/pc/images/titleSymbol.gif" width="54" height="18" align="absmiddle"><img src="/pc/images/spacer.gif" alt="" width="5" height="10">%_kadai_title%</td>
+            <td colspan="2" valign="middle" class="a30"><img src="/pc/images/spacer.gif" alt="" width="10" height="10"> 
+              <input type="text" name="_search" size="12" maxlength="20" class="searchBox" value="%_search%"> 
+              <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image46','','/pc/images/ban_search-2.gif',1)" onClick="setSubmit('SEARCH')"><img src="/pc/images/ban_search-1.gif" name="Image46" width="60" height="18" border="0" align="absbottom"  alt="学籍番号で解答を検索する"></a></td>
+          </tr>
+          <tr> 
+            <td width="152" height="29" valign="middle" class="c10"><img src="/pc/images/bangoSymbol.gif" width="54" height="18" align="absmiddle"><img src="/pc/images/spacer.gif" alt="" width="5" height="10">%_stNumber%</td>
+            <td width="168" valign="middle" class="c10"><img src="/pc/images/shimeiSymbol.gif" width="54" height="18" align="absmiddle"><img src="/pc/images/spacer.gif" alt="" width="5" height="10">%_stName%</td>
+            <td width="198" valign="middle" class="c20"><img src="/pc/images/teishutsubiSymbol.gif" width="54" height="18" align="absmiddle"><img src="/pc/images/spacer.gif" alt="" width="5" height="10">%_updateTime% 
+            </td>
+            <td width="71" align="center" valign="middle"  class="c35">No.<span class="blueBold">%_rec%</span></td>
+            <td width="143" valign="middle"  class="c36">
+	            <img src="/pc/images/spacer.gif" alt="" width="10" height="10">
+	            <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image38','','/pc/images/LE-2.gif',1)" onClick="setSubmit('FIRST')">
+	            <img src="/pc/images/LE-1.gif" alt="先頭のデータへ" name="Image38" width="20" height="14" border="0"></a>
+            
+	            <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','/pc/images/L-2.gif',1)" onClick="setSubmit('BACK')">
+	            <img src="/pc/images/spacer.gif" width="2" height="10"border="0">
+	            <img src="/pc/images/L-1.gif" alt="一つ前へ" name="Image39" width="20" height="14" border="0"></a>
+            
+	            <img src="/pc/images/spacer.gif" width="5" height="10">
+	            <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image44','','/pc/images/R-2.gif',1)" onClick="setSubmit('NEXT')">
+	            <img src="/pc/images/R-1.gif" alt="次へ" name="Image44" width="20" height="14" border="0"></a>
+            
+    	        <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','/pc/images/L-2.gif',1)">
+    	        <img src="/pc/images/spacer.gif" width="2" height="10"border="0"></a>
+    	        
+    	        <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image45','','/pc/images/RE-2.gif',1)" onClick="setSubmit('LAST')">
+    	        <img src="/pc/images/RE-1.gif" alt="最後のデータへ" name="Image45" width="20" height="14" border="0"></a>
+            </td>
+          </tr>
+          <tr> 
+            <td height="27" valign="middle"  class="c10"><img src="/pc/images/kubunSymbol.gif" width="54" height="18"><img src="/pc/images/spacer.gif" alt="" width="5" height="10"><img src="/pc/images/mark%_kubun%.gif" width="11" height="11" align="absmiddle"><img src="/pc/images/spacer.gif" alt="" width="15" height="10"><img src="/pc/images/yubin%_sent%.gif" width="12" height="12" align="absmiddle"></td>
+            <td colspan="2" valign="middle" class="c10"><img src="/pc/images/fileDispSymbol.gif" width="54" height="18"><img src="/pc/images/spacer.gif" alt="" width="5" height="10"><span class="blueStr">%_fileList%</span></td>
+            <td colspan="2" valign="middle" class="c30"><img src="/pc/images/spacer.gif" alt="" width="10" height="10"><img src="/pc/images/hyokaSymbol.gif" width="54" height="18" align="absmiddle"><img src="/pc/images/spacer.gif" width="5" height="10"> 
+              <input type="text" name="_score" size="3" maxlength="3" class="hyoka" value="%_score%"  onChange= "setSubmit('WRITE')"> 
+              <img src="/pc/images/spacer.gif" alt="" width="5" height="10"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image48','','/pc/images/saveLargeIcon-2.gif',1)"  onClick="setSubmit('WRITE')"><img src="/pc/images/saveLargeIcon-1.gif" alt="データを保存する" name="Image48" width="60" height="20" border="0" align="absmiddle"></a></td>
+          </tr>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="152" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="168" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="198" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="71" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="143" height="1"></td>
+          </tr>
+        </table></td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="33" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="274" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="211" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="2" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="49" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="163" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    </tr>
+  </table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="780" height="17" valign="bottom"><img src="/pc/images/lineB2.gif" width="780" height="7"></td>
+    </tr>
+
+  </table>
+%_html%
+ <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="31" height="21" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="603" valign="top" class="normal_brown2"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      
+    <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="11" colspan="4" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="15">&nbsp;</td>
+      <td>&nbsp;</td>
+      <td width="60">&nbsp;</td>
+      <td width="86" valign="middle"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

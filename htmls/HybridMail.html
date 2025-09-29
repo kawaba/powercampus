@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ハイブリッドメール</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function setFileSubmit(sw) {
+	if(document.form1.file.value!=""){
+		document.form1._menu.value = "SEND_FILE";
+		document.form1._opFile.value = "FILE";
+		document.form1.submit();
+	}else{
+		document.form1._menu.value = "ERROR_FILE";
+		document.form1._opFile.value = "NO_FILE";
+		document.form1.submit();
+	}
+}
+function setSubmit(sw) {
+	document.form1._menu.value = sw; // UPDATE  RETURN MAIL_MODE
+	document.form1._opFile.value = "NO_FILE"
+	document.form1.submit();
+}
+function note(){
+	w = window.open("/pc/help/help01.html", "help01", "width=700,height=300");
+}
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=700,left=5,top=5,scrollbars=yes,");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no,");
+  }
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('/pc/images/toggle.gif','/pc/images/fileSend2.gif')">
+<form name="form1" method="post" action="%_action%" ENCTYPE="multipart/form-data">
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="15" colspan="9" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="500" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif" ></td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="../top/manual%_division%.html" target="_blank" ><img src="/pc/images/howtoIcon.gif" width="32" height="38" border="0" alt="マニュアルを見る"></a></td>
+      <td width="54" rowspan="2" valign="middle"><a href="#" onClick="JumpCL('/pc/launch/postPcCalendar.html');"><img src="/pc/images/calendarIcon.gif" width="32" height="38" border="0" alt="カレンダーを見る"></a></td>
+      <td width="40" rowspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="40" rowspan="2" valign="middle"><a href="#"  onClick="setSubmit('SEND_MAIL')"><img src="/pc/images/mailSendIcon.gif" width="32" height="38" border="0"></a></td>
+      <td width="40" rowspan="2" valign="middle"><a href="#" onClick="setSubmit('RETURN')"><img src="/pc/images/returnIcon.gif" width="32" height="38" border="0" alt="戻る"></a></td>
+      <td width="11" rowspan="2" align="left" valign="bottom" class="mormal_very_small__blue"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="9" valign="bottom"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+    </tr>
+    <tr> 
+      <td height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="500" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="54" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="40" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="11" height="1"></td>
+    </tr>
+  </table>
+
+
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="66" height="40" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="714" valign="middle" class="morma_large">［<img src="/pc/images/spacer.gif" width="5" height="10"><span class="mormal_blue1">%_wdateString%</span><img src="/pc/images/spacer.gif" width="5" height="10"> 
+        <span class="large_green">%_title%</span><img src="/pc/images/spacer.gif" width="5" height="10">］</td>
+    </tr>
+    <tr> 
+      <td height="0"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="66" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="714" height="1"></td>
+    </tr>
+  </table> 
+  <table width="780" border="0" cellpadding="0" cellspacing="0" class="mormalWhite14">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="64" rowspan="4" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="7" rowspan="2" valign="top"><img src="/pc/images/mailTab1.gif" width="220" height="26" border="0" usemap="#Map"></td>
+      <td height="23" colspan="6" valign="top"><img src="/pc/images/spacer.gif" width="100" height="20"></td>
+      <td width="184" valign="top"><select name="_mailMode" class="mormal_blue2" id="_mailMode"  onChange="setSubmit('MAIL_MODE')">
+          <option value="OFF" %_no_sashikomi%>差込みメール送信は無効</option>
+          <option value="ON" %_ok_sashikomi%>差込みメールを送信する</option>
+        </select></td>
+      <td width="25">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="3" colspan="7" valign="top" bgcolor="#6699FF"><img src="/pc/images/spacer.gif" width="100" height="3"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="32" colspan="3" align="center" valign="middle" bgcolor="#6699FF" class="mormal_white"> 
+        　件名</td>
+      <td colspan="8" valign="middle" bgcolor="#6699FF"><input name="_mailSubject" type="text" class="mormalLarge14" id="_mailSubject" value="%_mailSubject%" size="55" maxlength="100"></td>
+      <td width="48" align="center" valign="middle" bgcolor="#6699FF" class="mormal_white">返信先</td>
+      <td colspan="2" valign="middle" bgcolor="#6699FF"><input name="_returnAd" type="text" class="mormal_blue1" id="_returnAd" value="%_returnAd%" size="35" maxlength="60"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="3" colspan="14" valign="top" bgcolor="#6699FF"><img src="/pc/images/spacer.gif" width="10" height="3"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="18"></td>
+      <td width="25"></td>
+      <td width="3"></td>
+      <td width="30"></td>
+      <td width="45"></td>
+      <td width="64"></td>
+      <td width="31"></td>
+      <td width="22"></td>
+      <td width="6"></td>
+      <td width="28"></td>
+      <td width="37"></td>
+      <td width="134"></td>
+      <td></td>
+      <td width="34"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr> 
+	<pct: @sendMark> 
+	<pct: block> 
+      <td height="24"></td>
+      <td colspan="2" align="center" valign="middle" bgcolor="#FFFFCC" class="mormal" style="border-top: 1px solid #666666;border-left: 1px solid #666666;"> 
+        <input name="_sw_keitai" type="checkbox" class="mormal_samll" id="_sw_keitai" value="ON" %_kmSign%> 
+      </td>
+      <td colspan="2" align="center" valign="middle" bgcolor="#FFFFCC" class="mormal_samll2" style="border-top: 1px solid #666666;border-right: 1px solid #666666;"><img src="/pc/images/keitaiTab.gif" width="64" height="20"></td>
+      <td></td>
+      <td></td>
+      <td colspan="2" align="center" valign="middle" bgcolor="#FFFFCC"  style="border-top: 1px solid #666666;border-left: 1px solid #666666;"><input name="_sw_email" type="checkbox" class="mormal_samll" id="_sw_email" value="ON" %_imSign%></td>
+      <td colspan="2" align="center" valign="middle" bgcolor="#FFFFCC" style="border-top: 1px solid #666666;border-right: 1px solid #666666;"><img src="/pc/images/emailTab.gif" width="64" height="20"></td>
+      <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <pct: /block> 
+	  </tr>
+    <tr> 
+      <td height="175"></td>
+      <td colspan="5" align="center" valign="middle" bgcolor="#FFCCCC" style="border: 1px solid #666666"> 
+        <textarea name="_kmText" cols="21" rows="10" wrap="PHYSICAL" class="mormalD" id="_kmText">%_kmText%</textarea></td>
+      <td>&nbsp;</td>
+      <td colspan="8" align="center" valign="middle" bgcolor="#99CCCC" style="border: 1px solid #666666"> 
+        <textarea name="_emText" cols="84" rows="10" wrap="PHYSICAL" class="mormalD" id="_emText">%_emText%</textarea></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td rowspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td height="30" colspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="13" valign="middle" class="normal_brown2">%_msg%</td>
+    </tr>
+    <tr> 
+      <td height="7" colspan="14" valign="top"><img src="/pc/images/logolineB1.gif" width="691" height="7"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="22" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="8" valign="bottom"><span class="mormal_blue1">送信先一覧：　</span><span class="mormal">チェックOFFで送信除外</span></td>
+      <td colspan="5" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="64" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="3" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="30" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="45" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="64" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="31" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="22" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="6" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="28" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="37" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="134" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="48" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="34" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="184" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="25" height="1"></td>
+    </tr>
+  </table>
+
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="64" height="49">&nbsp;</td>
+    <td width="230" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr> 
+          <td width="32" height="24" align="center" valign="middle" bgcolor="#CC9999" class="mormal_white" style="border: 1px solid #CCCCCC"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image47','','/pc/images/toggle.gif',1)"  onClick="setSubmit('REVERSE')"><img src="/pc/images/toggle1.gif" name="Image47" width="30" height="22" border="0" align="absmiddle" alt="チェックを全てクリア／ON"></a></td>
+          <td width="80" align="center" valign="middle" bgcolor="#CC9999" class="mormal_white" style="border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">学籍番号</td>
+          <td width="118" align="center" valign="middle" bgcolor="#CC9999" class="mormal_white" style="border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">氏　　名</td>
+        </tr>
+	<pct: @listForMail>
+	<pct: block>
+        <tr> 
+          <td height="24" align="center" valign="middle" style="border-left: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><input type="checkbox" name="_rv%_n%" value="ON" %_rvSign%></td>
+          <td align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">%_stNumber%</td>
+          <td align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">%_kname%</td>
+        </tr>
+	<pct: /block>
+	<pct: @listForMail_blankBLK>
+	<pct: block>
+        <tr> 
+          <td height="24" align="center" valign="middle" style="border-left: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+            <td align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">＜差込ファイル</td>
+            <td align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">を送信してください＞</td>
+        </tr>
+	<pct: /block>
+        <tr> 
+          <td height="1"><img src="/pc/images/spacer.gif" alt="" width="32" height="1"></td>
+          <td><img src="/pc/images/spacer.gif" alt="" width="80" height="1"></td>
+          <td><img src="/pc/images/spacer.gif" alt="" width="118" height="1"></td>
+        </tr>
+      </table></td>
+    <td width="23">&nbsp;</td>
+    <td width="440" rowspan="2" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <!--DWLayoutTable-->
+          <tr> 
+            <td width="83" height="40" align="center" valign="middle" bgcolor="#6699FF" style="border-left: 1px solid #336699;border-bottom: 1px solid #336699;border-top: 1px solid #336699;"><img src="/pc/images/fileField.gif" width="70" height="20"></td>
+            <td colspan="2" align="left" valign="middle" bgcolor="#6699FF" style="border-bottom: 1px solid #336699;border-top: 1px solid #336699;"> 
+              <input name="file" type="file" class="mormal_blue" size="37" maxlength="200"  ></td>
+            <td width="93" align="center" valign="middle"  style="border: 1px solid #336699;"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image48','','/pc/images/fileSend2.gif',1)" onClick="setFileSubmit()"><img src="/pc/images/fileSend.gif" name="Image48" width="60" height="22" border="0" align="absmiddle" alt="差込みファイルを送信"></a></td>
+          </tr>
+          <tr valign="middle"> 
+            <td height="10" colspan="4"><img src="/pc/images/spacer.gif" width="10" height="10"></td>
+          </tr>
+          <tr> 
+            <td height="24" colspan="2" align="center" valign="middle" bgcolor="#336699" class="mormal_white" style="border: 1px solid #CCCCCC">差込み項目タグ</td>
+            <td colspan="2" align="center" valign="middle" bgcolor="#336699" class="mormal_white" style="border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;">例示の値</td>
+          </tr>
+		<pct: @tagList>
+		<pct: block>
+          <tr> 
+            <td height="24" colspan="2" align="left" valign="middle" class="mormal" style="border-left: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">%_tag%</td>
+            <td colspan="2" align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">%_tagValue%</td>
+          </tr>
+		<pct: /block>
+		<pct: @tagList_blank_OFF_BLK>
+		<pct: block>
+          <tr> 
+            <td height="24" colspan="2" align="left" valign="middle" class="mormal" style="border-left: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">＜差込送信モードではありません＞</td>
+            <td colspan="2" align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><!--DWLayoutEmptyCell-->&nbsp;</td>
+          </tr>
+		<pct: /block>
+		<pct: @tagList_blank_ON_BLK>
+		<pct: block>
+          <tr> 
+            <td height="24" colspan="2" align="left" valign="middle" class="mormal" style="border-left: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">＜差込データの指定がありません＞</td>
+            <td colspan="2" align="left" valign="middle" class="mormal" style="border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;"><img src="/pc/images/spacer.gif" width="5" height="10">★まず差し込みファイルを送信してください</td>
+          </tr>
+		<pct: /block>
+          <tr> 
+            <td height="1"><img src="/pc/images/spacer.gif" alt="" width="83" height="1"></td>
+            <td width="117"><img src="/pc/images/spacer.gif" alt="" width="117" height="1"></td>
+            <td width="147"><img src="/pc/images/spacer.gif" alt="" width="147" height="1"></td>
+            <td><img src="/pc/images/spacer.gif" alt="" width="93" height="1"></td>
+          </tr>
+        </table></td>
+    <td width="23">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="47"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="/pc/images/spacer.gif" alt="" width="64" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="230" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="440" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="23" height="1"></td>
+  </tr>
+</table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td height="10" colspan="2" valign="top">
+	  </td>
+
+  </tr>
+  <tr> 
+    <td height="11" colspan="2" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+  </tr>
+  <tr> 
+    <td width="694" height="15">&nbsp;</td>
+    <td width="86" valign="middle"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+  </tr>
+</table>
+
+<map name="Map">
+  <area shape="rect" coords="73,3,142,25" href="#"  onClick="setSubmit('VIEW')" alt="メール送信イメージの確認">
+</map>
+</form>
+</body>
+</html>

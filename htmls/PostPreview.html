@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>科目登録・変更</title>
+<link href="/pc/css/mycss.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+function dosubmit(sw) {
+	document.form1._menu.value = sw; // 
+	document.form1.submit();
+}
+
+function Jump(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=450,height=600,left=5,top=5,scrollbars=yes,toolbar=yes,resizable=yes");
+  }
+}
+function JumpCL(url) 
+{
+  if (url != '')
+  {
+    window.open(url, '_blank',"width=180,height=560,left=5,top=5,scrollbars=no");
+  }
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+A:link 		{ text-decoration: none; }
+A:visited 	{ text-decoration: none; }
+A:active 	{ text-decoration: none; }
+A:hover 	{ text-decoration: none; }
+
+ body   { font-size: 12px; color: #333333;}
+ table  { font-size: 12px; color: #333333; empty-cells: show;}
+
+.a1{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.a2{
+	font-size: 12px;
+	color: #333333;
+	border: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.a3{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.x1{
+	font-size: 12px;
+	color: #000000;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+}
+.x2{
+	font-size: 12px;
+	color: #333333;
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #6699CC;
+}
+.x3{
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-right: 1px solid #849898;
+
+	background-color: #6699CC;
+}
+
+.b1{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b2{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b2_nopadding{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.b11{
+	font-size: 12px;
+	font-weight: bold;
+	color: #3366CC;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b21{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px dotted #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #F0F3FF;
+	padding: 5px;
+}
+.b12{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.b22{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #99CCFF;
+}
+.b1a{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #7EA2A2;
+}
+.b2a{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #7EA2A2;
+}
+.a2b{
+	border-top: 1px solid #849898;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+
+}
+.b1_boldBottom{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #FAFAFF;
+	padding: 5px;
+}
+.b2_boldBottomNopaddig{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #FAFAFF;
+}
+.b1a_boldBottom{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	background-color: #F0F3FF;
+	padding: 5px;
+}
+.b2a_boldBottomNopaddig{
+	font-size: 12px;
+	color: #333333;
+	border-bottom: 1px solid #849898;
+	border-left: 1px solid #849898;
+	border-right: 1px solid #849898;
+	background-color: #F0F3FF;
+}
+.green12a {font-size: 12px; color: #000000; background-color: #6699CC;}
+.green12b {font-size: 12px; color: #006600; background-color: #FAFAFF;padding: 1px 5px 1px 5px5px;}
+.green12c {font-size: 12px; color: #333333; background-color: #FAFAFF;padding: 1px 5px 1px 5px5px;}
+
+.gray12a { font-size: 12px; color: #333333; }
+.red12a  { font-size: 12px; color: #CC3366; font-weight: bold; }
+
+-->
+</style>
+</head>
+<body>
+<form name="form1" method="post" action="%_action%">
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td height="15" colspan="6" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="15" rowspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="641" height="34" valign="top"><img src="/pc/images/logo/%_szDB%.gif"></td>
+      <td colspan="2" rowspan="2" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" rowspan="2" valign="bottom"><a href="#" onClick="dosubmit('RETURN')"><img src="/pc/images/returnIcon.gif" alt="戻る" width="32" height="38" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td height="9" valign="top"><img src="/pc/images/spacer.gif" width="100" height="9"></td>
+  </tr>
+  <tr> 
+    <td height="11" colspan="6" valign="top"><img src="/pc/images/logo/logoline4.gif" width="780" height="11"></td>
+  </tr>
+  <tr> 
+    <td height="20" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td colspan="2" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="2" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="15" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="0"></td>
+    <td></td>
+    <td width="31"></td>
+    <td width="26"></td>
+    <td width="52"></td>
+    <td></td>
+  </tr>
+</table>
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="17"  height="25"  align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="150"  align="center" valign="middle" class="x1">投　稿　者</td>
+    <td width="496"  align="center" valign="middle" class="x2">記　　　　　　事</td>
+    <td width="102" valign="top" class="x3"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="17"  align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="17"  height="60"  align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="150" height="60"  align="center"   valign="top" class="b11" ><img src="%_faceIconURL%" alt="" border="0"><br><br>%_dispName%</td>
+    <td height="60" colspan="2"  align="left"   valign="top" class="b2">
+<pct: @Subject>
+<pct: block>
+	<span class="red12a">%_subjectPrv%</span><br>
+<pct: /block>
+<pct: @Content>
+<pct: block>
+	%_contentPrv%
+<pct: /block>
+<pct: @Attach>
+<pct: block>
+      <br>%_attachmentPrv%
+<pct: /block>
+    </td>
+	<td width="17"  height="60"  align="center" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="20"  align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td align="center" valign="top" class="b1_boldBottom" ><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td colspan="2" valign="top" class="b2_boldBottomNopaddig"> <table width="596" border="0" cellpadding="0" cellspacing="0">
+        <!--DWLayoutTable-->
+        <tr > 
+            <td height="20"width="396" class="green12b">%_dateStr%</td>
+          <td width="100" align="right" valign="bottom" class="green12b"><img src="/pc/images/quote.gif" width="21" height="15" border="0" alt="この記事を引用して投稿する"><img src="/pc/images/spacer.gif" width="8" height="15" border="0"><img src="/pc/images/post.gif" width="19" height="15" border="0" alt="新らしく記事を作成して投稿する"></td>
+          <td width="100" align="center" valign="bottom" class="green12b"><img src="/pc/images/pencile2.gif" width="24" height="18" border="0" alt="この記事を編集する"><img src="/pc/images/deleteIcon.gif" width="16" height="15" border="0" alt="この記事を削除する"><img src="/pc/images/spacer.gif" width="8" height="15" border="0"></td>
+        </tr>
+        <tr> 
+          <td height="0"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr> 
+          <td height="1"><img src="/pc/images/spacer.gif" alt="" width="396" height="1"></td>
+          <td><img src="/pc/images/spacer.gif" alt="" width="100" height="1"></td>
+          <td><img src="/pc/images/spacer.gif" alt="" width="100" height="1"></td>
+        </tr>
+      </table></td>
+    <td align="center" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr height="10"> 
+    <td height="12"  align="center" valign="middle"><img src="/pc/images/spacer.gif" alt="" width="10" height="10"></td>
+    <td align="center" valign="middle" class="b12"><img src="/pc/images/spacer.gif" alt="" width="10" height="10"></td>
+    <td colspan="2" align="center" valign="middle" class="b22"><img src="/pc/images/spacer.gif" alt="" width="10" height="10"></td>
+    <td align="center" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="1"><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="150" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="496" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="102" height="1"></td>
+    <td><img src="/pc/images/spacer.gif" alt="" width="17" height="1"></td>
+  </tr>
+</table>
+  <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td width="20" height="35" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      
+    <td width="668" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp; </td>
+      <td width="78" align="center" valign="bottom"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="14" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="668" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="78" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="14" height="1"></td>
+    </tr>
+  </table>
+ <table width="780" border="0" cellpadding="0" cellspacing="0">
+    <!--DWLayoutTable-->
+    <tr> 
+      <td height="28" colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td width="2">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td height="13" colspan="3" valign="top"><img src="/pc/images/logo/logoline5.gif" width="780" height="11"></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="696" height="8"></td>
+      <td width="78" valign="top"><img src="/pc/images/mail-and-work.gif" width="78" height="8"></td>
+      <td width="6"></td>
+      <td></td>
+    </tr>
+    <tr> 
+      <td height="1"><img src="/pc/images/spacer.gif" alt="" width="696" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="78" height="1"></td>
+      <td><img src="/pc/images/spacer.gif" alt="" width="6" height="1"></td>
+      <td></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

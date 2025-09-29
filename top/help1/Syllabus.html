@@ -1,0 +1,658 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>15．シラバスの書式（フォーム）を変更する</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="0" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+シラバスの書式(フォーム)を変更する
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　シラバスの記入フォームは自由に設計できます．全てのユーザーのファイルキャビネットに，あらかじめ「科目定義ファイルの雛形」として<span style="font-weight: bold;"><span style="color: royalblue;">syllabus.xml</span></span>が配布されていますので，これを元にしてオリジナルのシラバスを作成します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+--------------------------------------------
+<br><a href="#a01" target ="_self" >１．シラバス定義タグの使い方</a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a href="#a02" target ="_self" >(1) テキストフィールド</a>
+<br><a href="#a03" target ="_self" >(2) テキストエリア</a>
+<br><a href="#a04" target ="_self" >(3) ドロップダウンリスト</a>
+<br><a href="#a05" target ="_self" >(4) チェックボックス</a>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a href="#a06" target ="_self" >２．シラバス定義ファイルの作成</a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a href="#a06" target ="_self" >(1) syllbus.xmlの内容</a>
+<br><a href="#a07" target ="_self" >(1) シラバスフォームの変更手順とシリアル番号</a>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a href="#a08" target ="_self" >３．シラバスフォームの変更の実際</a>
+<br>--------------------------------------------
+<br>
+<br><a name="a01"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> シラバス定義タグの使い方
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　シラバスの項目は，科目名や担当者名など１行以内のテキストで表示するものや講義内容など比較的長い説明文からなるものなどいくつかのパターンがあります．シラバス定義ファイルである syllabus.xmlは，それらのパターンをシラバスの項目ごとに，細かく指定したものです．
+<br>　記述には<span style="color: crimson;">シラバス定義タグ</span>を用いますが，シラバス定義タグは，わずか４種類しかありません．それら４つを組み合わせることで実際のシラバスを定義します．そこで最初に，シラバス定義タグの４つのパターンについて例を示しながら説明します．
+<br><a name="a02"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/001.gif" border="0" align="absmiddle" alt=""> テキストフィールド
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+下図の例で赤で囲った部分は１行以内の短いテキストで記述する項目です．このような項目をテキストフィールドといいます．テキストフィールドでは，「科目名」,「英語科目名」,「副題」,「担当者」のように行頭に表示される文字列を<span style="font-weight: bold;"><span style="color: royalblue;">ラベル</span></span>といい，それに続く入力欄を<span style="font-weight: bold;"><span style="color: royalblue;">入力フィールド</span></span>といいます．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/a15.010.gif" border="1" align="absmiddle" alt="">
+<br>
+<br>上のテキストフィールドはそれぞれ次のようなシラバス定義タグで表現します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #000000 ; white-space:pre; text-align: left;">
+    &lt;<span style="color: green;">title</span>    label=<span style="color: green;">科　目　名</span>   type=<span style="color: blue;">text</span>   col=<span style="font-weight: bold;"><span style="color: green;">80</span>&gt;</span>
+   &lt;/<span style="color: green;">title</span>&gt;
+
+    &lt;<span style="color: green;">etitle</span>   label=<span style="color: green;">英語科目名</span>   type=<span style="color: blue;">text</span>   col=<span style="font-weight: bold;"><span style="color: green;">80</span>&gt;</span>
+   &lt;/<span style="color: green;">etitle</span>&gt;
+
+    &lt;<span style="color: green;">subtitle</span> label=<span style="color: green;">副　　　題</span>   type=<span style="color: blue;">text</span>   col=<span style="font-weight: bold;"><span style="color: green;">80</span>&gt;</span>
+   &lt;/<span style="color: green;">subtitle</span>&gt;
+
+    ･････
+    &lt;<span style="color: green;">tantou</span>   label=<span style="color: green;">担　当　者</span>   type=<span style="color: blue;">text</span>   col=<span style="font-weight: bold;"><span style="color: green;">20</span>&gt;</span>
+   &lt;/<span style="color: green;">tantou</span>&gt;
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+表示例とシラバス定義タグの対応は簡単です．まず，青字の <span style="color: blue;">text</span> がテキストフィールドを指定するキーワードです．そして，緑色の部分が項目ごとに指定する部分で，最初の例で言うと，先頭の <span style="color: green;">title</span> がこの項目に付けた名前です．他と重複しなければ好きな名前をつける事ができます．&quot;<span style="color: green;">科　目　名</span>&quot; は画面に表示するラベルです．最後の <span style="font-weight: bold;"><span style="color: green;">80</span> </span>はフィールドの長さを文字数で示すものです．
+<br>
+<br>
+<br><a name="a03"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/002.gif" border="0" align="absmiddle" alt=""> テキストエリア
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+下図の例で赤で囲った部分は，数行の長いテキストで記述する項目です．このような項目をテキストエリアといいます．テキストエリアでも，【概　　要】のように行頭に表示される文字列を<span style="font-weight: bold;"><span style="color: royalblue;">ラベル</span></span>といい，それに続く入力欄を<span style="font-weight: bold;"><span style="color: royalblue;">入力フィールド</span></span>といいます．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/a15.011.gif" border="1" align="absmiddle" alt="">
+<br>
+<br>上のテキストエリアは次のようなシラバス定義タグで表現します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #000000 ; white-space:pre; text-align: left;">
+    &lt;<span style="color: green;">title</span>    label=<span style="color: green;">概　　要</span>   type=<span style="color: blue;">text</span>   col=<span style="font-weight: bold;"><span style="color: green;">80</span></span>     row=<span style="font-weight: bold;"><span style="color: green;">15</span></span>&gt;
+   &lt;/<span style="color: green;">title</span>&gt;
+
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+表示例とシラバス定義タグの対応をみると明らかですが，１．で説明したテキストフィールドとほとんど同じです．唯一違うのは，row=15 という部分が増えていることですが，これは入力フィールドの行数を指定するものです．テキストエリアとテキストフィールドは，行数指定があるかないかだけの違いしかありません．
+<br> 
+<br>
+<br><a name="a04"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/003.gif" border="0" align="absmiddle" alt=""> ドロップダウンリスト
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/a15.0130.gif" border="0" ></td>
+<td valign="top">
+<table width= "350" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+
+<br>下図の例で赤で囲った部分は，いくつかの選択候補からひとつを選ぶ項目です．左に示すようにリストからマウスで選択します．この例のように，いくつかのカテゴリがあって，その中のどれかに該当するという項目が，シラバスにはよく出てきます．このような項目をドロップダウンリストといいます．
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+ドロップダウンリストでも，&quot;履修区分&quot;や&quot;科目種別&quot;のように行頭に表示される文字列を<span style="font-weight: bold;"><span style="color: royalblue;">ラベル</span></span>といいます．そして，それに続く部分を<span style="font-weight: bold;"><span style="color: royalblue;">選択肢リスト</span></span>といいます．
+<br>
+<br><img src="files/a15.013.gif" border="1" align="absmiddle" alt="">
+<br>
+<br>上のドロップダウンリストは次のようなシラバス定義タグで表現します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #000000 ; white-space:pre; text-align: left;">
+    &lt;<span style="color: green;">rishu</span>   label=<span style="color: green;">履修区分</span>　 type=<span style="color: blue;">list</span>&gt;
+        <span style="color: green;">選択 選択必修 必修</span>
+    &lt;/<span style="color: green;">rishu</span>&gt;
+
+
+    &lt;<span style="color: green;">kubun</span>   label=<span style="color: green;">科目種別</span>　 type=<span style="color: blue;">list</span>&gt;
+        <span style="color: green;">専門科目 教職科目 共通教養科目　その他</span>
+    &lt;/ <span style="color: green;">kubun</span>&gt;
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+青字のlistがドロップダウンリストを指定するキーワードです．緑色の部分は,各項目ごとに指定する必要のある部分ですが，表示例とタグを見比べるとその働きは明らかです．これまでの例と同じように，&quot;rishu&quot; や &quot;kubun&quot; はこれらの項目に付けた名前です，label= に続いてラベルを書きます．そして，選択肢はタグの間に挟みこむように書きます．選択肢項目は間に空白を入れて区切り，個数には制限はありません．
+<br> 
+<br>
+<br><a name="a05"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/004.gif" border="0" align="absmiddle" alt=""> チェックボックス
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+下図の例で赤で囲った部分は，選択候補から複数の対象を選ぶ項目です．図に示すようにマウスでクリックすることで，複数の対象を選択します．これもシラバスにはよく出てくる項目です．
+<br>
+<br>　　<img src="files/a15.0140.gif" border="1" align="absmiddle" alt="">
+<br>
+<br>チェックボックスでもドロップダウンリストと同様に，&quot;対象学年&quot;のように行頭に表示される文字列を<span style="font-weight: bold;"><span style="color: royalblue;">ラベル</span></span>といいます．そして，それに続く部分を<span style="font-weight: bold;"><span style="color: royalblue;">選択肢リスト</span></span>といいます．
+<br>
+<br><img src="files/a15.014.gif" border="1" align="absmiddle" alt="">
+<br>
+<br>上のチェックボックスは次のようなシラバス定義タグで表現します．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #000000 ; white-space:pre; text-align: left;">
+    &lt;<span style="color: green;">taisho</span> label=<span style="color: green;">対象学年</span>　 type=<span style="color: blue;">check</span>&gt;
+        <span style="color: green;">１年   ２年   ３年   ４年</span>
+    &lt;/<span style="color: green;">taisho</span>&gt;
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+青字の check がチェックボックスを指定するキーワードです．緑色の部分は,各項目ごとに指定する必要のある部分ですが，あとはドロップダウンリストと全く同じです．&quot;taisho&quot; はこの項目に付けた名前です．label= に続いてラベルを書きます．そして，選択肢はタグの間に挟みこむように書きます．選択肢項目は間に空白を入れて区切り，個数には制限はありません．
+<br>
+<br>
+<br>
+<br><a name="a06"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> シラバス定義ファイルの作成
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/001.gif" border="0" align="absmiddle" alt=""> syllbus.xmlの内容
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "280" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　syllabus.xmlの内容を示します．赤い枠内がシラバスの各項目をタグで定義したものです．これらの内容は，これまでの説明で十分理解できるものです．この部分を各自で編集することにより，自分用のシラバスフォームを定義します．
+<br>
+<br>　ところで，「概要」と「内容」では col= で指定する文字数が書かれていませんが，書いてない場合はシステムの規定値が当てられます．
+<br>
+<br>　　テキストエリア
+<br>　　　　row =  省略不可
+<br>　　　　col =  省略可(規定値は 90 )
+<br>
+<br>　　テキストフィールド
+<br>　　　　col =  省略可(規定値は 50 )
+<br>
+<br>
+<br>　また，青い文字で書かれている部分は<span style="color: crimson;">変更できません</span>．青い文字の部分は，シラバス定義タグの外枠にあたるもので，いつもこのように書きます．
+<br>ただ，赤枠の内部にも青い文字がありますが，これは「<span style="color: royalblue;">科目名</span>」の欄を定義するものです．科目名の欄は，名前を <span style="color: crimson;">title</span> として，<span style="border-bottom:1px dotted red">必ず作成しなければならない</span>ことを意味しています．
+<br>
+<br>　青い文字の中に緑色の文字がありますが，この部分のみ変更してもよいことを意味します．つまり，serialの値(<span style="color: crimson;">シリアル番号</span>)と科目名欄のラベルおよび桁数は変更することができます．なお，シリアル番号については次の節で説明します．
+<br>
+<br>
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a15.021.gif" border="1" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+
+<br><a name="a07"></a>
+<br><img src="files/002.gif" border="0" align="absmiddle" alt=""> シラバスフォームの変更手順とシリアル番号
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+手順はつぎのようになります．
+<br><span style="color: royalblue;">
+<br>　1.syllabus.xmlのシリアル番号を 0003 と変更する
+<br>　2.syllabus.xmlをエディタで編集して新しいシラバス定義ファイルを作成する
+<br>　3.科目作成画面のアップローダーを使って syllabus.xml をアップロードする
+<br>　4.科目作成画面で，科目の新規作成ボタンをクリックし，生成された画面をチェックする
+<br>　5.チェックで不具合があれば 2.→3.→4.→5. を繰り返す
+<br></span>
+<br>　シリアル番号は，<span style="color: crimson;">0003</span>から始まります(先頭の000は省略できません)．syllabus.xmlでは最初 0002となっているので，必ず書き換えてください．これは，シラバス定義ファイルのバージョンを示します．<span style="border-bottom:1px dotted red">シリアル番号は，そのバージョンのシラバス定義ファイルを使って，何かの科目のシラバスを実際に作成したときから有効になります．</span>したがって，上の 2.～5.の様にシラバス定義ファイルそのものを編集している段階では 0003 から変更する必要はありません．
+<br>
+<br>　ただし，ひとたびシリアル番号が有効になった後で(つまりそのバージョンのフォームで何かの科目のシラバスを作成した後で)，シラバス定義ファイルを変更する場合は，シリアル番号をひとつ増やしてください．0003→0004とするわけです．これによって，古いバージョンのシラバスを新しいバージョンに移行することができます．シリアル番号を上げないと，新しいシラバスフォームは既存の科目には適用されません．
+<br>
+<br>　ですから，例えば，新年度になり，心気一転してシラバスフォームも変更したという場合には，新しいフォームのシリアル番号を上げる必要があります．そうすることによって，新規に作成する科目だけでなく，旧来の科目のシラバスにも自動的に新しいシラバスフォームが適用されます．
+<br>
+<br>　なお，新しくフォームを作成する場合，古いシラバスと同じ内容の項目があれば，その項目名は新しいフォームでも同じものを使って下さい．例えば，科目の内容を説明する項目は新旧どちらのフォームにもあります．古いフォームで，その項目名を naiyou としていれば，新しいフォームでも項目名を naiyou としてください．
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+［古いシラバス］
+   &lt;<span style="color: crimson;">naiyou</span> label=内　　容    type=text  row=20&gt;
+   &lt;/naiyou&gt;                         
+
+［新しいシラバス］
+   &lt;<span style="color: crimson;">naiyou</span> label=講義の説明  type=text  row=25&gt;
+   &lt;/naiyou&gt;                         
+ 
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　こうすると，古いシラバスで【内　　容】欄に書かれていたデータが，新しいシラバスで【講義の説明】という欄にそのまま移行します．
+<br>
+<br>
+<br><a name="a08"></a>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="30px" height="1"></td>
+<td valign="top">
+<table width= "650" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> シラバスフォームの変更の実際
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/01.gif" border="0" align="absmiddle" alt=""> syllabus.xml を編集して新しいフォームを作成する
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "280" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+
+<br>　編集を行う前に，シリアル番号を 0003 に修正しておきます．
+<br>
+<br>新しいファイルでは，不要な項目を削除したほか，図で赤く網掛けした部分が変更されています．「科目の名称」は「科　目　名」のラベルを変更しただけです．「担当者紹介」は新しく項目を作成して追加しています．
+<br>
+<br>(注１)
+<br>「副　　題」などにある空白文字は全角空白
+<br>文字を使います．
+<br>
+<br>(注２)
+<br>&quot;副　　題&quot;とか &quot;80&quot; のように文字列を<span style="color: crimson;">引用
+<br>符でくくらないでください</span>．
+<br>
+<br><span style="font-size: 11px; line-height: _lineheight%;"><span style="color: #666666;">これは厳密にはxmlの文法に合致しないのですが，xmlの専門家でない人にはかえって不自然に見えますので敢えて二重引用符を使用しない仕様にしています．</span></span>
+<br>
+<br>
+<br></td></tr></table></td>
+<td style="padding-left:10px"><img src="files/a15.040.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+
+<br>
+<br>
+<br><img src="files/02.gif" border="0" align="absmiddle" alt=""> 科目作成画面のアップローダーでsyllabus.xmlをアップロードする
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+科目作成画面の開き方は <a href="startup01.html#r01" target ="_blank" ><img src="files/h01.gif" border="0" align="absmiddle" alt=""></a> を参照してください．
+<br>アップローダーでは，最初に「<span style="color: royalblue;">参照</span>」ボタンをクリックしてファイルを選択します．下の画面は選択直後の状態を示しています．「<span style="color: royalblue;">送信</span>」ボタンをクリックすると，ファイルがサーバーへ送信されます．
+<br>
+<br><img src="files/a15.041.gif" border="0" align="absmiddle" alt="">
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/03.gif" border="0" align="absmiddle" alt=""> 科目新規作成ボタンをクリックする
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+新規作成ボタンは新しくシラバスを作成するためのものですが，ここでは送信した新しいシラバス定義ファイルが意図どおりのシラバスフォームとして表示されるかどうか，シラバス作成画面を表示させて確認するためにクリックします．
+<br>
+<br><img src="files/a15.042.gif" border="0" align="absmiddle" alt="">
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #3366cc ; white-space:normal; text-align: left;">
+<img src="files/04.gif" border="0" align="absmiddle" alt=""> フォームを確認する
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "630" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+意図したとおりにフォームが表示されているかどうかを確認します．また，シリアル番号がきちんと更新されたかどうか，画面の表示から確認します．さらに修正する必要があれば，<img src="files/01.gif" border="0" align="absmiddle" alt=""> に戻って修正します．
+<br>
+<br>必要があれば，実際に何かデータを書き込んで，確認ボタンでプレビューを見たりしても構いません．ただし，この操作で新しく科目が出来てしまいますので，元の科目一覧画面にもどったとき，削除ボタンで削除しておいてください．
+<br>
+<br><img src="files/a15.043.gif" border="0" align="absmiddle" alt="">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>

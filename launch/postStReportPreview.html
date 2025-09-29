@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>カレンダー</title>
+<SCRIPT language="JavaScript">
+<!--
+function setw(sw) {
+	document.form1._stay.value   		= opener.document.form1._stay.value;
+	document.form1._szDB.value   		= opener.document.form1._szDB.value;
+	document.form1._teUid.value  		= opener.document.form1._teUid.value;
+	document.form1._stNumber.value  	= opener.document.form1._stNumber.value;
+
+	document.form1._lec_key.value 		= opener.document.form1._lec_key.value;
+	document.form1._aplec_key.value 	= opener.document.form1._aplec_key.value;
+	document.form1._kadai_key.value   	= opener.document.form1._kadai_key.value;
+	//
+	document.form1._menu.value 			= sw;
+	document.form1.submit();
+
+}
+
+//-->
+</script>
+</title>
+<body onLoad="setw('VIEW')">
+<form  name="form1" method="post" action="/pc/servlet/PowerCampusST">
+
+
+	  <input type="hidden" name="_stay" 			value="%_stay%"> 
+	  <input type="hidden" name="_szDB"     		value="%_szDB%"> 
+      <input type="hidden" name="_teUid"    		value="%_teUid%">
+      <input type="hidden" name="_stNumber"    		value="%_stNumber%"> 
+
+	  <input type="hidden" name="_lec_key"  		value="%_lec_key%"> 
+      <input type="hidden" name="_aplec_key"      	value="%_aplec_key%"> 
+	  <input type="hidden" name="_kadai_key"    	value="%_kadai_key%"> 
+	  <input type="hidden" name="_sheet" 			value="9930">
+      <input type="hidden" name="_menu">
+
+
+</form>
+</body>
+</html>

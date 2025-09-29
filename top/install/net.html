@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="imagetoolbar" content="no">
+<title>PowerCampusのためのコンピュータ環境</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+　<img src="files/PowerCampusDesktop.gif" border="0" align="absmiddle" alt="">　
+<img src="files/logoline4.gif" border="0" align="absmiddle" alt="">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+　PowerCampus desktop のためのコンピュータ環境
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> <a href="#a10" target ="_self" >利用するパソコンのスペック</a><br><br><img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> <a href="#a20" target ="_self" >ネットワーク環境</a> <br><br><img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> <a href="#a30" target ="_self" >究極のネットワーク環境(自宅サーバー)</a><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+1. <a href="#a310" target ="_self" >自宅設備を整備する</a> 
+　1.1 <a href="#aa1" target ="_self" >光ケーブル(FTTH)かADSLでの通信環境</a> 
+  1.2 <a href="#aa2" target ="_self" >ホームルーターの利用と設定</a>
+2. <a href="#aa3" target ="_self" >ドメイン名とＤＮＳサーバーの登録 </a>
+  2.1 <a href="#a321" target ="_self" >レジストラのホームページ</a> 
+  2.2 <a href="#a322" target ="_self" >ドメイン名を登録する</a>
+  2.3 <a href="#a323" target ="_self" >残された問題－DNSサーバーを登録する</a> 
+3. <a href="#a33" target ="_self" >ダイナミックDNSサービスをレンタルする</a>
+  3.1 <a href="#a331" target ="_self" >ダイナミックDNSサービスへの登録</a>
+  3.2 <a href="#a332" target ="_self" >DNSサーバー名の登録</a>
+  3.3 <a href="#a333" target ="_self" >ダイナミックDNSクライアント、DiCEのインストール</a>
+4. <a href="#a40" target ="_self" >まとめ</a>
+
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+<img src="files/line1.gif" border="0" align="absmiddle" alt="">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a10"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> 利用するパソコンのスペック<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/b04.gif" border="0" align="absmiddle" alt=""> WindowsXPの動作するデスクトップパソコンまたはノートブックパソコン<br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> Windows2000,Meなどは非推奨．<br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> CPUは少なくともCeleronの 1GHZ程度以上(早いものほどよい)<br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> メモリーは最低256MB．512MB以上を推奨(多いほどよい)．<br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> 外部記憶装置は10GB以上の空きを推奨．(使用環境による)<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="70px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+特に気をつけるのは<span style="color: #CC3366;">メモリー</span>です．例えば、全員が一斉にアクセスするオンライン試験を行うと、クラスの人数分の記憶領域が一挙に必要になり、もしも不足した場合はハングアップしてしまいます．メモリーは大分安くなってきたので、この際512MBから１GB位に増設することをお勧めします．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+<img src="files/line1.gif" border="0" align="absmiddle" alt="">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a20"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> ネットワーク環境<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　クラスの学生が自宅からアクセスできることが望ましいので、学外からアクセスできるかどうかが重要です．しかし、最近はセキュリティーを固くする傾向にあることから、大学の研究室に置いたパソコンを、自宅からアクセスするには大学側と何らかのネゴシエーションが必要でしょう．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/firewall.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/b10.gif" border="0" align="absmiddle" alt=""> PowerCampusはhttpしか使わないので、Webサーバーと同じ扱いです．これなら大学のファイヤーウォールに穴を開けてもほとんど脅威になるとは思えません．上の図は、学内では172.16.100.32とう内部アドレスが付いている自室のパソコンを、ファイヤーウォールの設定で、<span style="border-bottom:1px dotted red">外部からは210.137.222.12というアドレスに見えるようにし、しかもhttpの通信だけ通すように設定</span>した例です．<br>　まずは、このような設定ができないか大学側と交渉してみるといいでしょう．ファイヤーウォールでのこの設定は比較的簡単ですし、設定だけで費用が発生しないのでこれが一番いい方法です．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/server.gif" border="0" ></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+<br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> もっとも、PowerCampus desktop は大規模用途のLMS(Learning Management System)をWindowsXP用に移植したものなので、100名以上の教員で共同利用することも出来ます．Windows2003 serverにインストールすれば大規模LMSとして使えますから、全学で使うための<span style="color: crimson;">試行</span>ということで左図のserverとして運用するよう、大学側に提案する方法もあります．OSは数人で試行するならWindowsXP proでもいいかもしれません．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　なお、PowerCampusのインストールや運用はとてもラクです．素人でもインストールでき、運用では事務や管理部門に負担が発生しません．ですから、合意は得やすいと思います．また、全学的な運用をお考えの際はご相談ください．何か役に立てるかも知れません．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 16px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+<img src="files/line1.gif" border="0" align="absmiddle" alt="">
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a30"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width= "680" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/createIcon.gif" border="0" align="absmiddle" alt=""> 究極のネットワーク環境(自宅サーバー)<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+【開設手順】<br><br>１．自宅設備を整備する<br>２．ドメイン名とDNSサーバーの登録<br>３．ダイナミックDNSサービスに申し込む<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　大学との交渉がうまくいかない場合は、自宅のパソコンをサーバーにする方法があります．パソコンの電源を切れないのではないかという心配もありますが、自分のクラスを相手に自分で運用するサーバーですから、不要な時は切ってしまうなど、融通を利かせることができます．ここでは、自宅でサーバーを開設するための方法を説明します．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a310"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/01.gif" border="0" align="absmiddle" alt=""> 自宅設備を整備する<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a name="aa1"></a><br><img src="files/n01.gif" border="0" align="absmiddle" alt=""> 光ケーブル(FTTH)かADSLでの通信環境<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "500" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　やはり、ADSLなどの高速回線が必要です．通信には２方向あり、自宅から外部へを「上り」といい、外部から自宅へを「下り」といいます．ADSLは上り・下りが非対称のサービスで、早いのは下りです．上りの速度は下りの半分以下と考えていいでしょう．サーバーでは上りが重要ですから気をつけてください．Bフレッツなどの光ケーブル接続ではこの問題はありません．<br><br>　<br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/cable.jpg" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a name="aa2"></a>　<br><img src="files/n02.gif" border="0" align="absmiddle" alt=""> ホームルーターの利用と設定<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　ホームルータは、外から引いた回線を分線して宅内の複数の機器に接続します．ルーターも含めて、宅内の機器には 、それぞれを識別する番号としてIPアドレスが必要ですが、<span style="color: crimson;">プライベートアドレス</span>を使います．192.168.0.* などというもので、* の部分には1～254の好きな数字を当てます．<br>　ルーター自身は192.168.0.1 とすることが多いようです．これは、宅内でだけ有効なIPアドレスですから、<span style="color: crimson;">内部アドレス</span>といわれます．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "250" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　これに対して、プロバイダーから割り当てられたIPアドレスを<span style="color: crimson;">グローバルアドレス</span>といいます．ルーターはこのアドレスを自分が受けもって(図では210.137.222.10)通信の橋渡しをします．つまり、インターネットの世界に対しては、210.137.222.10 と名乗り、宅内の機器に対しては 192.168.0.1 と名乗っているわけです．こうすることによって、ルーターは、インターネット世界と宅内機器との間の通信を橋渡ししているのです．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/homenet.jpg" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　10年ほど前、このようなルータは100万円近くしたのですが、今では家電量販店に行くと１万円ほどで買えてしまいます．本当に凄い世の中になりました．<br>　さて、ウェブサーバーやPowerCampusシステムは通信方式としてHTTPを使います．また、電子メールの通信はSMTP、ファイル転送はFTPと言うように、インターネットの中には様々な通信方式があります．ルーターは、外部からやって来るこれらの通信データをその種類によって、内部のどのパソコンに送り届けるか制御することができます．これを<span style="color: crimson;">フォーワーディング</span>といいます．例えば、192.168.0.20というアドレスを持つパソコンでPowerCampusシステムを動かす時は、外からやって来るHTTPの通信データは全て、192.168.0.20 へ届けるというように設定しておきます．<br>　この結果、192.168.0.20 のパソコンは、外部からはIPアドレス<span style="color: crimson;">210.137.222.10</span>を持つPowerCAmpusサーバーとして見えるようになります．最近のルーターはフォーワーディング設定をWebから簡単に行うことができます．参考までに、下に、私の自宅のルーターの設定を示します．PowerCampusを動かしている192.168.0.213は、図の赤枠にあるようにフォーワーディング設定をしています．<br><br><img src="files/router_s.gif" border="0" align="absmiddle" alt=""><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　ところで、サーバーを宅内に置く時は、ルーターではDHCPという機能を使いません．DHCPは、ルーターが自動的に宅内のパソコンに対してプライベートアドレスを割り振ってくれる機能です．便利なのですが、サーバーの場合は使えません．個々のパソコンに、固定のプライベートアドレスを割り当ててください．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　右は、そのような状況下における宅内のパソコンのtcp/ip設定です．IPアドレス以外は、サーバーも含めてみな同じです．赤枠で囲ったのは、ルーターのIPアドレスです．デフォルトゲートウェイは、インターネット世界への出入口ですから、ルーターのプライベートアドレス(<span style="color: crimson;">LAN</span>側のアドレスといったりもします．これに対して、グローバルアドレスの側を<span style="color: crimson;">WAN</span>側と言います)を指定します．<br><br>　サブネットマスクは、プライベートアドレスの可変部がどこかを示すためのもので、ラフな言い方をすれば、変えていけないところは255、可変部は0を指定します．192.168.0.* では最後の部分だけを変えていいので、0 と指定してあります．<br>　また、DNSサーバーはプロバイダが指定してきたものを設定します．(実はDNSサーバーなら何でもいいのですが)<br><br>　<br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/tcpip.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20" height="1"></td>
+<td valign="top">
+<table width= "700" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<a name="aa3"></a>　<br><img src="files/02.gif" border="0" align="absmiddle" alt=""> ドメイン名とＤＮＳサーバーの登録<br><br>　サーバーを運営するには、サーバーに名前をつけてやる必要があります．この名前はドメイン名といい、世界中で唯一のものでなくてはなりません．例えば、myclass.net とか、classroom.com のような名前です．ですから勝手につけるわけには行かず、レジストラと呼ばれる企業のホームページを開いて、名前が他に使われていないことを検索し、さらに登録してもらうという手続きが必要です．これは有料で、名前の末尾を".com"とするか、".jp"とするかなどで料金が変わります．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a321"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> レジストラのホームページ<br><br>　世界のレジストラは総元締めである<a href="http://www.icann.org/registrars/accredited-list.html" target ="_blank" >ICANNのWeb</a>で知ることができます．やたらたくさんあり、2005.10現在514社登録されています．登録はレンタルサーバー屋さんなど、代行してくれるところがありますが、私の経験から代行は後々問題があり、やはり自分で登録した方がいいでしょう．日本にも８社ありますので、このどれかで行うのがいいと思います．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/b10.gif" border="0" align="absmiddle" alt=""> 最も低料金な --------------------- <a href="http://do-reg.jp/" target ="_blank" >Doレジ</a> <br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> とにかく老舗の ------------------- <a href="http://www.onamae.com/" target ="_blank" >お名前.com</a><br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> 固定IPアドレスを得るのに便利な --- <a href="http://21-domain.com/" target ="_blank" >21-Domain.com</a><br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> 少し安い ------------------------- <a href="http://domain.livedoor.com/" target ="_blank" >livedoor DOMAIN</a><br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> フツーのサービスの --------------- <a href="http://www.psi-domains.com/" target ="_blank" >Web domains(PSI)</a><br><img src="files/b04.gif" border="0" align="absmiddle" alt=""> 少し高めの ----------------------- <a href="http://domain.fm-net.ne.jp/" target ="_blank" >FM-Net</a><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>　こうして並べてみると、やはり<span style="color: crimson;">Doレジ</span>か<span style="color: crimson;">お名前.com</span>でしょうか．私は、Web domains で登録しましたが、Doレジに移ろうかと思っています(A社で登録したドメイン名をB社の扱いに移籍できます)．ドメイン名は生ものではないので、どこで登録しても同じです．<br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/d1.04.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="160px" height="1"></td>
+<td valign="top">
+<table width= "550" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 10px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #666666 ; white-space:normal; text-align: left;">
+<br>　ところで、固定IPアドレスは、本物のメールサーバーを自分で持ちたい人向けです．本物というのは、後で説明するDNSに登録されていて、ドメイン名からIPアドレスを検索でき、またその逆(逆引き)もでき、逆引きしたときに ***.ocn.ne.jp とかでない、独自ドメイン名が帰ってくるサーバーのことです．本物でなければ送れないメールがあります．その最たるものは携帯電話に送るメールで、２通以上の複数メールを一括送信すると受け取り拒否されてしまいます．また、最近では普通の企業や大学でも、本物から以外のメールを受け取らないところがあります．参考までに、プロバイダの<a href="http://www.interlink.or.jp/service/flets/moot/index.html" target ="_blank" >インターリンク</a>には固定IPアドレスと逆引きの出来るDNSサーバーを利用する安価なサービスがあります．その場合は、関連会社の<a href="http://www.gonbei.jp/" target ="_blank" >gonbe.jp</a>でドメイン名を取得しておくと便利でしょう．<br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a322"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> ドメイン名を登録する<br><br>　さて、これ以降の節では、実際に、Doレジで、PowerCampus.net(大文字、小文字の区別はないので、実際には、powercampus.net)というドメインを登録した事例に沿って説明します．登録は、あっけないほど簡単で、最初に登録したいドメイン名を検索して見て、登録されていなければ、そのま新規登録画面に移ることができます．登録画面では、単に名前や住所をいれるだけです．何度も似たような入力を要求されるのですが、全てに自分の名前を入れていけば問題ありません．<br>　後での変更に備えてパスワードを設定する部分がいくつかありますが、これは全て同じにしておくといいでしょう．後で、メールでも知らせてくれますので、それをなくさないように保管しておきます．<br><br><img src="files/d1.03.gif" border="0" align="absmiddle" alt=""><img src="files/d1.01.gif" border="0" align="absmiddle" alt=""><br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a323"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt="">  残された問題－DNSサーバーを登録する<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+　以上で http://powercampus.net を開設する準備ができました．しかし、他の人がこのドメインをアクセスするには、このサイトのIPアドレスが何か分からないといけません．コンピュータの世界では、名前だけでは通信できず、名前をIPアドレスという数値に置き換える必要があります．<br><br>　名前とIPアドレスの対照表をもつコンピュータを<span style="font-weight: bold;">DNSサーバー</span>と言います．意識することは少ないのですが、誰でも知らないうちにどこかのDNSサーバーに接続して名前からIPアドレスを引いているのです．ですから、インターネットサイトを開設するなら、DNSサーバーを立てる必要があります．このDNSサーバーは、<img src="files/01.gif" border="0" align="absmiddle" alt="">-<img src="files/n02.gif" border="0" align="absmiddle" alt=""> に説明した自分が使うDNSサーバーでではありません．自分側をアクセスしてくる外の人が必要とするDNSサーバーです．混同しないようにしましょう．<br>　さて、いづれにせよDNSサーバーは個人でもつと大変です．また、自宅サーバーでは、プロバイダの都合で、IPアドレスがコロコロかわりますので、ダイナミックDNSという特殊なDNSが必要です．そこで、普通はDNSサーバーをレンタルします．<br>　<br>　レンタルサービスは、無料の<a href="http://www.mydns.jp/index.html" target ="_blank" ><img src="files/s03.gif" border="0" align="absmiddle" alt=""> mydns.jp</a>や有料サービスもある<a href="https://ddo.jp/" target ="_blank" ><img src="files/s03.gif" border="0" align="absmiddle" alt=""> ddo.jp</a>がお勧めです．信頼性を重視するならddo.jpの有料サービス(年間 6,000円)は、安定していて信頼できます．なお、全てのダイナミックDNSサービス業者のリストが <a href="http://www.hi-ho.ne.jp/yoshihiro_e/dice/#LIST" target ="_blank" ><img src="files/h02.gif" border="0" align="absmiddle" alt=""></a>にあります．重要なのは機能の多さではなくて信頼性ですから、どれがいいかと言われると、実際に数年に渡って利用している ddo.jp を進める以外根拠をもちません．確かなのは有料にはそれなりの理由があるということです．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/d1.02.gif" border="1" ></td>
+<td valign="top">
+<table width= "300" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;" >
+レンタルしたDNSサーバーの名前(実は正、副２台あります)を、<span style="color: crimson;">Doレジで</span>、powercampus.net というドメイン名と一緒に登録しておかねばなりません．これは、PowerCampus.netドメインにアクセスするために世界中のコンピュータが参照する基本情報になります．<br><br>　左はそのための画面です．DOレジに自分の顧客IDとパスワードを使ってログインすると、この登録画面にいく事ができます．この登録は、DNSサーバーをレンタルしたあとになるので、くれぐれも忘れないようにしましょう．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 10px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #666666 ; white-space:normal; text-align: left;">
+(注：上図は、登録直後でまだ登録料を支払っていないため、ドメイン名がないと表示されています)<br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a33"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a> <br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/03.gif" border="0" align="absmiddle" alt=""> ダイナミックDNSサービスをレンタルする<br><br>　ダイナミックDNSは特殊なDNSです．そもそもDNSはドメイン名とIPアドレスを対にした表を持っていて、これを検索することにより、ドメイン名からIPアドレスをもとめたり(正引き)、逆にIPアドレスからドメイン名を求めたり(逆引き)します．しかし、一般のプロバイダに接続している状態では、自分に割り当てられるIPアドレスが時々変わってしまいます．プロバイダは、顧客数と同じ数のIPアドレスを持たないので、アクセスしている人に使いまわししているからです．<br><br>　ドメイン名を取得しても、IPアドレスがコロコロ変わるので、変わるたびにDNSの記録も書き換えてやる必要があります．ユーザーコンピュータからの変更データ送信を受け付けて、動的に記録を書き換えてくれるDNS、それがダイナミックDNSなのです．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a331"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a> <br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n01.gif" border="0" align="absmiddle" alt=""> ダイナミックDNSサービスへの登録 <br><br>　ダイナミックDNSサービスはいくつかありますが、信頼のおけるところを利用しましょう．また、ダイナミックDNSを利用するには、ユーザー側のサーバーコンピュータにも、DNSサーバーにIPアドレスを通知するためのソフトウェアが必要です．<a href="http://www.hi-ho.ne.jp/yoshihiro_e/dice/" target ="_blank" >DiCE</a>という有名なフリーソフトがありますのでこれを利用しましょう．<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="120px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+【一例をあげます】<br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> <a href="https://ddo.jp/" target ="_blank" >ddo.jp</a>    ----- 有料サービスあり．無料では、***.ddo.jp サブドメインのみ<br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> <a href="http://www.mydns.jp/index.html" target ="_blank" >myDNS.jp</a>  --- 無料で自分のドメインを登録できる<br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> <a href="http://www.zoneedit.com/" target ="_blank" >zoneEdit</a>  --- 無料で自分のドメインを登録できる. 専用クライアントソフトあり　(英語)<br><br><img src="files/b10.gif" border="0" align="absmiddle" alt=""> <a href="http://www.hi-ho.ne.jp/yoshihiro_e/dice/" target ="_blank" >DiCE</a>　------- 広く使われているダイナミックDNSクライアントソフト<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+ddo.jpでの登録例<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 10px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #666666 ; white-space:normal; text-align: left;">
+最初にドメイン名を入力して登録すると、その後でパスワードなどの設定画面が開く<br><img src="files/d1.07.gif" border="0" align="absmiddle" alt="">⇒<img src="files/d1.08.gif" border="0" align="absmiddle" alt=""><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+myDNS.jp での登録例<br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 10px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #666666 ; white-space:normal; text-align: left;">
+最初ユーザー登録をし、UIDとパスワードを取得してからログインし、ドメイン名を指定する<br><img src="files/d1.09.gif" border="0" align="absmiddle" alt="">⇒<img src="files/d1.06.gif" border="0" align="absmiddle" alt="">⇒<img src="files/d1.05.gif" border="0" align="absmiddle" alt=""><br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a332"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a> <br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n02.gif" border="0" align="absmiddle" alt=""> DNSサーバー名の登録<br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table   border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/110% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+　前節 <img src="files/02.gif" border="0" align="absmiddle" alt="">-<img src="files/n03.gif" border="0" align="absmiddle" alt=""> で説明したように、レンタルを完了したら、DNSの名前を登録します．
+
+  ddo.jp 　では、プライマリＤＮＳ ：211.123.57.98   (ns.furu.org)
+　　　　　　　　 セカンダリＤＮＳ ：219.111.217.155 (ns.furu2.org)
+
+　myDNS.jp では、プライマリＤＮＳ ：210.197.74.200  (ns0.MyDNS.JP)
+　　　　　　　　 セカンダリＤＮＳ ：210.197.74.201  (ns1.MyDNS.JP) 　
+
+
+
+
+</td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a333"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a> <br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/n03.gif" border="0" align="absmiddle" alt=""> ダイナミックDNSクライアント、DiCEのインストール<br><br>　DiCEをパソコン(サーバー)で動かしてやると、数分に１度、自サイトのIPアドレスが変わっていないかどうか調べます．すでに述べたように、プロバイダからもらったIPアドレスはルーターが受け持っていますので、ルーターのIPアドレスを自動的に調べるわけです．<br>　もし変更されていたら、変更後のIPアドレスを自動的にダイナミックDNSサーバーへ送信します．１～３分に１度程度チェックするように設定しておけば安心です．以下では、DiCEをダウンロードして、そのような設定を行うまでを説明します．<br><br><br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "250" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/g05.gif" border="0" align="absmiddle" alt=""> DiCEのサイトから最新バージョンのプログラムをダウンロードします．インストールはダウンロードしたファイルをダブルクリックして、どんどん「次へ」をクリックするだけです．ダウンロードが終わったらすぐにインストールしてください．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/dice-1.gif" border="1" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "150" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/g05.gif" border="0" align="absmiddle" alt=""> DiCEを起動したら、最初にイ[ベント]⇒[追加]と選択して、設定ダイアログを表示します．説明欄はメモです．《一般》タブのサービス名として、ダイナミックDNSをレンタルしたMyDNS.jpをドロップダウンリストの中から選びます．ホスト名はありません．ドメイン名に自分のドメインであるpowercampus.netを入れます．(<span style="color: crimson;">手書きで入力</span>してください．ドロップダウンリストの形をしていますが、ここは選ぶのではなく入力します)<br>　さらに、ユーザー名とパスワードを入力しますが、これはMyDNS.jpで取得した顧客IDです．また、頻度欄には、IPアドレスが変化したときを選択します．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/dice-2.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "150" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/g05.gif" border="0" align="absmiddle" alt=""> 次は、うまく動作するかチェックします．<br>元の画面にもどると、PowerCampus.net と表示されています．そこで、この名前をクリックして青く反転させ、選択状態にします．さらに、[ベント]⇒[今すぐ実行]と選択して見ましょう．うまく動作すれば、画面下段に「IPアドレスを更新しました」と表示されます．<br>　エラーになった場合は[イベント]⇒[編集]と選択して設定を確認してください．<br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/dice-3.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td valign="top"><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width= "350" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 12px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/g05.gif" border="0" align="absmiddle" alt=""> 最後に、メニュのオプションをクリックして、IPアドレス監視タブを開き、IPアドレスをチェックする間隔を設定してください．PowerCampusのようなLMSを動かす場合、１～３分程度が安心です．<br>　サーバーを起動した時は、必ずDiCEも起動してください．忘れると外部から接続できないということになります．スタートメニューに入れて、自動起動にしておくといいでしょう．また、DiCEの有償版はWindowsのサービスとして起動できますので、忘れるということがなく安心です．購入も検討してみてください．<br><br><br><br><br></td></tr></table></td>
+<td style="padding-left:10px" valign="top"><img src="files/dice-4.gif" border="0" ></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="60px" height="1"></td>
+<td valign="top">
+<table width= "690" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: right;">
+<a name="a40"></a><a href="#top" target ="_self" ><img src="files/g01.gif" border="0" align="absmiddle" alt=""></a> <br></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td valign="top">
+<table width= "660" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<img src="files/04.gif" border="0" align="absmiddle" alt=""> まとめ<br><br>　自宅サーバーを開設する方法について、概要をのべました．ホームルーターの設定についてもう少し詳しく書きたいのですが、これは機種ごとにやり方が違うので、あまり意味がありません．どのような状態にすればいいのかは、十分分かるように書いておきましたので、各機種の説明書を見てトライしてください．<br><br>　ところで、自宅サーバーの問題点は、電気を食うのではということですが、自宅で様子を見ている限り電気代がひどくあがったようにも思えません．一番こまるのは、パソコンの置き場所で、涼しいところに置かないと、夏場など熱暴走する可能性があります．最近ですが、本物のクーラーが付いたパソコンケースが発売になったそうです．試してみる価値があるかもしれません．<br><br><br>　この文書について何か不明なことがあれば、遠慮なくご連絡ください．<br><br><br>　<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td></tr></table></td>
+</tr>
+</table>
+
+</body>
+</html>
