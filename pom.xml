@@ -128,17 +128,20 @@
             <version>${postgresql.version}</version>
         </dependency>
 
-        <!-- プロジェクト内カスタム JAR（install-file 済み想定） -->
+        <!-- Orange CSV -->
+        <dependency>
+            <groupId>com.orangesignal</groupId>
+            <artifactId>orangesignal-csv</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+        <!-- プロジェクト内カスタム JAR（install-file 済み想定）
         <dependency>
             <groupId>jp.tkxtools</groupId>
             <artifactId>tkxtools</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>net.sf.orangesignal</groupId>
-            <artifactId>orangesignal-csv</artifactId>
-            <version>1.2.5</version>
-        </dependency>
+        -->
 
         <!-- Swing Layout（テスト用途） -->
         <dependency>
@@ -170,6 +173,7 @@
                     <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
+            <!--        <arg>-Xlint:deprecation</arg>   -->
                     </compilerArgs>
                 </configuration>
             </plugin>
@@ -239,46 +243,9 @@
                 <version>3.3.0</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
+                    <propertiesEncoding>UTF-8</propertiesEncoding>
                 </configuration>
             </plugin>
-
-            <!-- Install custom JARs to local repository -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>install-tkxtools</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${basedir}/lib/tkxtools.jar</file>
-                            <groupId>jp.tkxtools</groupId>
-                            <artifactId>tkxtools</artifactId>
-                            <version>1.0.0</version>
-                            <packaging>jar</packaging>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-orangesignal-csv</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${basedir}/lib/orangesignal-csv-1.2.5-with-jlha.jar</file>
-                            <groupId>net.sf.orangesignal</groupId>
-                            <artifactId>orangesignal-csv</artifactId>
-                            <version>1.2.5</version>
-                            <packaging>jar</packaging>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
 </project>

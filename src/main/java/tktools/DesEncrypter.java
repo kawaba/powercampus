@@ -79,7 +79,6 @@ public class DesEncrypter {
             return new String(utf8, "UTF8");
         } catch (javax.crypto.BadPaddingException e) {
         } catch (IllegalBlockSizeException e) {
-        } catch (UnsupportedEncodingException e) {
         } catch (java.io.IOException e) {
         }
         return null;

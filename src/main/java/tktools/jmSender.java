@@ -1,26 +1,26 @@
 package tktools;
 /**
  * 電子メール送信ユーティリティ
- * 
+ *
  * 電子メールを送信するスタティックメソッド
  * 添付ファイル付きの送信も可能
- * 
- * (C)Takashi KAWABA 2000- 
- * 
+ *
+ * (C)Takashi KAWABA 2000-
+ *
  *    例示：（添付ファイル付き送信）
  *      try{
  *	       	String fullPath = zipDir + File.separator + zipFile;
  *
  *			jmSender.sendMP(host,to,from,subject,body,fullPath,zipFile);
- *	    
+ *
  *	    }catch(Exception e){
  *	        e.printStacktarce();
  *	    }finally{
  *			// ファイルは不要なので削除しておく（ディレクトリも消す）
  *			delDir(zipDir);
  *		}
- * 
- * 
+ *
+ *
  */
 import java.io.IOException;
 import java.util.Date;
@@ -40,7 +40,7 @@ import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 import jakarta.mail.internet.MimeUtility;
 
-public class jmSender {
+public class jmSender implements AutoCloseable {
     private Session session;
     private Transport transport;
     //
@@ -64,7 +64,7 @@ public class jmSender {
                         String from,
                         String subject,
                         String body)
-                        throws MessagingException, AddressException
+            throws MessagingException, AddressException
     {
         MimeMessage msg = createMessage();
         setHeaders(msg, to, from);
@@ -83,7 +83,7 @@ public class jmSender {
                         String body,
                         String filepath, // ファイル名を含むフルパス（読み出し用）
                         String filename) // ファイル名のみ（添付ファイル名となる）
-                        throws MessagingException, AddressException,IOException
+            throws MessagingException, AddressException,IOException
     {
         MimeMessage msg = createMessage();
         setHeaders(msg, to, from);
@@ -102,7 +102,7 @@ public class jmSender {
                                 String from,
                                 String subject,
                                 String body)
-                throws MessagingException, AddressException
+            throws MessagingException, AddressException
     {
         jmSender s = new jmSender();
         MimeMessage msg = s.createMessage();
@@ -125,7 +125,7 @@ public class jmSender {
                                 String body,
                                 String filepath, // ファイル名を含むフルパス（読み出し用）
                                 String filename) // ファイル名のみ（添付ファイル名となる）
-                throws MessagingException, AddressException,IOException
+            throws MessagingException, AddressException,IOException
     {
         jmSender s = new jmSender();
         MimeMessage msg = s.createMessage();
@@ -184,7 +184,9 @@ public class jmSender {
         //
         transport.sendMessage(msg, envelopeTo);
     }
-    protected void finalize() throws Throwable {
+
+    @Override
+    public void close() {
         disconnect();
     }
 }

@@ -1,8 +1,8 @@
 /**
  * pop-before-smtp 方式の実装
  * Copyright (c) 2015 Takashi Kawaba Released under the MIT license
- * https://opensource.org/licenses/MIT* * 
-*/
+ * https://opensource.org/licenses/MIT* *
+ */
 package net.tkxtools;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -12,20 +12,19 @@ import jakarta.mail.NoSuchProviderException;
 import jakarta.mail.Session;
 import jakarta.mail.Store;
 
-public class JmAuthenticate {
+public class JmAuthenticate implements AutoCloseable {
     private Store store;
     /**
      * POP 認証
      * @param host
      * @param user
      * @param password
-     * @return 
+     * @return
      */
     public static boolean authenticate(String host,String user,String password){
-        try{
-            JmAuthenticate jm = new JmAuthenticate();
+        try (JmAuthenticate jm = new JmAuthenticate()) {
             jm.connect(host,user,password);
-            jm.disconnect();
+            // try-with-resourcesで自動的にclose()が呼ばれる
         }catch(NoSuchProviderException e1){
             return false;
         }catch(MessagingException e2){
@@ -35,7 +34,7 @@ public class JmAuthenticate {
     }
     /**
      * コンストラクタ
-     * @throws NoSuchProviderException 
+     * @throws NoSuchProviderException
      */
     public JmAuthenticate() throws NoSuchProviderException {
         Session session = Session.getInstance(new Properties(), null);
@@ -46,11 +45,11 @@ public class JmAuthenticate {
      * @param host
      * @param user
      * @param password
-     * @throws MessagingException 
+     * @throws MessagingException
      */
     public synchronized void connect(String host,
-                        String user,
-                        String password) throws MessagingException {
+                                     String user,
+                                     String password) throws MessagingException {
         store.connect(host, -1, user, password);
     }
     /**
@@ -60,19 +59,12 @@ public class JmAuthenticate {
         try {
             store.close();
         } catch (MessagingException e) {
-           Logger.getLogger(JmSender.class.getName()).log(Level.SEVERE, null,e);
+            Logger.getLogger(JmSender.class.getName()).log(Level.SEVERE, null,e);
         }
     }
-    /**
-     * 
-     * @throws Throwable 
-     */
+
     @Override
-    protected void finalize() throws Throwable {
-        try {
-            disconnect();
-        } finally {
-            super.finalize();
-        }
+    public void close() {
+        disconnect();
     }
 }

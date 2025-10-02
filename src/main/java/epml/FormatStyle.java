@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.Hashtable;
 import epml.tools.Csv;
@@ -347,8 +348,8 @@ public class FormatStyle {
 	boolean	isURL(String urlStr){
 		URL		url;
 		try{
-			url = new URL(urlStr);
-		}catch( MalformedURLException e){
+			new URI(urlStr);
+		}catch( Exception e){
 			return false;
 		}
 		return true;
