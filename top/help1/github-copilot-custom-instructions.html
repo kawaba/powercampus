@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<title>GitHub Copilotのパーソナルカスタム指示を追加する方法</title>
+<style type="text/css">
+<!--
+A:link { color: #3366ff; }
+A:visited { color: #3366ff; }
+A:active { color: #3366ff; }
+a{
+	color:#3366ff;
+	text-decoration: none;
+}
+a:hover{
+	color:#CC3333;
+	text-decoration: underline;
+}
+a[name]:hover{
+	color:#3366ff;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="20px" height="1"></td>
+<td valign="top">
+<table border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 18px/120% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:pre; text-align: left;">
+GitHub Copilotのパーソナルカスタム指示を追加する方法
+
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="1"></td>
+<td valign="top">
+<table width="640" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 14px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+GitHub Copilotのパーソナルカスタム指示（Personal Custom Instructions）機能を使用すると、Copilotの応答をあなたの好みやプロジェクトの要件に合わせてカスタマイズできます。この機能により、コーディングスタイル、命名規則、使用するフレームワークなどの好みをCopilotに伝えることができます。
+<br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+1. GitHub Copilot設定にアクセスする
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+<b>Visual Studio Codeの場合：</b>
+<br>
+① Visual Studio Codeを開きます<br>
+② 画面右下のステータスバーにあるGitHub Copilotアイコン（または左下の歯車アイコン）をクリックします<br>
+③ 「Edit Instructions」または「Copilot設定を編集」を選択します<br>
+<br>
+<b>GitHub.comの場合：</b>
+<br>
+① <a href="https://github.com/settings/copilot" target="_blank">https://github.com/settings/copilot</a> にアクセスします<br>
+② 右上のプロフィール画像をクリック<br>
+③ 「Settings」を選択<br>
+④ サイドバーの「Copilot」をクリック<br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+2. カスタム指示を追加する
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+「Custom Instructions」または「カスタム指示」のセクションを見つけます。ここに、あなたのコーディング規約や好みを記述できます。
+<br>
+<br>
+<b>記述例：</b>
+<br>
+<pre style="background-color: #f5f5f5; padding: 10px; border: 1px solid #ccc; overflow-x: auto;">
+私のコーディング規約：
+- Javaのメソッド名はキャメルケース（camelCase）を使用する
+- クラス名はパスカルケース（PascalCase）を使用する
+- インデントはスペース4つを使用
+- コメントは日本語で記述する
+- エラーハンドリングは必ず実装する
+- 変数名は意味のある名前を使用し、略語は避ける
+
+プロジェクト情報：
+- Java 17を使用
+- Spring Bootフレームワークを使用
+- Lombokを使用してボイラープレートコードを削減
+- RESTful APIの開発
+</pre>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+3. 設定を保存する
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+カスタム指示を入力したら、「Save」または「保存」ボタンをクリックして設定を保存します。
+<br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+4. カスタム指示の動作確認
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+設定を保存した後、GitHub Copilotは自動的にあなたのカスタム指示を考慮して提案を生成するようになります。<br>
+<br>
+コードエディタで新しいコードを書き始めると、Copilotがあなたの指示に従った提案を行うことを確認できます。
+<br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #cc0000 ; white-space:normal; text-align: left;">
+重要な注意事項
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+・<b>利用可能性：</b> この機能は、GitHub Copilot Individual、Business、またはEnterpriseプランで利用可能です。GitHub Education（学生・教員アカウント）でも利用できる場合があります。<br>
+<br>
+・<b>更新頻度：</b> カスタム指示はいつでも更新できます。変更は即座に反映されます。<br>
+<br>
+・<b>機能の場所：</b> この機能は2023年後半から順次展開されており、お使いの環境によってはまだ利用できない場合があります。その場合は、GitHub CopilotやVS Codeのバージョンを最新にアップデートしてください。<br>
+<br>
+・<b>代替方法：</b> カスタム指示機能が利用できない場合は、コードコメントで指示を書くことで同様の効果を得ることができます。例：<br>
+<pre style="background-color: #f5f5f5; padding: 10px; border: 1px solid #ccc;">
+// コーディング規約: メソッド名はキャメルケース、インデントは4スペース
+</pre>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+よくある質問
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+<b>Q1: カスタム指示が見つかりません。どこにありますか？</b><br>
+A1: GitHub Copilotの設定場所は、使用しているツールによって異なります：<br>
+　・VS Code: 右下のCopilotアイコン → 「Edit Instructions」<br>
+　・GitHub.com: Settings → Copilot → Custom Instructions<br>
+　・JetBrains IDE: Settings/Preferences → Tools → GitHub Copilot<br>
+<br>
+<b>Q2: カスタム指示はプロジェクトごとに設定できますか？</b><br>
+A2: 2024年1月現在、カスタム指示はアカウント全体に適用されます。プロジェクト固有の指示を行いたい場合は、プロジェクトのルートに.github/copilot-instructions.mdファイルを作成する方法もあります（この機能は試験的なものです）。<br>
+<br>
+<b>Q3: カスタム指示の文字数制限はありますか？</b><br>
+A3: 通常、数千文字までの指示を記述できますが、あまり長すぎると効果が薄れる可能性があります。簡潔で明確な指示を心がけましょう。<br>
+<br>
+<b>Q4: カスタム指示はGitHub Copilot Chatにも適用されますか？</b><br>
+A4: はい、カスタム指示はGitHub Copilotのコード補完とCopilot Chat（チャット機能）の両方に適用されます。<br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="50px" height="1"></td>
+<td style="padding-right:10px" valign="top"><img src="files/g06.gif" border="0"></td>
+<td valign="top">
+<table width="600" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal bold 14px/130% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: royalblue ; white-space:normal; text-align: left;">
+参考リンク
+<br></td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="80px" height="1"></td>
+<td valign="top">
+<table width="580" border="0" cellpadding="0" cellspacing="0"><tr>
+<td style="font: normal normal normal 13px/140% 'ＭＳ ゴシック', 'Osaka－等幅'; COLOR: #333333 ; white-space:normal; text-align: left;">
+<br>
+・<a href="https://docs.github.com/ja/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot" target="_blank">GitHub公式ドキュメント - GitHub Copilotのカスタム指示を追加する</a><br>
+<br>
+・<a href="https://github.blog/2023-12-06-how-to-use-github-copilot-in-your-ide-tips-tricks-and-best-practices/" target="_blank">GitHub Blog - Copilotの使い方とベストプラクティス</a><br>
+<br>
+・<a href="https://docs.github.com/ja/copilot/using-github-copilot/getting-started-with-github-copilot" target="_blank">GitHub Copilot入門ガイド</a><br>
+<br>
+</td></tr></table></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="files/spacer.gif" width="40px" height="30"></td>
+</tr>
+</table>
+
+</body>
+</html>
