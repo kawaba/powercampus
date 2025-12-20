@@ -171,10 +171,6 @@
                 <configuration>
                     <release>21</release>
                     <encoding>UTF-8</encoding>
-                    <compilerArgs>
-                        <arg>--enable-preview</arg>
-            <!--        <arg>-Xlint:deprecation</arg>   -->
-                    </compilerArgs>
                 </configuration>
             </plugin>
 
